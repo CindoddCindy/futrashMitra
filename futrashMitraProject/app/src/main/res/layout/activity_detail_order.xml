@@ -5,14 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_gravity="center"
-    android:gravity="center"
     android:background="#232740"
     tools:context=".view.DetailOrder">
 
     <LinearLayout
-        android:layout_gravity="center"
-        android:gravity="center"
         android:background="@drawable/abuabu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
