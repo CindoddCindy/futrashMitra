@@ -30,6 +30,19 @@ public class Regis extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                if(editText_name.getText().toString().isEmpty() && editText_name.getText().toString().isEmpty()&&editText_email.getText().toString().isEmpty()&& editText_phone.getText().toString().isEmpty()&&editText_password.getText().toString().isEmpty()){
+                    editText_name.setError("nama belum diisi");
+                    editText_email.setError("email belum diisi");
+                    editText_phone.setError("nomor telepon belum diisi");
+                    editText_password.setError("password belum diisi");
+
+
+                }else {
+                    subbmitRegis();
+
+
+                }
+
             }
         });
     }
