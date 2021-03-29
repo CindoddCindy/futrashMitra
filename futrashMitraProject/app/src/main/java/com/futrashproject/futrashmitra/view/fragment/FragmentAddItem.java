@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.futrashproject.futrashmitra.R;
 
@@ -25,6 +27,14 @@ public class FragmentAddItem extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+
+    private EditText editText_jenis_makanan, editText_tidak_dikonsumsi_sejak,
+    editText_dijual_karena, editText_berat_makanan, editText_nama_toko,
+    editText_nama_penjual, editText_lokasi_makanan, editText_harga_makanan,
+    editText_saran_penggunaan, editText_kandungan_kimia;
+
+    private TextView textView_btn_post_item;
 
     public FragmentAddItem() {
         // Required empty public constructor
@@ -61,6 +71,48 @@ public class FragmentAddItem extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_item, container, false);
+       View view= inflater.inflate(R.layout.fragment_add_item, container, false);
+       editText_jenis_makanan=view.findViewById(R.id.et_add_item_jenis_makanan);
+       editText_tidak_dikonsumsi_sejak=view.findViewById(R.id.et_add_item_tidak_dikonsumsi_sejak);
+       editText_dijual_karena=view.findViewById(R.id.et_add_item_di_posting_karena);
+       editText_berat_makanan=view.findViewById(R.id.et_add_item_berat_makanan);
+       editText_nama_toko=view.findViewById(R.id.et_add_item_nama_toko);
+       editText_nama_penjual=view.findViewById(R.id.et_add_item_nama_penjual);
+       editText_lokasi_makanan=view.findViewById(R.id.et_add_item_lokasi_makanan);
+       editText_harga_makanan=view.findViewById(R.id.et_add_item_harga_makanan);
+       editText_saran_penggunaan=view.findViewById(R.id.et_add_item_saran_penggunaan);
+       editText_kandungan_kimia=view.findViewById(R.id.et_add_item_kandungan_kimi);
+
+       textView_btn_post_item=view.findViewById(R.id.tv_add_item_btn_subbmit_makanan);
+
+       textView_btn_post_item.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               if(editText_jenis_makanan.getText().toString().isEmpty()&&editText_tidak_dikonsumsi_sejak.getText().toString().isEmpty()&& editText_dijual_karena.getText().toString().isEmpty()&&editText_berat_makanan.getText().toString().isEmpty() && editText_nama_toko.getText().toString().isEmpty()&&editText_nama_penjual.getText().toString().isEmpty()&&editText_lokasi_makanan.getText().toString().isEmpty()&& editText_harga_makanan.getText().toString().isEmpty()&&editText_saran_penggunaan.getText().toString().isEmpty()&&editText_kandungan_kimia.getText().toString().isEmpty()){
+                   editText_jenis_makanan.setError("Field Kosong");
+                   editText_tidak_dikonsumsi_sejak.setError("Field Kosong");
+                   editText_dijual_karena.setError("Field Kosong");
+                   editText_berat_makanan.setError("Field Kosong");
+                   editText_nama_toko.setError("Field Kosong");
+                   editText_nama_penjual.setError("Field Kosong");
+                   editText_lokasi_makanan.setError("Field Kosong");
+                   editText_harga_makanan.setError("Field Kosong");
+                   editText_saran_penggunaan.setError("Field Kosong");
+                   editText_kandungan_kimia.setError("Field Kosong");
+
+
+               }else {
+                   postItem();
+
+
+               }
+           }
+       });
+
+        return  view;
+    }
+
+    public void postItem(){
+
     }
 }
