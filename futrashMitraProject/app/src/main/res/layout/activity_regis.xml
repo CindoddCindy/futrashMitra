@@ -63,6 +63,8 @@
             </TextView>
 
             <EditText
+                android:id="@+id/et_regis_name"
+                android:gravity="center"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
                 android:padding="5dp"
@@ -84,6 +86,7 @@
             </TextView>
 
             <EditText
+                android:id="@+id/et_regis_email"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
                 android:padding="5dp"
@@ -104,6 +107,7 @@
             </TextView>
 
             <EditText
+                android:id="@+id/et_regis_phone"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
                 android:padding="5dp"
@@ -124,6 +128,7 @@
             </TextView>
 
             <EditText
+                android:id="@+id/et_regis_password"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
                 android:padding="5dp"
@@ -135,6 +140,7 @@
 
 
             <TextView
+                android:id="@+id/tv_regis_btn_subbmit"
                 android:textColor="#BFBABA"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
