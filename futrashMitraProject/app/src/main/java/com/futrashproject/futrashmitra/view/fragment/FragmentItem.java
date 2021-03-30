@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.futrashproject.futrashmitra.R;
 
@@ -25,6 +26,8 @@ public class FragmentItem extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private TextView textView_name, textView_email;
 
     public FragmentItem() {
         // Required empty public constructor
@@ -61,6 +64,10 @@ public class FragmentItem extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_item, container, false);
+        View view = inflater.inflate(R.layout.fragment_item, container, false);
+        textView_name=view.findViewById(R.id.tv_fragment_item_name);
+        textView_email=view.findViewById(R.id.tv_fragment_item_email);
+
+        return  view;
     }
 }
