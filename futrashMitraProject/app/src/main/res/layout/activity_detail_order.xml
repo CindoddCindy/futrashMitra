@@ -75,11 +75,11 @@
             </TextView>
 
             <TextView
+                android:background="@drawable/bakron_kembali"
                 android:id="@+id/tv_order_detail_nama_customer"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
                 android:padding="5dp"
-                android:background="@drawable/bakron_kembali"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -105,6 +105,8 @@
                 android:layout_height="wrap_content">
 
             </TextView>
+
+
             <TextView
                 android:textColor="#BFBABA"
                 android:drawablePadding="5dp"
@@ -125,6 +127,8 @@
                 android:layout_height="wrap_content">
 
             </TextView>
+
+
             <TextView
                 android:textColor="#BFBABA"
                 android:text="Jenis Pengiriman Makanan"
