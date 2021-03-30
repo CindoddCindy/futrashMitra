@@ -64,6 +64,88 @@
 
             </TextView>
 
+            <TextView
+                android:textColor="#BFBABA"
+                android:drawablePadding="5dp"
+                android:text="Nama Customer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_order_detail_nama_customer"
+                android:textColor="#BFBABA"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:background="@drawable/bakron_kembali"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <TextView
+                android:textColor="#BFBABA"
+                android:drawablePadding="5dp"
+                android:text="Lokasi Customer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_order_detail_lokasi_customer"
+                android:textColor="#BFBABA"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:background="@drawable/bakron_kembali"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+            <TextView
+                android:textColor="#BFBABA"
+                android:drawablePadding="5dp"
+                android:text="Nomor Telepon Customer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_order_detail_phone_customer"
+                android:textColor="#BFBABA"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:background="@drawable/bakron_kembali"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+            <TextView
+                android:textColor="#BFBABA"
+                android:text="Jenis Pengiriman Makanan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            </TextView>
+
+            <TextView
+                android:textColor="#BFBABA"
+                android:id="@+id/tv_order_detail_jenis_pengiriman"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:background="@drawable/bakron_kembali"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+
 
 
             <TextView
@@ -76,7 +158,8 @@
 
             </TextView>
 
-            <EditText
+            <TextView
+                android:id="@+id/tv_order_detail_nama_makanan"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
                 android:padding="5dp"
@@ -84,7 +167,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            </EditText>
+            </TextView>
 
             <TextView
                 android:textColor="#BFBABA"
@@ -96,7 +179,8 @@
 
             </TextView>
 
-            <EditText
+            <TextView
+                android:id="@+id/tv_order_detail_nama_mitra"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
                 android:padding="5dp"
@@ -104,7 +188,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            </EditText>
+            </TextView>
             <TextView
                 android:textColor="#BFBABA"
                 android:drawablePadding="5dp"
@@ -115,7 +199,8 @@
 
             </TextView>
 
-            <EditText
+            <TextView
+                android:id="@+id/tv_order_detail_lokasi_makanan"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
                 android:padding="5dp"
@@ -123,7 +208,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            </EditText>
+            </TextView>
             <TextView
                 android:textColor="#BFBABA"
                 android:drawablePadding="5dp"
@@ -134,96 +219,22 @@
 
             </TextView>
 
-            <EditText
+            <TextView
+                android:id="@+id/tv_order_detail_harga_makanan"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
                 android:padding="5dp"
                 android:background="@drawable/bakron_kembali"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
-            </EditText>
-
-            <TextView
-                android:textColor="#BFBABA"
-                android:drawablePadding="5dp"
-                android:text="Nama Customer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
 
             </TextView>
 
-            <EditText
-                android:textColor="#BFBABA"
-                android:layout_margin="10dp"
-                android:padding="5dp"
-                android:background="@drawable/bakron_kembali"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </EditText>
-
-            <TextView
-                android:textColor="#BFBABA"
-                android:drawablePadding="5dp"
-                android:text="Lokasi Customer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
-
-            </TextView>
-
-            <EditText
-                android:textColor="#BFBABA"
-                android:layout_margin="10dp"
-                android:padding="5dp"
-                android:background="@drawable/bakron_kembali"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </EditText>
-            <TextView
-                android:textColor="#BFBABA"
-                android:drawablePadding="5dp"
-                android:text="Nomor Telepon Customer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
-
-            </TextView>
-
-            <EditText
-                android:textColor="#BFBABA"
-                android:layout_margin="10dp"
-                android:padding="5dp"
-                android:background="@drawable/bakron_kembali"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </EditText>
-            <TextView
-                android:textColor="#BFBABA"
-                android:text="Jenis Pengiriman Makanan"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                >
-
-            </TextView>
-
-            <EditText
-                android:textColor="#BFBABA"
-                android:layout_margin="10dp"
-                android:padding="5dp"
-                android:background="@drawable/bakron_kembali"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </EditText>
 
 
 
             <TextView
+                android:id="@+id/tv_order_detail_btn_konfirm"
                 android:textColor="#BFBABA"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
