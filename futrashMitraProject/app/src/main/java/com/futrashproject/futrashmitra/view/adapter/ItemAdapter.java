@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.futrashproject.futrashmitra.R;
@@ -34,6 +35,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemAdapterChi
 
         private ImageView imageView_item_edit, imageView_item_delete;
 
+        private CardView cardViewItem;
+
         public ItemAdapterChild(@NonNull View itemView) {
             super(itemView);
             textView_nama_penjual=itemView.findViewById(R.id.tv_item_nama_penjual);
@@ -43,6 +46,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemAdapterChi
             textView_harga_makanan=itemView.findViewById(R.id.tv_item_harga_makanan);
             imageView_item_edit=itemView.findViewById(R.id.iv_item_edit_item);
             imageView_item_delete=itemView.findViewById(R.id.iv_item_delete_item);
+            cardViewItem=itemView.findViewById(R.id.cv_item_item);
         }
     }
 }

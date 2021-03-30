@@ -8,6 +8,7 @@
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cv_confirm_confirm"
         android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,6 +33,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
+                    android:id="@+id/tv_confirm_nama_penjual"
                     android:gravity="center"
                     android:padding="2dp"
                     android:textStyle="bold"
@@ -70,6 +72,7 @@
                     android:orientation="vertical"
                     android:layout_weight="1">
                     <TextView
+                        android:id="@+id/tv_confirm_order_terima_tolak"
                         android:shadowColor="#F0F5F6"
                         android:shadowRadius="2"
                         android:shadowDx="1"
@@ -86,6 +89,7 @@
                     </TextView>
 
                     <TextView
+                        android:id="@+id/tv_confirm_catatan_mitra"
                         android:shadowColor="#F0F5F6"
                         android:shadowRadius="2"
                         android:shadowDx="1"
@@ -122,8 +126,8 @@
                         android:orientation="vertical"
                         android:layout_weight="1">
                         <TextView
+                            android:id="@+id/tv_confirm_jenis_makanan"
                             android:padding="5dp"
-
                             android:textSize="12dp"
                             android:textColor="#BFBABA"
                             android:drawablePadding="5dp"
@@ -133,8 +137,8 @@
                             android:text="Jenis Makanan "
                             />
                         <TextView
+                            android:id="@+id/tv_confirm_lokasi_makanan"
                             android:padding="5dp"
-
                             android:textSize="12dp"
                             android:textColor="#BFBABA"
                             android:drawablePadding="5dp"
@@ -153,25 +157,26 @@
                         android:orientation="vertical"
                         android:layout_weight="1">
                         <TextView
+                            android:id="@+id/tv_confirm_cutomer_name"
                             android:textColor="#BFBABA"
                             android:padding="5dp"
                             android:textSize="12dp"
                             android:drawablePadding="5dp"
-                            android:drawableLeft="@drawable/ic_baseline_food_bank_24"
+                            android:drawableLeft="@drawable/ic_baseline_person_24"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Nama Makanan "
+                            android:text="Nama Cutomer"
                             />
                         <TextView
+                            android:id="@+id/tv_confirm_cust_phone"
                             android:padding="5dp"
-
                             android:textSize="12dp"
                             android:textColor="#BFBABA"
                             android:drawablePadding="5dp"
-                            android:drawableLeft="@drawable/ic_baseline_monetization_on_24"
+                            android:drawableLeft="@drawable/ic_baseline_phone_24"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Harga Makanan"
+                            android:text="Phone"
                             />
 
 
