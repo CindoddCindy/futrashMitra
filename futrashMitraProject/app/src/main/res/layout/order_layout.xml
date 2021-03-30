@@ -32,6 +32,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tv_order_nama_makanan"
+                    android:gravity="center"
+                    android:padding="2dp"
+                    android:textStyle="bold"
+                    android:textSize="10dp"
+                    android:textColor="#BFBABA"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nama Makanan "
+                    />
+
 
 
 
@@ -44,17 +56,6 @@
 
                 </de.hdodenhof.circleimageview.CircleImageView>
 
-                <TextView
-                    android:id="@+id/tv_order_nama_makanan"
-                    android:gravity="center"
-                    android:padding="2dp"
-                    android:textStyle="bold"
-                    android:textSize="10dp"
-                    android:textColor="#BFBABA"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Nama Makanan "
-                    />
 
 
             </LinearLayout>
@@ -78,10 +79,84 @@
 
 
                     <LinearLayout
+                        android:layout_marginBottom="10dp"
+                        android:layout_gravity="center"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:layout_weight="1">
+                        <TextView
+                            android:drawableRight="@drawable/ic_baseline_more_horiz_24"
+                            android:textSize="12dp"
+                            android:textColor="#BFBABA"
+                            android:drawablePadding="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_weight="1"
+                                    android:shadowColor="#F0F5F6"
+                                    android:shadowRadius="2"
+                                    android:shadowDx="1"
+                                    android:shadowDy="1"
+                                    android:textColor="#EDE5E5"
+                                    android:text="Tanggal Order"
+                                    android:gravity="center"
+                                    android:textStyle="bold"
+                                    android:textSize="12dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    >
+
+                                </TextView>
+
+                                <TextView
+                                    android:layout_weight="1"
+                                    android:shadowColor="#F0F5F6"
+                                    android:shadowRadius="2"
+                                    android:shadowDx="1"
+                                    android:shadowDy="1"
+                                    android:textColor="#EDE5E5"
+                                    android:text="Tanggal Order"
+                                    android:gravity="center"
+                                    android:textStyle="normal"
+                                    android:textSize="12dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    >
+
+                                </TextView>
+
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:layout_marginTop="15dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/garis">
+
+
+                            </ImageView>
+
+
+
+
+                        </LinearLayout>
+
+
+
 
                         <TextView
                             android:id="@+id/tv_order_cust_name"
@@ -90,7 +165,7 @@
                             android:textColor="#BFBABA"
                             android:drawablePadding="5dp"
                             android:drawableLeft="@drawable/ic_baseline_person_24"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Customer Name"
                             />

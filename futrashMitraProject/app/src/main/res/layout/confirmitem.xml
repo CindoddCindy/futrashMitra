@@ -24,40 +24,8 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_gravity="center"
-                android:layout_weight="2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/tv_confirm_nama_penjual"
-                    android:gravity="center"
-                    android:padding="2dp"
-                    android:textStyle="bold"
-                    android:textSize="10dp"
-                    android:textColor="#BFBABA"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Nama Penjual "
-                    />
-
-
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:padding="5dp"
-
-                    android:layout_gravity="center"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/example_image">
-
-                </de.hdodenhof.circleimageview.CircleImageView>
-
-
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -71,39 +39,190 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_weight="1">
+
                     <TextView
-                        android:id="@+id/tv_confirm_order_terima_tolak"
-                        android:shadowColor="#F0F5F6"
+                        android:shadowColor="#E6ECED"
                         android:shadowRadius="2"
                         android:shadowDx="1"
                         android:shadowDy="1"
-                        android:textColor="#EDE5E5"
-                        android:text="Order Diterima"
+                        android:id="@+id/tv_confirm_nama_penjual"
                         android:gravity="center"
+                        android:padding="2dp"
                         android:textStyle="bold"
-                        android:textSize="15dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        >
-
-                    </TextView>
-
-                    <TextView
-                        android:id="@+id/tv_confirm_catatan_mitra"
-                        android:shadowColor="#F0F5F6"
-                        android:shadowRadius="2"
-                        android:shadowDx="1"
-                        android:shadowDy="1"
-                        android:textColor="#EDE5E5"
-                        android:text="mohon mengamibilo order pukul 16.00"
-                        android:gravity="center"
-                        android:textStyle="normal"
                         android:textSize="12dp"
+                        android:textColor="#BFBABA"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        >
+                        android:text="Nama Penjual "
+                        />
 
-                    </TextView>
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:padding="5dp"
+
+                        android:layout_gravity="center"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/example_image">
+
+                    </de.hdodenhof.circleimageview.CircleImageView>
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:shadowColor="#E6ECED"
+                                android:shadowRadius="2"
+                                android:shadowDx="1"
+                                android:shadowDy="1"
+                                android:id="@+id/tv_confirm_order_terima_tolak"
+                                android:textColor="#EDE5E5"
+                                android:text="Status Order"
+                                android:gravity="center"
+                                android:textStyle="normal"
+                                android:textSize="12dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                >
+
+                            </TextView>
+                            <TextView
+
+                                android:shadowColor="#E6ECED"
+                                android:shadowRadius="2"
+                                android:shadowDx="1"
+                                android:shadowDy="1"
+
+                                android:textColor="#EDE5E5"
+                                android:text="Catatan Mitra"
+                                android:gravity="center"
+                                android:textStyle="normal"
+                                android:textSize="12dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                >
+
+                            </TextView>
+                            <TextView
+                                android:shadowColor="#E6ECED"
+                                android:shadowRadius="2"
+                                android:shadowDx="1"
+                                android:shadowDy="1"
+
+                                android:textColor="#EDE5E5"
+                                android:text="Tanggal Order"
+                                android:gravity="center"
+                                android:textStyle="normal"
+                                android:textSize="12dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                >
+
+                            </TextView>
+
+
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:shadowColor="#E6ECED"
+                                android:shadowRadius="2"
+                                android:shadowDx="1"
+                                android:shadowDy="1"
+                                android:textColor="#EDE5E5"
+                                android:text="Order Diterima"
+                                android:gravity="center"
+                                android:textStyle="normal"
+                                android:textSize="12dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                >
+
+                            </TextView>
+                            <TextView
+                                android:shadowColor="#E6ECED"
+                                android:shadowRadius="2"
+                                android:shadowDx="1"
+                                android:shadowDy="1"
+                                android:textColor="#EDE5E5"
+                                android:text="Order Diterima"
+                                android:gravity="center"
+                                android:textStyle="normal"
+                                android:textSize="12dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                >
+
+                            </TextView>
+                            <TextView
+                                android:shadowColor="#E6ECED"
+                                android:shadowRadius="2"
+                                android:shadowDx="1"
+                                android:shadowDy="1"
+                                android:textColor="#EDE5E5"
+                                android:text="Order Diterima"
+                                android:gravity="center"
+                                android:textStyle="normal"
+                                android:textSize="12dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                >
+
+                            </TextView>
+
+
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+
+
+                    <LinearLayout
+                        android:layout_gravity="center"
+                        android:gravity="center"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/garis">
+
+
+                        </ImageView>
+
+
+
+
+                    </LinearLayout>
+
 
 
 
@@ -121,6 +240,8 @@
 
 
                     <LinearLayout
+                        android:layout_gravity="center"
+                        android:gravity="center"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -128,6 +249,7 @@
                         <TextView
                             android:id="@+id/tv_confirm_jenis_makanan"
                             android:padding="5dp"
+                            android:gravity="center"
                             android:textSize="12dp"
                             android:textColor="#BFBABA"
                             android:drawablePadding="5dp"
@@ -137,6 +259,7 @@
                             android:text="Jenis Makanan "
                             />
                         <TextView
+                            android:gravity="left"
                             android:id="@+id/tv_confirm_lokasi_customer"
                             android:padding="5dp"
                             android:textSize="12dp"
@@ -152,11 +275,14 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:layout_gravity="center"
+                        android:gravity="center"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:layout_weight="1">
                         <TextView
+                            android:gravity="center"
                             android:id="@+id/tv_confirm_cutomer_name"
                             android:textColor="#BFBABA"
                             android:padding="5dp"
@@ -167,16 +293,17 @@
                             android:layout_height="wrap_content"
                             android:text="Nama Cutomer"
                             />
+
                         <TextView
-                            android:id="@+id/tv_confirm_cust_phone"
+                            android:gravity="center"
+                            android:textColor="#BFBABA"
                             android:padding="5dp"
                             android:textSize="12dp"
-                            android:textColor="#BFBABA"
                             android:drawablePadding="5dp"
                             android:drawableLeft="@drawable/ic_baseline_phone_24"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Phone"
+                            android:text="phone Cutomer"
                             />
 
 
@@ -186,6 +313,8 @@
 
 
                 </LinearLayout>
+
+
             </LinearLayout>
 
 
