@@ -63,6 +63,7 @@
                     android:orientation="vertical"
                     android:layout_weight="1">
                     <TextView
+                        android:id="@+id/tv_item_detai_nama_makanan"
                         android:shadowColor="#E6ECED"
                         android:shadowRadius="2"
                         android:shadowDx="1"
@@ -83,12 +84,12 @@
                     </TextView>
 
                     <TextView
+                        android:id="@+id/tv_item_detail_nama_penjual"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
                         android:shadowColor="#F1F5F6"
                         android:shadowRadius="2"
                         android:shadowDx="1"
                         android:shadowDy="1"
-
                         android:textColor="#BFBABA"
                         android:layout_marginTop="12dp"
                         android:textSize="15dp"
@@ -112,6 +113,7 @@
                     android:orientation="vertical"
                     android:layout_weight="1">
                     <TextView
+                        android:id="@+id/tv_item_detail_lokasi_makanan"
                         android:shadowColor="#F1F5F6"
                         android:shadowRadius="2"
                         android:shadowDx="1"
@@ -132,6 +134,7 @@
                     </TextView>
 
                     <TextView
+                        android:id="@+id/id_tv_item_detail_nomor_telepon"
                         android:shadowColor="#F1F5F6"
                         android:shadowRadius="2"
                         android:shadowDx="1"
@@ -193,6 +196,7 @@
                     </TextView>
 
                     <TextView
+                        android:id="@+id/tv_item_detail_tidak_dikonsumsi"
                         android:layout_marginBottom="10dp"
                         android:textColor="#BFBABA"
                         android:layout_marginTop="12dp"
@@ -227,6 +231,7 @@
 
                     </TextView>
                     <TextView
+                        android:id="@+id/tv_item_detail_post_karena"
                         android:layout_marginBottom="10dp"
                         android:textColor="#BFBABA"
                         android:layout_marginTop="12dp"
@@ -234,7 +239,7 @@
                         android:textStyle="bold"
                         android:gravity="left"
                         android:drawablePadding="5dp"
-                        android:text="Tidak Di Konsumsi Sejak"
+                        android:text="Di posting karena"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         >
@@ -260,6 +265,7 @@
 
                     </TextView>
                     <TextView
+                        android:id="@+id/tv_item_detail_berat_makanan"
                         android:layout_marginBottom="10dp"
                         android:textColor="#BFBABA"
                         android:layout_marginTop="12dp"
@@ -267,7 +273,7 @@
                         android:textStyle="bold"
                         android:gravity="left"
                         android:drawablePadding="5dp"
-                        android:text="Tidak Di Konsumsi Sejak"
+                        android:text="Berat makanan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         >
@@ -293,6 +299,7 @@
 
                     </TextView>
                     <TextView
+                        android:id="@+id/tv_item_detail_kandungan_kimia"
                         android:layout_marginBottom="10dp"
                         android:textColor="#BFBABA"
                         android:layout_marginTop="12dp"
@@ -300,7 +307,7 @@
                         android:textStyle="bold"
                         android:gravity="left"
                         android:drawablePadding="5dp"
-                        android:text="Tidak Di Konsumsi Sejak"
+                        android:text="Kandungan kimia"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         >
@@ -337,6 +344,7 @@
 
                     </TextView>
                     <TextView
+                        android:id="@+id/tv_item_detail_nama_toko"
                         android:layout_marginBottom="10dp"
                         android:textColor="#BFBABA"
                         android:layout_marginTop="12dp"
@@ -344,7 +352,7 @@
                         android:textStyle="bold"
                         android:gravity="left"
                         android:drawablePadding="5dp"
-                        android:text="Tidak Di Konsumsi Sejak"
+                        android:text="Nama toko"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         >
@@ -371,6 +379,7 @@
 
                     </TextView>
                     <TextView
+                        android:id="@+id/tv_item_detail_harga"
                         android:layout_marginBottom="10dp"
                         android:textColor="#BFBABA"
                         android:layout_marginTop="12dp"
@@ -378,7 +387,7 @@
                         android:textStyle="bold"
                         android:gravity="left"
                         android:drawablePadding="5dp"
-                        android:text="Tidak Di Konsumsi Sejak"
+                        android:text="Harga"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         >
@@ -404,6 +413,7 @@
 
                     </TextView>
                     <TextView
+                        android:id="@+id/tv_item_detail_catatan_tambahan"
                         android:layout_marginBottom="10dp"
                         android:textColor="#BFBABA"
                         android:layout_marginTop="12dp"
@@ -411,7 +421,7 @@
                         android:textStyle="bold"
                         android:gravity="left"
                         android:drawablePadding="5dp"
-                        android:text="Tidak Di Konsumsi Sejak"
+                        android:text="Saran Penggunaan"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         >
