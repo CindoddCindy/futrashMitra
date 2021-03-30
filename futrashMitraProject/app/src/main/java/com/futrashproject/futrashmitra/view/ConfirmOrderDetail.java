@@ -1,9 +1,11 @@
-package com.futrashproject.futrashmitra;
+package com.futrashproject.futrashmitra.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.futrashproject.futrashmitra.R;
 
 public class ConfirmOrderDetail extends AppCompatActivity {
     private TextView textView_nama_penjual, textView_nama_makanan, textView_lokasi_customer, textView_nama_customer,

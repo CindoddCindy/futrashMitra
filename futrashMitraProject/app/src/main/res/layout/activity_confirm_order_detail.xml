@@ -8,7 +8,7 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:background="#232740"
-    tools:context=".ConfirmOrderDetail">
+    tools:context=".view.ConfirmOrderDetail">
 
     <LinearLayout
         android:layout_gravity="center"

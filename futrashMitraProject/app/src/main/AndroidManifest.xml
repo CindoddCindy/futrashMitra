@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FutrashMitra">
-        <activity android:name=".ConfirmOrderDetail"></activity>
+        <activity android:name=".view.ConfirmOrderDetail"></activity>
         <activity android:name=".view.OrderKonfirmasi" />
         <activity android:name=".view.MyAccount" />
         <activity android:name=".view.DetailItem" />
