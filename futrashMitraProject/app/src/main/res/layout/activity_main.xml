@@ -28,16 +28,26 @@
         </de.hdodenhof.circleimageview.CircleImageView>
 
         <TextView
+            android:shadowColor="#E6ECED"
+            android:shadowRadius="2"
+            android:shadowDx="1"
+            android:shadowDy="1"
             android:padding="10dp"
             android:layout_marginTop="10dp"
             android:textColor="#FAFFFE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Futrash"
-            android:textSize="15dp"
+            android:textSize="12dp"
+            android:textStyle="bold"
             />
 
         <TextView
+            android:textStyle="normal"
+            android:shadowColor="#E6ECED"
+            android:shadowRadius="2"
+            android:shadowDx="1"
+            android:shadowDy="1"
             android:padding="10dp"
             android:textSize="12dp"
             android:layout_width="wrap_content"
@@ -47,6 +57,7 @@
             />
 
         <TextView
+            android:textStyle="normal"
             android:padding="10dp"
             android:textSize="12dp"
             android:layout_width="wrap_content"
