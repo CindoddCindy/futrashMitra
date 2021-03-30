@@ -28,6 +28,7 @@
         </de.hdodenhof.circleimageview.CircleImageView>
 
         <TextView
+            android:padding="10dp"
             android:layout_marginTop="10dp"
             android:textColor="#FAFFFE"
             android:layout_width="wrap_content"
@@ -37,13 +38,23 @@
             />
 
         <TextView
-
+            android:padding="10dp"
             android:textSize="12dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" Sumbang, Daur atau Jual  Ulang Makanan Sisa "
             android:textColor="#F1EBEB"
             />
+
+        <TextView
+            android:padding="10dp"
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" For Mitra "
+            android:textColor="#F1EBEB"
+            />
+
 
 
     </LinearLayout>
