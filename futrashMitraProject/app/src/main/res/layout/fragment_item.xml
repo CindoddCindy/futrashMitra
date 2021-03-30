@@ -59,6 +59,7 @@
                     android:orientation="vertical"
                     android:layout_weight="1">
                     <TextView
+                        android:id="@+id/tv_fragment_item_name"
                         android:shadowColor="#F0F5F6"
                         android:shadowRadius="2"
                         android:shadowDx="1"
@@ -76,6 +77,7 @@
 
                     <TextView
                         android:shadowColor="#F0F5F6"
+                        android:id="@+id/tv_fragment_item_email"
                         android:shadowRadius="2"
                         android:shadowDx="1"
                         android:shadowDy="1"
