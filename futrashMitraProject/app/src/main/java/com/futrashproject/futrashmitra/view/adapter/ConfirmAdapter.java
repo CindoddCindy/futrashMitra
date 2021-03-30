@@ -42,7 +42,7 @@ public class ConfirmAdapter extends RecyclerView.Adapter<ConfirmAdapter.ConfirmA
             textView_terima_tolak=itemView.findViewById(R.id.tv_confirm_order_terima_tolak);
             textView_note_penjual=itemView.findViewById(R.id.tv_confirm_catatan_mitra);
             textView_jenis_makanan=itemView.findViewById(R.id.tv_confirm_jenis_makanan);
-            textView_lokasi_makanan=itemView.findViewById(R.id.tv_confirm_lokasi_makanan);
+            textView_lokasi_makanan=itemView.findViewById(R.id.tv_confirm_lokasi_customer);
             textView_nama_customer=itemView.findViewById(R.id.tv_confirm_cutomer_name);
             textView_phone_customer=itemView.findViewById(R.id.tv_confirm_cust_phone);
             cardView_confirm_confirm=itemView.findViewById(R.id.cv_confirm_confirm);
