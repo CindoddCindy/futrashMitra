@@ -26,7 +26,7 @@ public class OrderKonfirmasi extends AppCompatActivity {
         textView_nama_makanan=findViewById(R.id.tv_confirm_jenis_makanan);
         textView_lokasi_customer=findViewById(R.id.tv_confirm_lokasi_customer);
         textView_nama_customer=findViewById(R.id.tv_confirm_cutomer_name);
-        textView_phone_customer=findViewById(R.id.tv_confirm_cust_phone);
+
         editText_terima_tolak=findViewById(R.id.et_confirm_activity_terima_tolak);
         editText_note_reason=findViewById(R.id.et_confirm_activity_catatan_alasan);
         textView_btn_confirm=findViewById(R.id.tv_confirm_layout_btn_konfirm_order);

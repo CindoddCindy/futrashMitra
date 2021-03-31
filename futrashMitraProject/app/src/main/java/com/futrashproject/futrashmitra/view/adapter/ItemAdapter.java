@@ -44,8 +44,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemAdapterChi
             textView_nama_makanan=itemView.findViewById(R.id.tv_item_nama_makanan);
             textView_lokasi_makanan=itemView.findViewById(R.id.tv_item_lokasi);
             textView_harga_makanan=itemView.findViewById(R.id.tv_item_harga_makanan);
-            imageView_item_edit=itemView.findViewById(R.id.iv_item_edit_item);
-            imageView_item_delete=itemView.findViewById(R.id.iv_item_delete_item);
+
             cardViewItem=itemView.findViewById(R.id.cv_item_item);
         }
     }
