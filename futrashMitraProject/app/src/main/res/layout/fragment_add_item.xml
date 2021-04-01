@@ -279,6 +279,30 @@
 
             </EditText>
 
+            <TextView
+                android:textColor="#BFBABA"
+                android:text="Phone Number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            </TextView>
+
+            <EditText
+
+                android:gravity="center"
+                android:textColor="#BFBABA"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:background="@drawable/bakron_kembali"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </EditText>
+
+
+
+
 
 
 
