@@ -25,7 +25,7 @@ public class RetrofitHandle {
         okHttpClient.addInterceptor(httpLoggingInterceptor).build();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://156.67.218.222:1010/api/")
+                .baseUrl("localhost:8080/api/foodTrash/")
                 .client(okHttpClient.build())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
