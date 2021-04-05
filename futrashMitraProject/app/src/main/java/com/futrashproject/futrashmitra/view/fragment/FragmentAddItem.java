@@ -32,7 +32,7 @@ public class FragmentAddItem extends Fragment {
     private EditText editText_jenis_makanan, editText_tidak_dikonsumsi_sejak,
     editText_dijual_karena, editText_berat_makanan, editText_nama_toko,
     editText_nama_penjual, editText_lokasi_makanan, editText_harga_makanan,
-    editText_saran_penggunaan, editText_kandungan_kimia;
+    editText_saran_penggunaan, editText_kandungan_kimia, editText_phone_number;
 
     private TextView textView_btn_post_item;
 
@@ -81,14 +81,15 @@ public class FragmentAddItem extends Fragment {
        editText_lokasi_makanan=view.findViewById(R.id.et_add_item_lokasi_makanan);
        editText_harga_makanan=view.findViewById(R.id.et_add_item_harga_makanan);
        editText_saran_penggunaan=view.findViewById(R.id.et_add_item_saran_penggunaan);
-       editText_kandungan_kimia=view.findViewById(R.id.et_add_item_kandungan_kimi);
+       editText_kandungan_kimia=view.findViewById(R.id.et_add_item_kandungan_kimia);
+       editText_phone_number=view.findViewById(R.id.et_add_item_phone_number);
 
        textView_btn_post_item=view.findViewById(R.id.tv_add_item_btn_subbmit_makanan);
 
        textView_btn_post_item.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               if(editText_jenis_makanan.getText().toString().isEmpty()&&editText_tidak_dikonsumsi_sejak.getText().toString().isEmpty()&& editText_dijual_karena.getText().toString().isEmpty()&&editText_berat_makanan.getText().toString().isEmpty() && editText_nama_toko.getText().toString().isEmpty()&&editText_nama_penjual.getText().toString().isEmpty()&&editText_lokasi_makanan.getText().toString().isEmpty()&& editText_harga_makanan.getText().toString().isEmpty()&&editText_saran_penggunaan.getText().toString().isEmpty()&&editText_kandungan_kimia.getText().toString().isEmpty()){
+               if(editText_jenis_makanan.getText().toString().isEmpty()&&editText_tidak_dikonsumsi_sejak.getText().toString().isEmpty()&& editText_dijual_karena.getText().toString().isEmpty()&&editText_berat_makanan.getText().toString().isEmpty() && editText_nama_toko.getText().toString().isEmpty()&&editText_nama_penjual.getText().toString().isEmpty()&&editText_lokasi_makanan.getText().toString().isEmpty()&& editText_harga_makanan.getText().toString().isEmpty()&&editText_saran_penggunaan.getText().toString().isEmpty()&&editText_kandungan_kimia.getText().toString().isEmpty()&&editText_phone_number.getText().toString().isEmpty()){
                    editText_jenis_makanan.setError("Field Kosong");
                    editText_tidak_dikonsumsi_sejak.setError("Field Kosong");
                    editText_dijual_karena.setError("Field Kosong");
@@ -99,6 +100,7 @@ public class FragmentAddItem extends Fragment {
                    editText_harga_makanan.setError("Field Kosong");
                    editText_saran_penggunaan.setError("Field Kosong");
                    editText_kandungan_kimia.setError("Field Kosong");
+                   editText_phone_number.setError("Field Kosong");
 
 
                }else {
