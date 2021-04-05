@@ -37,6 +37,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
                     <ImageView
+                        android:id="@+id/iv_add_item"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:layout_width="350dp"
@@ -268,7 +269,7 @@
             </TextView>
 
             <EditText
-                android:id="@+id/et_add_item_kandungan_kimi"
+                android:id="@+id/et_add_item_kandungan_kimia"
                 android:gravity="center"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
@@ -289,7 +290,7 @@
             </TextView>
 
             <EditText
-
+                android:id="@+id/et_add_item_phone_number"
                 android:gravity="center"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
