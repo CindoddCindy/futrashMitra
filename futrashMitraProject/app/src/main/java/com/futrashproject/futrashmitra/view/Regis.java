@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.futrashproject.futrashmitra.R;
+import com.futrashproject.futrashmitra.model.pojo_regis.FoodTrashRegisMitraRespon;
 import com.futrashproject.futrashmitra.servis.MethodsFactory;
 import com.futrashproject.futrashmitra.servis.RetrofitHandle;
 import com.futrashproject.futrashmitra.shared_preference.SpHandle;
@@ -71,7 +72,7 @@ public class Regis extends AppCompatActivity {
        String email = editText_email.getText().toString();
        String phone = editText_phone.getText().toString();
        String password = editText_password.getText().toString();
-       String role_seller= "seller";
+       String[] role_seller= ["seller","user"];
 
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("name", String.valueOf(name));
@@ -83,10 +84,10 @@ public class Regis extends AppCompatActivity {
 
 
         MethodsFactory methodsFactory =  RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
-        Call<String> call= methodsFactory.isRegistration(jsonObject);
-        call.enqueue(new Callback<String>() {
+        Call<FoodTrashRegisMitraRespon> call= methodsFactory.isRegistration(jsonObject);
+        call.enqueue(new Callback<FoodTrashRegisMitraRespon>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
+            public void onResponse(Call<FoodTrashRegisMitraRespon> call, Response<FoodTrashRegisMitraRespon> response) {
                 if(response.isSuccessful()){
 
 
@@ -119,7 +120,7 @@ public class Regis extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<FoodTrashRegisMitraRespon> call, Throwable t) {
                 Toast.makeText(Regis.this, "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
 
             }
