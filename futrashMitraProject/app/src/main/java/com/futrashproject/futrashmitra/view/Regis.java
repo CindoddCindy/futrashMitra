@@ -2,17 +2,33 @@ package com.futrashproject.futrashmitra.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.futrashproject.futrashmitra.R;
+import com.futrashproject.futrashmitra.servis.MethodsFactory;
+import com.futrashproject.futrashmitra.servis.RetrofitHandle;
+import com.futrashproject.futrashmitra.shared_preference.SpHandle;
+import com.google.gson.JsonObject;
+
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Regis extends AppCompatActivity {
 
     private EditText editText_name, editText_email, editText_phone, editText_password;
     private TextView textView_btn_submmit_regis;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +41,8 @@ public class Regis extends AppCompatActivity {
         editText_password=findViewById(R.id.et_regis_password);
 
         textView_btn_submmit_regis=findViewById(R.id.tv_regis_btn_subbmit);
+
+
 
         textView_btn_submmit_regis.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,5 +67,67 @@ public class Regis extends AppCompatActivity {
 
     public void subbmitRegis(){
 
+       String name = editText_name.getText().toString();
+       String email = editText_email.getText().toString();
+       String phone = editText_phone.getText().toString();
+       String password = editText_password.getText().toString();
+       String role_seller= "seller";
+
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("name", String.valueOf(name));
+        jsonObject.addProperty("email", String.valueOf(email));
+        jsonObject.addProperty("phone", String.valueOf(phone));
+        jsonObject.addProperty("password", String.valueOf(password));
+        jsonObject.addProperty("role", String.valueOf(role_seller));
+
+
+
+        MethodsFactory methodsFactory =  RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
+        Call<String> call= methodsFactory.isRegistration(jsonObject);
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                if(response.isSuccessful()){
+
+
+                    Intent intent = new Intent(Regis.this, Login.class);
+                    startActivity(intent);
+                    finish();
+
+
+                }
+
+                else {
+                    // error case
+                    switch (response.code()) {
+                        case 404:
+                            Toast.makeText(Regis.this, " not found", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 500:
+                            Toast.makeText(Regis.this, "server error", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 401:
+                            Toast.makeText(Regis.this, " sorry can't authenticated, try again", Toast.LENGTH_SHORT).show();
+                            break;
+
+                        default:
+                            Toast.makeText(Regis.this, "unknown error ", Toast.LENGTH_SHORT).show();
+                            break;
+                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                Toast.makeText(Regis.this, "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
     }
+
+
 }
