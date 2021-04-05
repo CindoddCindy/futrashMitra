@@ -15,6 +15,7 @@ import com.futrashproject.futrashmitra.model.pojo_regis.FoodTrashRegisMitraRespo
 import com.futrashproject.futrashmitra.servis.MethodsFactory;
 import com.futrashproject.futrashmitra.servis.RetrofitHandle;
 import com.futrashproject.futrashmitra.shared_preference.SpHandle;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import java.lang.reflect.Method;
@@ -72,14 +73,18 @@ public class Regis extends AppCompatActivity {
        String email = editText_email.getText().toString();
        String phone = editText_phone.getText().toString();
        String password = editText_password.getText().toString();
-       String[] role_seller= ["seller","user"];
+       String[] role_seller= {"seller","user"};
 
         JsonObject jsonObject = new JsonObject();
-        jsonObject.addProperty("name", String.valueOf(name));
-        jsonObject.addProperty("email", String.valueOf(email));
-        jsonObject.addProperty("phone", String.valueOf(phone));
-        jsonObject.addProperty("password", String.valueOf(password));
-        jsonObject.addProperty("role", String.valueOf(role_seller));
+        JsonArray jsonArray = new JsonArray();
+        jsonArray.add("seller");
+        jsonArray.add("user");
+
+        jsonObject.addProperty("name", name);
+        jsonObject.addProperty("email",email );
+        jsonObject.addProperty("phone", phone);
+        jsonObject.addProperty("password", password);
+        jsonObject.add("role", jsonArray);
 
 
 
