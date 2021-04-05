@@ -36,6 +36,16 @@
 
             </de.hdodenhof.circleimageview.CircleImageView>
 
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
             <TextView
                 android:textColor="#BFBABA"
                 android:layout_marginTop="12dp"
@@ -86,6 +96,7 @@
             </TextView>
 
             <EditText
+                android:gravity="center"
                 android:id="@+id/et_regis_email"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
@@ -107,6 +118,7 @@
             </TextView>
 
             <EditText
+                android:gravity="center"
                 android:id="@+id/et_regis_phone"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
@@ -132,6 +144,7 @@
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
                 android:padding="5dp"
+                android:gravity="center"
                 android:background="@drawable/bakron_kembali"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -156,6 +169,9 @@
 
             </TextView>
 
+
+            </LinearLayout>
+            </ScrollView>
 
 
 

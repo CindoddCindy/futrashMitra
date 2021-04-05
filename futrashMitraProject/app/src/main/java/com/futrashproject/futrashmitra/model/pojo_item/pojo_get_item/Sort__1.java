@@ -1,11 +1,11 @@
 
 package com.futrashproject.futrashmitra.model.pojo_item.pojo_get_item;
 
-import javax.annotation.Generated;
+//import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-@Generated("jsonschema2pojo")
+//@Generated("jsonschema2pojo")
 public class Sort__1 {
 
     @SerializedName("sorted")

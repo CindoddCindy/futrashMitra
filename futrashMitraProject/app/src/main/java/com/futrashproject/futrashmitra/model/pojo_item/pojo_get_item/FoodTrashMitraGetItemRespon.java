@@ -3,11 +3,11 @@ package com.futrashproject.futrashmitra.model.pojo_item.pojo_get_item;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.annotation.Generated;
+//import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-@Generated("jsonschema2pojo")
+//@Generated("jsonschema2pojo")
 public class FoodTrashMitraGetItemRespon {
 
     @SerializedName("content")
