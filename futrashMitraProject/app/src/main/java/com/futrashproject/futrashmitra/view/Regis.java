@@ -73,7 +73,6 @@ public class Regis extends AppCompatActivity {
        String email = editText_email.getText().toString();
        String phone = editText_phone.getText().toString();
        String password = editText_password.getText().toString();
-       String[] role_seller= {"seller","user"};
 
         JsonObject jsonObject = new JsonObject();
         JsonArray jsonArray = new JsonArray();
