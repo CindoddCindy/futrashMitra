@@ -91,15 +91,13 @@ public class Login extends AppCompatActivity {
 
                     spHandle.setSpIdUser(SpHandle.SP_ID_USER, foodTrashLoginMitraRespon.getId());
                     spHandle.setSpTokenUser(SpHandle.SP_TOKEN_USER,foodTrashLoginMitraRespon.getAccessToken());
+                    spHandle.setSpNamaMitra(SpHandle.SP_NAMA_MITRA,editText_nama.getText().toString());
+                    spHandle.setSpEmailMitra(SpHandle.SP_EMAIL_MITRA,foodTrashLoginMitraRespon.getEmail());
+                    spHandle.setSpPhoneMitra(SpHandle.SP_PHONE_MITRA,foodTrashLoginMitraRespon.getPhone());
                     // Shared Pref ini berfungsi untuk menjadi trigger session login
-                    sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, true);
-                    startActivity(new Intent(mContext, MainActivity.class)
+                    spHandle.saveSPBoolean(SpHandle.SP_HAVE_LOGIN, true);
+                    startActivity(new Intent(context, BottomNav.class)
                             .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
-                    finish();
-
-
-                    Intent intent = new Intent(Login.this, BottomNav.class);
-                    startActivity(intent);
                     finish();
 
 
