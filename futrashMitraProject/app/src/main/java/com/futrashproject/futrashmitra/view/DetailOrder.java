@@ -41,6 +41,10 @@ public class DetailOrder extends AppCompatActivity {
         textView_kandungan_kimia=findViewById(R.id.tv_detail_order_kandungan_kimia);
         textView_phone_number=findViewById(R.id.tv_detail_order_phone_makanan);
         textView_tanggal_item_di_post=findViewById(R.id.tv_item_detail_tanggal_item_di_post);
+        textView_btn_konfirm=findViewById(R.id.tv_detail_order_btn_konfirm_order);
+        textView_btn_hbgni_customer=findViewById(R.id.tv_detail_order_btn_hbngi_customer);
+        textView_btn_hapus=findViewById(R.id.tv_detail_order_btn_hapus_order);
+        textView_kembali=findViewById(R.id.tv_detail_order_btn_back);
 
 
 

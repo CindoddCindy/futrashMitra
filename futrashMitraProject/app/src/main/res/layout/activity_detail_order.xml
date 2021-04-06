@@ -636,7 +636,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/tv_detail_item_btn_konfirm_order"
+                android:id="@+id/tv_detail_order_btn_konfirm_order"
                 android:textColor="#BFBABA"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
@@ -653,7 +653,7 @@
             </TextView>
 
             <TextView
-                android:id="@+id/tv_detail_item_hbngi_customer"
+                android:id="@+id/tv_detail_order_btn_hbngi_customer"
                 android:textColor="#BFBABA"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
@@ -669,7 +669,7 @@
 
             </TextView>
             <TextView
-                android:id="@+id/tv_detail_item_btn_hapus_order"
+                android:id="@+id/tv_detail_order_btn_hapus_order"
                 android:textColor="#BFBABA"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
@@ -685,7 +685,7 @@
 
             </TextView>
             <TextView
-                android:id="@+id/tv_detail_item_btn_back"
+                android:id="@+id/tv_detail_order_btn_back"
                 android:textColor="#BFBABA"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
