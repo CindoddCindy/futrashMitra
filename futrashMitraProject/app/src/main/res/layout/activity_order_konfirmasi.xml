@@ -61,6 +61,7 @@
                 </TextView>
 
                 <TextView
+                    android:id="@+id/tv_confirm_date_order"
                     android:layout_weight="1"
                     android:shadowColor="#F0F5F6"
                     android:shadowRadius="2"
@@ -157,7 +158,7 @@
                         android:text="Jenis Makanan "
                         />
                     <TextView
-                        android:id="@+id/tv_confirm_activity_customer"
+                        android:id="@+id/tv_confirm_activity_customer_location"
                         android:padding="5dp"
                         android:textSize="12dp"
                         android:textColor="#BFBABA"
@@ -239,6 +240,7 @@
             </TextView>
 
             <EditText
+                android:id="@+id/et_confirm_nama_penjual"
                 android:textColor="#BFBABA"
                 android:gravity="center"
                 android:layout_margin="10dp"
@@ -259,6 +261,7 @@
             </TextView>
 
             <EditText
+                android:id="@+id/et_confirm_lokasi_makanan"
                 android:textColor="#BFBABA"
                 android:gravity="center"
                 android:layout_margin="10dp"

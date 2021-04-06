@@ -183,6 +183,7 @@
             </TextView>
 
             <TextView
+                android:id="@+id/tv_confirm_detail_tgal_confirm"
                 android:textColor="#BFBABA"
                 android:gravity="center"
                 android:layout_margin="10dp"

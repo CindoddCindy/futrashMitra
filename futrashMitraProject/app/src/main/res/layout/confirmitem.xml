@@ -45,7 +45,7 @@
                         android:shadowRadius="2"
                         android:shadowDx="1"
                         android:shadowDy="1"
-                        android:id="@+id/tv_confirm_nama_penjual"
+                        android:id="@+id/tv_confirm_item_nama_penjual"
                         android:gravity="center"
                         android:padding="2dp"
                         android:textStyle="bold"
@@ -145,6 +145,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
                             <TextView
+                                android:id="@+id/tv_confirm_item_status_order"
                                 android:shadowColor="#E6ECED"
                                 android:shadowRadius="2"
                                 android:shadowDx="1"
@@ -160,6 +161,7 @@
 
                             </TextView>
                             <TextView
+                                android:id="@+id/tv_confirm_item_catatan_mitra"
                                 android:shadowColor="#E6ECED"
                                 android:shadowRadius="2"
                                 android:shadowDx="1"
@@ -175,6 +177,7 @@
 
                             </TextView>
                             <TextView
+                                android:id="@+id/tv_confirm_item_tanggal_confirm"
                                 android:shadowColor="#E6ECED"
                                 android:shadowRadius="2"
                                 android:shadowDx="1"
@@ -253,7 +256,7 @@
                         android:orientation="vertical"
                         android:layout_weight="1">
                         <TextView
-                            android:id="@+id/tv_confirm_jenis_makanan"
+                            android:id="@+id/tv_confirm_item_jenis_makanan"
                             android:padding="5dp"
                             android:gravity="center"
                             android:textSize="12dp"
@@ -266,7 +269,7 @@
                             />
                         <TextView
                             android:gravity="left"
-                            android:id="@+id/tv_confirm_lokasi_customer"
+                            android:id="@+id/tv_confirm_item_lokasi_customer"
                             android:padding="5dp"
                             android:textSize="12dp"
                             android:textColor="#BFBABA"
@@ -291,7 +294,7 @@
                         android:layout_weight="1">
                         <TextView
                             android:gravity="center"
-                            android:id="@+id/tv_confirm_cutomer_name"
+                            android:id="@+id/tv_confirm_item_cutomer_name"
                             android:textColor="#BFBABA"
                             android:padding="5dp"
                             android:textSize="12dp"
@@ -303,6 +306,7 @@
                             />
 
                         <TextView
+                            android:id="@+id/tv_confirm_item_phone_customer"
                             android:gravity="center"
                             android:textColor="#BFBABA"
                             android:padding="5dp"
