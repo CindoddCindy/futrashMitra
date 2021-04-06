@@ -13,6 +13,11 @@ public class SpHandle {
     public static final String SP_ID_ORDER="spIdOrder";
     public static final String SP_ID_CONFIRM_ORDER="spIdConfirmOrder";
 
+    public  static final  String SP_NAMA_MITRA="spNamaMitra";
+    public static  final  String SP_EMAIL_MITRA="spEmailMitra";
+    public static final String SP_PHONE_MITRA="spPhoneMitra";
+    public static final String SP_ROLE_MITRA="spRoleMitra";
+
     public static final String SP_HAVE_LOGIN = "spHaveLogin";
 
     SharedPreferences sp;
@@ -48,6 +53,26 @@ public class SpHandle {
         spEditor.commit();
     }
 
+    public void setSpNamaMitra(String keySp, String value){
+        spEditor.putString(keySp,value);
+        spEditor.commit();
+    }
+
+    public void setSpEmailMitra(String keySP, String value){
+        spEditor.putString(keySP,value);
+        spEditor.commit();
+    }
+
+    public void setSpPhoneMitra(String keySP, String value){
+        spEditor.putString(keySP,value);
+        spEditor.commit();
+    }
+
+    public  void setSpRoleMitra(String keySP, String value){
+        spEditor.putString(keySP,value);
+        spEditor.commit();
+    }
+
     public void saveSPBoolean(String keySP, boolean value){
         spEditor.putBoolean(keySP, value);
         spEditor.commit();
@@ -71,6 +96,24 @@ public class SpHandle {
 
     public Long getSpIdConfirm(){
         return  sp.getLong(SP_ID_CONFIRM_ORDER,0);
+    }
+
+    public String getSpNamaMitra(){
+        return  sp.getString(SP_NAMA_MITRA,"");
+
+    }
+
+    public String getSpEmailMitra(){
+        return  sp.getString(SP_EMAIL_MITRA,"");
+    }
+
+    public String getSpPhoneMitra(){
+        return  sp.getString(SP_PHONE_MITRA,"");
+    }
+
+    public String getSpRoleMitra(){
+        return  sp.getString(SP_ROLE_MITRA,"");
+
     }
 
     public Boolean getHaveLogin(){

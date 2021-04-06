@@ -2,6 +2,7 @@ package com.futrashproject.futrashmitra.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.futrashproject.futrashmitra.model.pojo_login.FoodTrashLoginMitraRespo
 import com.futrashproject.futrashmitra.model.pojo_regis.FoodTrashRegisMitraRespon;
 import com.futrashproject.futrashmitra.servis.MethodsFactory;
 import com.futrashproject.futrashmitra.servis.RetrofitHandle;
+import com.futrashproject.futrashmitra.shared_preference.SpHandle;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
@@ -25,6 +27,8 @@ public class Login extends AppCompatActivity {
 
     private EditText editText_nama, editText_password;
     private TextView textView_btn_subbmit;
+    private SpHandle spHandle;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +37,16 @@ public class Login extends AppCompatActivity {
         editText_nama=findViewById(R.id.et_login_name);
         editText_password=findViewById(R.id.et_login_password);
 
+
         textView_btn_subbmit=findViewById(R.id.tv_login_btn_subbmit);
+
+        spHandle = new SpHandle(Login.this);
+
+        if (spHandle.getHaveLogin()){
+            startActivity(new Intent(Login.this, BottomNav.class)
+                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
+            finish();
+        }
 
         textView_btn_subbmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +85,17 @@ public class Login extends AppCompatActivity {
             @Override
             public void onResponse(Call<FoodTrashLoginMitraRespon> call, Response<FoodTrashLoginMitraRespon> response) {
                 if(response.isSuccessful()){
+
+                    FoodTrashLoginMitraRespon foodTrashLoginMitraRespon= response.body();
+
+
+                    spHandle.setSpIdUser(SpHandle.SP_ID_USER, foodTrashLoginMitraRespon.getId());
+                    spHandle.setSpTokenUser(SpHandle.SP_TOKEN_USER,foodTrashLoginMitraRespon.getAccessToken());
+                    // Shared Pref ini berfungsi untuk menjadi trigger session login
+                    sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, true);
+                    startActivity(new Intent(mContext, MainActivity.class)
+                            .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
+                    finish();
 
 
                     Intent intent = new Intent(Login.this, BottomNav.class);
