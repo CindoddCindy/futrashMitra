@@ -53,11 +53,19 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemAdapterChi
             @Override
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
-                bundle.putString("first_name", datum.getFirstName());
-                bundle.putString("last_name",datum.getLastName());
-                bundle.putString("email",datum.getEmail());
-                bundle.putString("gender",datum.getGender());
-                bundle.putString("image",datum.getAvatar());
+                bundle.putString("jm", content.getJenisMakanan());
+                bundle.putString("tds",content.getTidakDikonsumsiSejak());
+                bundle.putString("dk",content.getDijualKarena());
+                bundle.putString("bm",content.getBeratMakanan());
+                bundle.putString("nt",content.getNamaToko());
+                bundle.putString("np", content.getNamaPenjual());
+                bundle.putString("lm",content.getLokasiMakanan());
+                bundle.putString("hm",content.getHargaMakanan());
+                bundle.putString("sp",content.getSaranPenggunaan());
+                bundle.putString("kk",content.getKandunganKimia());
+                bundle.putString("pn",content.getPhoneNumber());
+
+
                 Intent intent = new Intent(context, DetailItem.class);
                 intent.putExtras(bundle);
                 context.startActivity(intent);
