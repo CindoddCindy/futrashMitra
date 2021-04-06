@@ -1,5 +1,6 @@
 package com.futrashproject.futrashmitra.view.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,8 +10,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.futrashproject.futrashmitra.R;
+import com.futrashproject.futrashmitra.model.pojo_item.pojo_post_item.FoodTrashMitraPostItemRespon;
+import com.futrashproject.futrashmitra.model.pojo_login.FoodTrashLoginMitraRespon;
+import com.futrashproject.futrashmitra.servis.MethodsFactory;
+import com.futrashproject.futrashmitra.servis.RetrofitHandle;
+import com.futrashproject.futrashmitra.shared_preference.SpHandle;
+import com.futrashproject.futrashmitra.view.BottomNav;
+import com.futrashproject.futrashmitra.view.Login;
+import com.google.gson.JsonObject;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,6 +49,8 @@ public class FragmentAddItem extends Fragment {
     editText_saran_penggunaan, editText_kandungan_kimia, editText_phone_number;
 
     private TextView textView_btn_post_item;
+
+    private SpHandle spHandle;
 
     public FragmentAddItem() {
         // Required empty public constructor
@@ -84,6 +100,8 @@ public class FragmentAddItem extends Fragment {
        editText_kandungan_kimia=view.findViewById(R.id.et_add_item_kandungan_kimia);
        editText_phone_number=view.findViewById(R.id.et_add_item_phone_number);
 
+       spHandle= new SpHandle(getContext());
+
        textView_btn_post_item=view.findViewById(R.id.tv_add_item_btn_subbmit_makanan);
 
        textView_btn_post_item.setOnClickListener(new View.OnClickListener() {
@@ -115,6 +133,85 @@ public class FragmentAddItem extends Fragment {
     }
 
     public void postItem(){
+        String jenisMakanan= editText_jenis_makanan.getText().toString();
+        String tidakDikonsumsi=editText_tidak_dikonsumsi_sejak.getText().toString();
+        String dijualKarena=editText_dijual_karena.getText().toString();
+        String beratMakanan=editText_berat_makanan.getText().toString();
+        String namaToko=editText_nama_toko.getText().toString();
+        String namaPenjual=editText_nama_penjual.getText().toString();
+        String lokasiMakanan=editText_lokasi_makanan.getText().toString();
+        String hargaMakanan=editText_harga_makanan.getText().toString();
+        String saranPenggunaan=editText_saran_penggunaan.getText().toString();
+        String kandunganKimia=editText_kandungan_kimia.getText().toString();
+        String phoneNumber=editText_phone_number.getText().toString();
+
+
+
+        JsonObject jsonObject = new JsonObject();
+
+        jsonObject.addProperty("jenis_makanan", jenisMakanan);
+        jsonObject.addProperty("tidak_dikonsumsi_sejak", tidakDikonsumsi);
+        jsonObject.addProperty("dijual_karena", dijualKarena);
+        jsonObject.addProperty("berat_makanan", beratMakanan);
+        jsonObject.addProperty("nama_toko", namaToko);
+        jsonObject.addProperty("nama_penjual", namaPenjual);
+        jsonObject.addProperty("lokasi_makanan", lokasiMakanan);
+        jsonObject.addProperty("harga_makanan", hargaMakanan);
+        jsonObject.addProperty("saran_penggunaan", saranPenggunaan);
+        jsonObject.addProperty("kandungan_kimia", kandunganKimia);
+        jsonObject.addProperty("phone_number", phoneNumber);
+
+
+        Long id = spHandle.getSpIdUser();
+
+
+
+        MethodsFactory methodsFactory =  RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
+        Call<FoodTrashMitraPostItemRespon> call= methodsFactory.isPostDataItem(id,jsonObject);
+        call.enqueue(new Callback<FoodTrashMitraPostItemRespon>() {
+            @Override
+            public void onResponse(Call<FoodTrashMitraPostItemRespon> call, Response<FoodTrashMitraPostItemRespon> response) {
+                if(response.isSuccessful()){
+
+                    FoodTrashMitraPostItemRespon foodTrashMitraPostItemRespon= response.body();
+                    spHandle.setSpIdItem(SpHandle.SP_ID_ITEM, foodTrashMitraPostItemRespon.getId() );
+
+
+
+                }
+
+                else {
+                    // error case
+                    switch (response.code()) {
+                        case 404:
+                            Toast.makeText(getContext(), " not found", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 500:
+                            Toast.makeText(getContext(), "server error", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 401:
+                            Toast.makeText(getContext(), " sorry can't authenticated, try again", Toast.LENGTH_SHORT).show();
+                            break;
+
+                        default:
+                            Toast.makeText(getContext(), "unknown error ", Toast.LENGTH_SHORT).show();
+                            break;
+                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<FoodTrashMitraPostItemRespon> call, Throwable t) {
+                Toast.makeText(getContext(), "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
+
+
 
     }
 }

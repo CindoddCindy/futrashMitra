@@ -12,6 +12,7 @@ public class SpHandle {
     public static final String SP_ID_CHART="spIdChart";
     public static final String SP_ID_ORDER="spIdOrder";
     public static final String SP_ID_CONFIRM_ORDER="spIdConfirmOrder";
+    public static final String SP_ID_ITEM="spIdItem";
 
     public  static final  String SP_NAMA_MITRA="spNamaMitra";
     public static  final  String SP_EMAIL_MITRA="spEmailMitra";
@@ -73,6 +74,11 @@ public class SpHandle {
         spEditor.commit();
     }
 
+    public void setSpIdItem(String keySp, Long value){
+        spEditor.putLong(keySp, value);
+        spEditor.commit();
+    }
+
     public void saveSPBoolean(String keySP, boolean value){
         spEditor.putBoolean(keySP, value);
         spEditor.commit();
@@ -114,6 +120,10 @@ public class SpHandle {
     public String getSpRoleMitra(){
         return  sp.getString(SP_ROLE_MITRA,"");
 
+    }
+
+    public Long getSpIdItem(){
+        return  sp.getLong(SP_ID_ITEM,0);
     }
 
     public Boolean getHaveLogin(){
