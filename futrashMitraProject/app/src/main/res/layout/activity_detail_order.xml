@@ -43,7 +43,7 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/tv_order_detail_tanggal"
+                    android:id="@+id/tv_detail_order_tanggal"
                     android:layout_weight="1"
                     android:shadowColor="#F0F5F6"
                     android:shadowRadius="2"
@@ -613,7 +613,7 @@
                     </TextView>
                     <TextView
                         android:layout_marginBottom="10dp"
-                        android:id="@+id/tv_detail_item_tanggal_dipost"
+                        android:id="@+id/tv_detail_order_tanggal_item_dipost"
                         android:textColor="#BFBABA"
                         android:layout_marginTop="12dp"
                         android:textSize="12dp"
