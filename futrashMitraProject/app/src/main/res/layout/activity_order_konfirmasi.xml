@@ -68,7 +68,7 @@
                     android:shadowDx="1"
                     android:shadowDy="1"
                     android:textColor="#EDE5E5"
-                    android:text="Tanggal Post"
+                    android:text="Tanggal Order"
                     android:gravity="center"
                     android:textStyle="normal"
                     android:textSize="12dp"
@@ -157,6 +157,19 @@
                         android:layout_height="wrap_content"
                         android:text="Jenis Makanan "
                         />
+
+                    <TextView
+                        android:id="@+id/tv_confirm_activity_date_item"
+                        android:padding="5dp"
+                        android:textSize="12dp"
+                        android:textColor="#BFBABA"
+                        android:drawablePadding="5dp"
+                        android:drawableLeft="@drawable/ic_baseline_date_range_24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="date item"
+                        />
+
                     <TextView
                         android:id="@+id/tv_confirm_activity_customer_location"
                         android:padding="5dp"
@@ -168,6 +181,8 @@
                         android:layout_height="wrap_content"
                         android:text="Lokasi Customer "
                         />
+
+
 
 
                 </LinearLayout>
@@ -199,6 +214,19 @@
                         android:layout_height="wrap_content"
                         android:text="Phone"
                         />
+
+                    <TextView
+                        android:id="@+id/tv_confirm_activity_jenis_pengiriman"
+                        android:padding="5dp"
+                        android:textSize="12dp"
+                        android:textColor="#BFBABA"
+                        android:drawablePadding="5dp"
+                        android:drawableLeft="@drawable/ic_baseline_local_shipping_24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jenis Pengiriman"
+                        />
+
 
 
 
@@ -240,7 +268,7 @@
             </TextView>
 
             <EditText
-                android:id="@+id/et_confirm_nama_penjual"
+                android:id="@+id/et_confirm_activity_nama_penjual"
                 android:textColor="#BFBABA"
                 android:gravity="center"
                 android:layout_margin="10dp"
@@ -261,7 +289,7 @@
             </TextView>
 
             <EditText
-                android:id="@+id/et_confirm_lokasi_makanan"
+                android:id="@+id/et_confirm_activity_lokasi_makanan"
                 android:textColor="#BFBABA"
                 android:gravity="center"
                 android:layout_margin="10dp"
@@ -282,6 +310,7 @@
             </TextView>
 
             <EditText
+                android:id="@+id/et_confirm_activity_phone_mitra"
                 android:textColor="#BFBABA"
                 android:gravity="center"
                 android:layout_margin="10dp"
@@ -328,7 +357,7 @@
             </TextView>
 
             <EditText
-                android:id="@+id/et_confirm_activity_catatan_alasan"
+                android:id="@+id/et_confirm_activity_catatan_mitra"
                 android:textColor="#BFBABA"
                 android:gravity="center"
                 android:layout_margin="10dp"
@@ -342,7 +371,7 @@
 
 
             <TextView
-                android:id="@+id/tv_confirm_layout_btn_konfirm_order"
+                android:id="@+id/tv_confirm_activity_btn_konfirm_order"
                 android:textColor="#BFBABA"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
