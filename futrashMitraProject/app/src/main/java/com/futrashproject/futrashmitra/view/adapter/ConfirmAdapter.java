@@ -30,21 +30,21 @@ public class ConfirmAdapter extends RecyclerView.Adapter<ConfirmAdapter.ConfirmA
 
     public class ConfirmAdapterChild extends  RecyclerView.ViewHolder{
 
-        private TextView textView_nama_penjual, textView_terima_tolak, textView_note_penjual,
-        textView_jenis_makanan, textView_lokasi_makanan, textView_nama_customer, textView_phone_customer;
+        TextView textView_nama_penjual, textView_status_order, textView_catatan_mitra, textView_tanggal_confirm,
+        textView_nama_makanan, textView_lokasi_customer, textView_nama_customer, textView_customer_phone;
 
         private CardView cardView_confirm_confirm;
 
         public ConfirmAdapterChild(@NonNull View itemView) {
             super(itemView);
-
-            textView_nama_penjual=itemView.findViewById(R.id.tv_confirm_nama_penjual);
-            textView_terima_tolak=itemView.findViewById(R.id.tv_confirm_order_terima_tolak);
-
-            textView_jenis_makanan=itemView.findViewById(R.id.tv_confirm_jenis_makanan);
-            textView_lokasi_makanan=itemView.findViewById(R.id.tv_confirm_lokasi_customer);
-            textView_nama_customer=itemView.findViewById(R.id.tv_confirm_cutomer_name);
-
+            textView_nama_penjual=itemView.findViewById(R.id.tv_confirm_item_nama_penjual);
+            textView_status_order=itemView.findViewById(R.id.tv_confirm_item_status_order);
+            textView_catatan_mitra=itemView.findViewById(R.id.tv_confirm_item_catatan_mitra);
+            textView_tanggal_confirm=itemView.findViewById(R.id.tv_confirm_item_tanggal_confirm);
+            textView_nama_makanan=itemView.findViewById(R.id.tv_confirm_item_jenis_makanan);
+            textView_lokasi_customer=itemView.findViewById(R.id.tv_confirm_item_lokasi_customer);
+            textView_nama_customer=itemView.findViewById(R.id.tv_confirm_item_cutomer_name);
+            textView_customer_phone=itemView.findViewById(R.id.tv_confirm_item_phone_customer);
             cardView_confirm_confirm=itemView.findViewById(R.id.cv_confirm_confirm);
         }
     }
