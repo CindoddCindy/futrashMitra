@@ -30,7 +30,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderAdapter
 
     public class OrderAdapterChild extends RecyclerView.ViewHolder{
 
-        private TextView textView_name, textView_location, textView_phone, textView_shipping_type, textView_food_name;
+        private TextView textView_name, textView_location, textView_phone, textView_shipping_type, textView_food_name,textView_date, textView_delete;
 
         private CardView cardView_order_order;
 
@@ -42,7 +42,10 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderAdapter
             textView_phone=itemView.findViewById(R.id.tv_order_cust_phone);
             textView_shipping_type=itemView.findViewById(R.id.tv_order_cust_shipp_type);
             textView_food_name=itemView.findViewById(R.id.tv_order_nama_makanan);
+            textView_date=itemView.findViewById(R.id.tv_order_date_);
+            textView_delete=itemView.findViewById(R.id.tv_order_delete);
             cardView_order_order=itemView.findViewById(R.id.cv_order_order);
+
         }
     }
 }

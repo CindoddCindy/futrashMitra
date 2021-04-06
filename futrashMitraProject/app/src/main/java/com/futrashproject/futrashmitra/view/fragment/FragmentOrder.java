@@ -63,4 +63,13 @@ public class FragmentOrder extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_order, container, false);
     }
+
+    public void getOrder(){
+        /*
+          String tokenUser = sharedPrefManager.getSpToken();
+        Map<String,String> token = new HashMap<>();
+        token.put("Authorization", "Bearer "+tokenUser);
+
+         */
+    }
 }

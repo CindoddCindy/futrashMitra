@@ -5,8 +5,12 @@ import com.futrashproject.futrashmitra.model.pojo_login.FoodTrashLoginMitraRespo
 import com.futrashproject.futrashmitra.model.pojo_regis.FoodTrashRegisMitraRespon;
 import com.google.gson.JsonObject;
 
+import java.util.Map;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
+import retrofit2.http.HeaderMap;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
@@ -32,7 +36,13 @@ public interface MethodsFactory {
             "Content-Type:application/json"
     })
     @POST("item/users/{id}/items")
-    Call<FoodTrashMitraPostItemRespon> isPostDataItem( @Path ("id") Long id, @Body JsonObject body);
+    Call<FoodTrashMitraPostItemRespon> isPostDataItem(@Path ("id") Long id, @HeaderMap Map<String,String > Map, @Body JsonObject body);
 
+
+    @Headers({
+            "Content-Type:application/json"
+    })
+    @GET("order/users/1/orders")
+    Call<FoodTrashMitraPostItemRespon> getOrder( @Path ("id") Long id,@HeaderMap Map<String,String > Map);
 
 }
