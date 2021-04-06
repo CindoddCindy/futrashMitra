@@ -69,6 +69,7 @@
                 android:orientation="vertical"
                 android:layout_weight="1">
                <TextView
+                   android:id="@+id/iv_item_delete"
                    android:layout_marginRight="5dp"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
@@ -104,6 +105,7 @@
                         </TextView>
 
                         <TextView
+                            android:id="@+id/tv_item_tanggal_post"
                             android:layout_weight="1"
                             android:shadowColor="#F0F5F6"
                             android:shadowRadius="2"

@@ -48,6 +48,14 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemAdapterChi
         holder.textView_lokasi_makanan.setText(content.getLokasiMakanan());
         holder.textView_phone_makanan.setText(content.getPhoneNumber());
         holder.textView_harga_makanan.setText(content.getHargaMakanan());
+        holder.textView_tanggal_post.setText(content.getCreatedAt());
+
+        holder.imageView_delete_item_from_list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         holder.cardViewItem.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +72,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemAdapterChi
                 bundle.putString("sp",content.getSaranPenggunaan());
                 bundle.putString("kk",content.getKandunganKimia());
                 bundle.putString("pn",content.getPhoneNumber());
+                bundle.putString("ca",content.getCreatedAt());
 
 
                 Intent intent = new Intent(context, DetailItem.class);
@@ -82,19 +91,22 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemAdapterChi
     }
 
     public  class ItemAdapterChild extends RecyclerView.ViewHolder{
-        private TextView textView_nama_penjual, textView_jenis_makanan, textView_phone_makanan, textView_lokasi_makanan, textView_harga_makanan;
+        private TextView textView_tanggal_post, textView_nama_penjual, textView_jenis_makanan, textView_phone_makanan, textView_lokasi_makanan, textView_harga_makanan;
 
-        private ImageView imageView_item_edit, imageView_item_delete;
+        private ImageView  imageView_delete_item_from_list;
 
         private CardView cardViewItem;
 
         public ItemAdapterChild(@NonNull View itemView) {
             super(itemView);
             textView_nama_penjual=itemView.findViewById(R.id.tv_item_nama_penjual);
+            textView_tanggal_post=itemView.findViewById(R.id.tv_item_tanggal_post);
             textView_jenis_makanan=itemView.findViewById(R.id.tv_item_jenis_makanan);
             textView_phone_makanan=itemView.findViewById(R.id.tv_item_phone_makanan);
             textView_lokasi_makanan=itemView.findViewById(R.id.tv_item_lokasi);
             textView_harga_makanan=itemView.findViewById(R.id.tv_item_harga_makanan);
+            imageView_delete_item_from_list=itemView.findViewById(R.id.iv_item_delete);
+
 
             cardViewItem=itemView.findViewById(R.id.cv_item_item);
         }
