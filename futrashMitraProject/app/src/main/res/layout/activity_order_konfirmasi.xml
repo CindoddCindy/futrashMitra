@@ -61,7 +61,7 @@
                 </TextView>
 
                 <TextView
-                    android:id="@+id/tv_confirm_date_order"
+                    android:id="@+id/tv_confirm_activity_date_order"
                     android:layout_weight="1"
                     android:shadowColor="#F0F5F6"
                     android:shadowRadius="2"
