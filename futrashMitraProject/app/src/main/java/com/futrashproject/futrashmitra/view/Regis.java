@@ -30,6 +30,8 @@ public class Regis extends AppCompatActivity {
 
     private EditText editText_name, editText_email, editText_phone, editText_password;
     private TextView textView_btn_submmit_regis;
+    private  SpHandle spHandle;
+    private Context context;
 
 
     @Override
@@ -41,6 +43,14 @@ public class Regis extends AppCompatActivity {
         editText_email=findViewById(R.id.et_regis_email);
         editText_phone=findViewById(R.id.et_regis_phone);
         editText_password=findViewById(R.id.et_regis_password);
+
+        spHandle= new SpHandle(Regis.this);
+
+        if (spHandle.getHaveLogin()){
+            startActivity(new Intent(Regis.this, Login.class)
+                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
+            finish();
+        }
 
         textView_btn_submmit_regis=findViewById(R.id.tv_regis_btn_subbmit);
 
@@ -93,11 +103,13 @@ public class Regis extends AppCompatActivity {
             @Override
             public void onResponse(Call<FoodTrashRegisMitraRespon> call, Response<FoodTrashRegisMitraRespon> response) {
                 if(response.isSuccessful()){
-
-
-                    Intent intent = new Intent(Regis.this, Login.class);
-                    startActivity(intent);
+                    FoodTrashRegisMitraRespon foodTrashRegisMitraRespon=response.body();
+                    foodTrashRegisMitraRespon.getMessage();
+                    spHandle.saveSPBoolean(SpHandle.SP_HAVE_LOGIN, true);
+                    startActivity(new Intent(context, Login.class)
+                            .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
                     finish();
+
 
 
                 }
