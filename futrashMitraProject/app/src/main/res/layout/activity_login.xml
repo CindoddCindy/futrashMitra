@@ -22,7 +22,7 @@
             android:layout_gravity="center"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/futrash"
+            android:src="@drawable/food_trash_3rd"
             tools:layout_editor_absoluteX="139dp"
             tools:layout_editor_absoluteY="239dp">
 
