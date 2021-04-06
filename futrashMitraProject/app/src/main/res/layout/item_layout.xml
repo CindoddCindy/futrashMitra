@@ -196,12 +196,12 @@
                         android:orientation="vertical"
                         android:layout_weight="1">
                         <TextView
-                            android:id="@+id/tv_item_nama_makanan"
+                            android:id="@+id/tv_item_phone_makanan"
                             android:textColor="#BFBABA"
                             android:padding="5dp"
                             android:textSize="12dp"
                             android:drawablePadding="5dp"
-                            android:drawableLeft="@drawable/ic_baseline_food_bank_24"
+                            android:drawableLeft="@drawable/ic_baseline_phone_24"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Nama Makanan "
