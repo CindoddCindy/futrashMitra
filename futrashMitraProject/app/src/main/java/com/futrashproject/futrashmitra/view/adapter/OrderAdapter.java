@@ -13,6 +13,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.futrashproject.futrashmitra.R;
+import com.futrashproject.futrashmitra.model.pojo_order.get_order.Content;
 import com.futrashproject.futrashmitra.view.DetailItem;
 
 import java.util.List;
@@ -75,6 +76,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderAdapter
                 bundle.putString("kk",content.getKandunganKimia());
                 bundle.putString("pn",content.getPhoneNumber());
                 bundle.putString("ca",content.getCreatedAt());
+                bundle.putString("di",content.getItemDate());
 
 
                 Intent intent = new Intent(context, DetailItem.class);
