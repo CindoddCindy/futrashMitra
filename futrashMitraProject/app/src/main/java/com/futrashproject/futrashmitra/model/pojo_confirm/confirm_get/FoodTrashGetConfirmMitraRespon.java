@@ -1,5 +1,5 @@
 
-package com.futrashproject.futrashmitra.model.pojo_confirm.get_confirm;
+package com.futrashproject.futrashmitra.model.pojo_confirm.confirm_get;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 //@Generated("jsonschema2pojo")
-public class FoodTrashGetConfirmRespon {
+public class FoodTrashGetConfirmMitraRespon {
 
     @SerializedName("content")
     @Expose
@@ -16,15 +16,15 @@ public class FoodTrashGetConfirmRespon {
     @SerializedName("pageable")
     @Expose
     private Pageable pageable;
-    @SerializedName("last")
-    @Expose
-    private boolean last;
-    @SerializedName("totalPages")
-    @Expose
-    private long totalPages;
     @SerializedName("totalElements")
     @Expose
     private long totalElements;
+    @SerializedName("totalPages")
+    @Expose
+    private long totalPages;
+    @SerializedName("last")
+    @Expose
+    private boolean last;
     @SerializedName("size")
     @Expose
     private long size;
@@ -34,12 +34,12 @@ public class FoodTrashGetConfirmRespon {
     @SerializedName("sort")
     @Expose
     private Sort__1 sort;
-    @SerializedName("first")
-    @Expose
-    private boolean first;
     @SerializedName("numberOfElements")
     @Expose
     private long numberOfElements;
+    @SerializedName("first")
+    @Expose
+    private boolean first;
     @SerializedName("empty")
     @Expose
     private boolean empty;
@@ -48,7 +48,7 @@ public class FoodTrashGetConfirmRespon {
      * No args constructor for use in serialization
      * 
      */
-    public FoodTrashGetConfirmRespon() {
+    public FoodTrashGetConfirmMitraRespon() {
     }
 
     /**
@@ -65,18 +65,18 @@ public class FoodTrashGetConfirmRespon {
      * @param totalElements
      * @param empty
      */
-    public FoodTrashGetConfirmRespon(List<Content> content, Pageable pageable, boolean last, long totalPages, long totalElements, long size, long number, Sort__1 sort, boolean first, long numberOfElements, boolean empty) {
+    public FoodTrashGetConfirmMitraRespon(List<Content> content, Pageable pageable, long totalElements, long totalPages, boolean last, long size, long number, Sort__1 sort, long numberOfElements, boolean first, boolean empty) {
         super();
         this.content = content;
         this.pageable = pageable;
-        this.last = last;
-        this.totalPages = totalPages;
         this.totalElements = totalElements;
+        this.totalPages = totalPages;
+        this.last = last;
         this.size = size;
         this.number = number;
         this.sort = sort;
-        this.first = first;
         this.numberOfElements = numberOfElements;
+        this.first = first;
         this.empty = empty;
     }
 
@@ -96,12 +96,12 @@ public class FoodTrashGetConfirmRespon {
         this.pageable = pageable;
     }
 
-    public boolean isLast() {
-        return last;
+    public long getTotalElements() {
+        return totalElements;
     }
 
-    public void setLast(boolean last) {
-        this.last = last;
+    public void setTotalElements(long totalElements) {
+        this.totalElements = totalElements;
     }
 
     public long getTotalPages() {
@@ -112,12 +112,12 @@ public class FoodTrashGetConfirmRespon {
         this.totalPages = totalPages;
     }
 
-    public long getTotalElements() {
-        return totalElements;
+    public boolean isLast() {
+        return last;
     }
 
-    public void setTotalElements(long totalElements) {
-        this.totalElements = totalElements;
+    public void setLast(boolean last) {
+        this.last = last;
     }
 
     public long getSize() {
@@ -144,20 +144,20 @@ public class FoodTrashGetConfirmRespon {
         this.sort = sort;
     }
 
-    public boolean isFirst() {
-        return first;
-    }
-
-    public void setFirst(boolean first) {
-        this.first = first;
-    }
-
     public long getNumberOfElements() {
         return numberOfElements;
     }
 
     public void setNumberOfElements(long numberOfElements) {
         this.numberOfElements = numberOfElements;
+    }
+
+    public boolean isFirst() {
+        return first;
+    }
+
+    public void setFirst(boolean first) {
+        this.first = first;
     }
 
     public boolean isEmpty() {

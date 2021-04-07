@@ -1,5 +1,5 @@
 
-package com.futrashproject.futrashmitra.model.pojo_confirm.get_confirm;
+package com.futrashproject.futrashmitra.model.pojo_confirm.confirm_get;
 
 //import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
@@ -47,6 +47,15 @@ public class Content {
     @SerializedName("phone_mitra")
     @Expose
     private String phoneMitra;
+    @SerializedName("item_date")
+    @Expose
+    private String itemDate;
+    @SerializedName("order_date")
+    @Expose
+    private String orderDate;
+    @SerializedName("shipping_type")
+    @Expose
+    private String shippingType;
 
     /**
      * No args constructor for use in serialization
@@ -57,6 +66,8 @@ public class Content {
 
     /**
      * 
+     * @param shippingType
+     * @param itemDate
      * @param namaCustomer
      * @param terimaTolak
      * @param createdAt
@@ -66,12 +77,13 @@ public class Content {
      * @param id
      * @param catatanAlasan
      * @param phoneCustomer
+     * @param orderDate
      * @param lokasiCustomer
      * @param updatedAt
      * @param lokasiMitra
      * @param phoneMitra
      */
-    public Content(String createdAt, String updatedAt, long id, String imageUrl, String terimaTolak, String catatanAlasan, String jenisMakanan, String lokasiCustomer, String namaCustomer, String phoneCustomer, String lokasiMitra, String namaMitra, String phoneMitra) {
+    public Content(String createdAt, String updatedAt, long id, String imageUrl, String terimaTolak, String catatanAlasan, String jenisMakanan, String lokasiCustomer, String namaCustomer, String phoneCustomer, String lokasiMitra, String namaMitra, String phoneMitra, String itemDate, String orderDate, String shippingType) {
         super();
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
@@ -86,6 +98,9 @@ public class Content {
         this.lokasiMitra = lokasiMitra;
         this.namaMitra = namaMitra;
         this.phoneMitra = phoneMitra;
+        this.itemDate = itemDate;
+        this.orderDate = orderDate;
+        this.shippingType = shippingType;
     }
 
     public String getCreatedAt() {
@@ -190,6 +205,30 @@ public class Content {
 
     public void setPhoneMitra(String phoneMitra) {
         this.phoneMitra = phoneMitra;
+    }
+
+    public String getItemDate() {
+        return itemDate;
+    }
+
+    public void setItemDate(String itemDate) {
+        this.itemDate = itemDate;
+    }
+
+    public String getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    public String getShippingType() {
+        return shippingType;
+    }
+
+    public void setShippingType(String shippingType) {
+        this.shippingType = shippingType;
     }
 
 }
