@@ -52,5 +52,26 @@ public class OrderKonfirmasi extends AppCompatActivity {
 
     public void getDataOrder(){
 
+        if(getIntent().getExtras()!=null){
+            /**
+             * Jika Bundle ada, ambil data dari Bundle
+             */
+            Bundle bundle = getIntent().getExtras();
+            textView_tanggal_order.setText(bundle.getString("ca"));
+            textView_nama_makanan.setText(bundle.getString("jm"));
+            textView_tanggal_makanan_post.setText(bundle.getString("di"));
+            textView_lokasi_customer.setText(bundle.getString("cl"));
+            textView_nama_customer.setText(bundle.getString("cn"));
+            textView_phone_customer.setText(bundle.getString("cp"));
+            textView_shipping_type.setText(bundle.getString("cst"));
+            editText_nama_penjual.setText(bundle.getString("np"));
+            editText_lokasi_makanan.setText(bundle.getString("lm"));
+            editText_nomor_telepon.setText(bundle.getString("pn"));
+
+
+
+
+        }
+
     }
 }
