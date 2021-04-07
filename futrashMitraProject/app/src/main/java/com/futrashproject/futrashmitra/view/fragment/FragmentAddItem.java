@@ -184,7 +184,8 @@ public class FragmentAddItem extends Fragment {
                     FoodTrashMitraPostItemRespon foodTrashMitraPostItemRespon= response.body();
                     spHandle.setSpIdItem(SpHandle.SP_ID_ITEM, foodTrashMitraPostItemRespon.getId() );
 
-
+                    Intent intent = new Intent(getActivity(),BottomNav.class);
+                    startActivity(intent);
 
                 }
 

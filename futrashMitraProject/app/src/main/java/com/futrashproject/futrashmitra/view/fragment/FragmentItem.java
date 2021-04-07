@@ -100,12 +100,13 @@ public class FragmentItem extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
+        getItemList();
 
         return  view;
     }
 
 
-    public void getDataPropinsi(){
+    public void getItemList(){
         Long id = spHandle.getSpIdUser();
 
         String tokenUser = spHandle.getSpTokenUser();
