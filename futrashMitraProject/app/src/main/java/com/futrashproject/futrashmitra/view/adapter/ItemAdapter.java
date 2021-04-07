@@ -50,7 +50,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemAdapterChi
         holder.textView_harga_makanan.setText(content.getHargaMakanan());
         holder.textView_tanggal_post.setText(content.getCreatedAt());
 
-        holder.imageView_delete_item_from_list.setOnClickListener(new View.OnClickListener() {
+        holder.textView_delete_item_from_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -93,7 +93,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemAdapterChi
     public  class ItemAdapterChild extends RecyclerView.ViewHolder{
         private TextView textView_tanggal_post, textView_nama_penjual, textView_jenis_makanan, textView_phone_makanan, textView_lokasi_makanan, textView_harga_makanan;
 
-        private ImageView  imageView_delete_item_from_list;
+        private TextView  textView_delete_item_from_list;
 
         private CardView cardViewItem;
 
@@ -105,7 +105,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemAdapterChi
             textView_phone_makanan=itemView.findViewById(R.id.tv_item_phone_makanan);
             textView_lokasi_makanan=itemView.findViewById(R.id.tv_item_lokasi);
             textView_harga_makanan=itemView.findViewById(R.id.tv_item_harga_makanan);
-            imageView_delete_item_from_list=itemView.findViewById(R.id.iv_item_delete);
+            textView_delete_item_from_list=itemView.findViewById(R.id.tv_item_delete);
 
 
             cardViewItem=itemView.findViewById(R.id.cv_item_item);
