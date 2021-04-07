@@ -22,6 +22,9 @@ import com.futrashproject.futrashmitra.view.BottomNav;
 import com.futrashproject.futrashmitra.view.Login;
 import com.google.gson.JsonObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -122,7 +125,7 @@ public class FragmentAddItem extends Fragment {
 
 
                }else {
-                //   postItem();
+                  postItem();
 
 
                }
@@ -131,7 +134,7 @@ public class FragmentAddItem extends Fragment {
 
         return  view;
     }
-/*
+
     public void postItem(){
         String jenisMakanan= editText_jenis_makanan.getText().toString();
         String tidakDikonsumsi=editText_tidak_dikonsumsi_sejak.getText().toString();
@@ -164,10 +167,15 @@ public class FragmentAddItem extends Fragment {
 
         Long id = spHandle.getSpIdUser();
 
+         String tokenUser = spHandle.getSpTokenUser();
+        Map<String,String> token = new HashMap<>();
+        token.put("Authorization", "Bearer "+tokenUser);
+
+
 
 
         MethodsFactory methodsFactory =  RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
-        Call<FoodTrashMitraPostItemRespon> call= methodsFactory.isPostDataItem(id,jsonObject);
+        Call<FoodTrashMitraPostItemRespon> call= methodsFactory.isPostDataItem(id,token ,jsonObject);
         call.enqueue(new Callback<FoodTrashMitraPostItemRespon>() {
             @Override
             public void onResponse(Call<FoodTrashMitraPostItemRespon> call, Response<FoodTrashMitraPostItemRespon> response) {
@@ -217,5 +225,5 @@ public class FragmentAddItem extends Fragment {
 
     }
 
- */
+
 }
