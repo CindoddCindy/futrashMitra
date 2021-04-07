@@ -35,6 +35,7 @@ public class DetailItem extends AppCompatActivity {
         textView_btn_edit_product=findViewById(R.id.tv_item_detail_btn_edit);
         textView_btn_hapus_product=findViewById(R.id.tv_item_detail_btn_hapus);
         textView_phone_numb=findViewById(R.id.id_tv_item_detail_nomor_telepon);
+        textView_tanggal_post_makanan = findViewById(R.id.tv_item_detail_tanggal_item_di_post);
 
         textView_btn_tambah_product.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +87,7 @@ public class DetailItem extends AppCompatActivity {
             textView_kandungan_kimia.setText(bundle.getString("kk"));
             textView_tanggal_post_makanan.setText(bundle.getString("ca"));
             textView_phone_numb.setText(bundle.getString("pn"));
+            textView_tanggal_post_makanan.setText(bundle.getString("ca"));
 
 
 

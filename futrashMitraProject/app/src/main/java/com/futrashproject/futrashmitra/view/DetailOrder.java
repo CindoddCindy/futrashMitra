@@ -52,6 +52,35 @@ public class DetailOrder extends AppCompatActivity {
 
     public void detailOrder(){
 
+
+        if(getIntent().getExtras()!=null){
+            /**
+             * Jika Bundle ada, ambil data dari Bundle
+             */
+            Bundle bundle = getIntent().getExtras();
+            textView_nama_cust.setText(bundle.getString("cn"));
+            textView_lokasi_cust.setText(bundle.getString("cl"));
+            textView_phone_cust.setText(bundle.getString("cp"));
+            textView_shipping_type.setText(bundle.getString("cst"));
+            textView_nama_food.setText(bundle.getString("jm"));
+            textView_tdk_dikonsumsi_sejak.setText(bundle.getString("tds"));
+            textView_dijual_karena.setText(bundle.getString("dk"));
+            textView_berat_makanan.setText(bundle.getString("bm"));
+            textView_nama_toko.setText(bundle.getString("nt"));
+            textView_nama_penjual.setText(bundle.getString("np"));
+            textView_lokasi_makanan.setText(bundle.getString("lm"));
+            textView_harga_makanan.setText(bundle.getString("hm"));
+            textView_saran_penggunaan.setText(bundle.getString("sp"));
+            textView_kandungan_kimia.setText(bundle.getString("kk"));
+            textView_phone_number.setText(bundle.getString("pn"));
+            textView_tanggal_item_di_post.setText(bundle.getString("ca"));
+
+
+
+
+        }
+
+
     }
 
     public void btnKonfirm(){

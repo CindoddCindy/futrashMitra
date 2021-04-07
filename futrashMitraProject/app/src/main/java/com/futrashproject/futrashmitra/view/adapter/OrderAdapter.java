@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.futrashproject.futrashmitra.R;
 import com.futrashproject.futrashmitra.model.pojo_order.get_order.Content;
 import com.futrashproject.futrashmitra.view.DetailItem;
+import com.futrashproject.futrashmitra.view.DetailOrder;
 
 import java.util.List;
 
@@ -63,7 +64,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderAdapter
                 bundle.putString("cn",content.getCustomerName());
                 bundle.putString("cl",content.getCustomerLocation());
                 bundle.putString("cp",content.getCustomerPhone());
-                bundle.putString("csp",content.getShippingType());
+                bundle.putString("cst",content.getShippingType());
                 bundle.putString("jm", content.getJenisMakanan());
                 bundle.putString("tds",content.getTidakDikonsumsiSejak());
                 bundle.putString("dk",content.getDijualKarena());
@@ -79,7 +80,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderAdapter
                 bundle.putString("di",content.getItemDate());
 
 
-                Intent intent = new Intent(context, DetailItem.class);
+                Intent intent = new Intent(context, DetailOrder.class);
                 intent.putExtras(bundle);
                 context.startActivity(intent);
 
