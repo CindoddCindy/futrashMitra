@@ -13,7 +13,6 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.futrashproject.futrashmitra.R;
-import com.futrashproject.futrashmitra.model.pojo_order.get_order.Content;
 import com.futrashproject.futrashmitra.view.DetailItem;
 
 import java.util.List;

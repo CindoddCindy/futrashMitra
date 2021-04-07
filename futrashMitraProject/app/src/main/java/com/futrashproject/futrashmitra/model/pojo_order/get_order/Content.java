@@ -65,6 +65,9 @@ public class Content {
     @SerializedName("phone_number")
     @Expose
     private String phoneNumber;
+    @SerializedName("item_date")
+    @Expose
+    private String itemDate;
 
     /**
      * No args constructor for use in serialization
@@ -80,6 +83,7 @@ public class Content {
      * @param hargaMakanan
      * @param shippingType
      * @param saranPenggunaan
+     * @param itemDate
      * @param lokasiMakanan
      * @param dijualKarena
      * @param customerName
@@ -95,7 +99,7 @@ public class Content {
      * @param tidakDikonsumsiSejak
      * @param updatedAt
      */
-    public Content(String createdAt, String updatedAt, long id, String imageUrl, String customerName, String customerLocation, String customerPhone, String shippingType, String jenisMakanan, String tidakDikonsumsiSejak, String dijualKarena, String beratMakanan, String namaToko, String namaPenjual, String lokasiMakanan, String hargaMakanan, String saranPenggunaan, String kandunganKimia, String phoneNumber) {
+    public Content(String createdAt, String updatedAt, long id, String imageUrl, String customerName, String customerLocation, String customerPhone, String shippingType, String jenisMakanan, String tidakDikonsumsiSejak, String dijualKarena, String beratMakanan, String namaToko, String namaPenjual, String lokasiMakanan, String hargaMakanan, String saranPenggunaan, String kandunganKimia, String phoneNumber, String itemDate) {
         super();
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
@@ -116,6 +120,7 @@ public class Content {
         this.saranPenggunaan = saranPenggunaan;
         this.kandunganKimia = kandunganKimia;
         this.phoneNumber = phoneNumber;
+        this.itemDate = itemDate;
     }
 
     public String getCreatedAt() {
@@ -268,6 +273,14 @@ public class Content {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getItemDate() {
+        return itemDate;
+    }
+
+    public void setItemDate(String itemDate) {
+        this.itemDate = itemDate;
     }
 
 }
