@@ -2,7 +2,9 @@ package com.futrashproject.futrashmitra.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.futrashproject.futrashmitra.R;
@@ -46,6 +48,13 @@ public class DetailOrder extends AppCompatActivity {
         textView_btn_hapus=findViewById(R.id.tv_detail_order_btn_hapus_order);
         textView_kembali=findViewById(R.id.tv_detail_order_btn_back);
 
+        textView_btn_konfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnKonfirm();
+            }
+        });
+
 
 
     }
@@ -84,6 +93,8 @@ public class DetailOrder extends AppCompatActivity {
     }
 
     public void btnKonfirm(){
+        Intent intent = new Intent(DetailOrder.this, OrderKonfirmasi.class);
+        startActivity(intent);
 
     }
 

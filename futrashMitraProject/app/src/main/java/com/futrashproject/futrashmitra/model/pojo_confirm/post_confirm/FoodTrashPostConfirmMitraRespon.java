@@ -6,7 +6,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 //@Generated("jsonschema2pojo")
-public class FoodTrashMitraPostConfirmRespon {
+public class FoodTrashPostConfirmMitraRespon {
 
     @SerializedName("createdAt")
     @Expose
@@ -47,16 +47,23 @@ public class FoodTrashMitraPostConfirmRespon {
     @SerializedName("phone_mitra")
     @Expose
     private String phoneMitra;
+    @SerializedName("item_date")
+    @Expose
+    private String itemDate;
+    @SerializedName("order_date")
+    @Expose
+    private String orderDate;
 
     /**
      * No args constructor for use in serialization
      * 
      */
-    public FoodTrashMitraPostConfirmRespon() {
+    public FoodTrashPostConfirmMitraRespon() {
     }
 
     /**
      * 
+     * @param itemDate
      * @param namaCustomer
      * @param terimaTolak
      * @param createdAt
@@ -66,12 +73,13 @@ public class FoodTrashMitraPostConfirmRespon {
      * @param id
      * @param catatanAlasan
      * @param phoneCustomer
+     * @param orderDate
      * @param lokasiCustomer
      * @param updatedAt
      * @param lokasiMitra
      * @param phoneMitra
      */
-    public FoodTrashMitraPostConfirmRespon(String createdAt, String updatedAt, long id, String imageUrl, String terimaTolak, String catatanAlasan, String jenisMakanan, String lokasiCustomer, String namaCustomer, String phoneCustomer, String lokasiMitra, String namaMitra, String phoneMitra) {
+    public FoodTrashPostConfirmMitraRespon(String createdAt, String updatedAt, long id, String imageUrl, String terimaTolak, String catatanAlasan, String jenisMakanan, String lokasiCustomer, String namaCustomer, String phoneCustomer, String lokasiMitra, String namaMitra, String phoneMitra, String itemDate, String orderDate) {
         super();
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
@@ -86,6 +94,8 @@ public class FoodTrashMitraPostConfirmRespon {
         this.lokasiMitra = lokasiMitra;
         this.namaMitra = namaMitra;
         this.phoneMitra = phoneMitra;
+        this.itemDate = itemDate;
+        this.orderDate = orderDate;
     }
 
     public String getCreatedAt() {
@@ -190,6 +200,22 @@ public class FoodTrashMitraPostConfirmRespon {
 
     public void setPhoneMitra(String phoneMitra) {
         this.phoneMitra = phoneMitra;
+    }
+
+    public String getItemDate() {
+        return itemDate;
+    }
+
+    public void setItemDate(String itemDate) {
+        this.itemDate = itemDate;
+    }
+
+    public String getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(String orderDate) {
+        this.orderDate = orderDate;
     }
 
 }
