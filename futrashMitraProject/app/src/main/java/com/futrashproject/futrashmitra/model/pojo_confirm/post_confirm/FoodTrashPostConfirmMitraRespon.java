@@ -53,6 +53,9 @@ public class FoodTrashPostConfirmMitraRespon {
     @SerializedName("order_date")
     @Expose
     private String orderDate;
+    @SerializedName("shipping_type")
+    @Expose
+    private String shippingType;
 
     /**
      * No args constructor for use in serialization
@@ -63,6 +66,7 @@ public class FoodTrashPostConfirmMitraRespon {
 
     /**
      * 
+     * @param shippingType
      * @param itemDate
      * @param namaCustomer
      * @param terimaTolak
@@ -79,7 +83,7 @@ public class FoodTrashPostConfirmMitraRespon {
      * @param lokasiMitra
      * @param phoneMitra
      */
-    public FoodTrashPostConfirmMitraRespon(String createdAt, String updatedAt, long id, String imageUrl, String terimaTolak, String catatanAlasan, String jenisMakanan, String lokasiCustomer, String namaCustomer, String phoneCustomer, String lokasiMitra, String namaMitra, String phoneMitra, String itemDate, String orderDate) {
+    public FoodTrashPostConfirmMitraRespon(String createdAt, String updatedAt, long id, String imageUrl, String terimaTolak, String catatanAlasan, String jenisMakanan, String lokasiCustomer, String namaCustomer, String phoneCustomer, String lokasiMitra, String namaMitra, String phoneMitra, String itemDate, String orderDate, String shippingType) {
         super();
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
@@ -96,6 +100,7 @@ public class FoodTrashPostConfirmMitraRespon {
         this.phoneMitra = phoneMitra;
         this.itemDate = itemDate;
         this.orderDate = orderDate;
+        this.shippingType = shippingType;
     }
 
     public String getCreatedAt() {
@@ -216,6 +221,14 @@ public class FoodTrashPostConfirmMitraRespon {
 
     public void setOrderDate(String orderDate) {
         this.orderDate = orderDate;
+    }
+
+    public String getShippingType() {
+        return shippingType;
+    }
+
+    public void setShippingType(String shippingType) {
+        this.shippingType = shippingType;
     }
 
 }

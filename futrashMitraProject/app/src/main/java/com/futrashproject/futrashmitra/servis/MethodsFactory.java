@@ -1,5 +1,6 @@
 package com.futrashproject.futrashmitra.servis;
 
+import com.futrashproject.futrashmitra.model.pojo_confirm.post_confirm.FoodTrashPostConfirmMitraRespon;
 import com.futrashproject.futrashmitra.model.pojo_item.pojo_get_item.FoodTrashMitraGetItemRespon;
 import com.futrashproject.futrashmitra.model.pojo_item.pojo_post_item.FoodTrashMitraPostItemRespon;
 import com.futrashproject.futrashmitra.model.pojo_login.FoodTrashLoginMitraRespon;
@@ -59,6 +60,6 @@ public interface MethodsFactory {
             "Content-Type:application/json"
     })
     @POST("confirm/users/{id}/confirm")
-    Call<FoodTrashMitraGetItemRespon> postConfirm(@Path ("id") Long id, @HeaderMap Map<String,String > Map);
+    Call<FoodTrashPostConfirmMitraRespon> postConfirm(@Path ("id") Long id, @HeaderMap Map<String,String > Map, @Body JsonObject body);
 
 }
