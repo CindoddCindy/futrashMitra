@@ -9,6 +9,7 @@
     tools:context=".view.fragment.FragmentOrder">
 
 <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/rv_order"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 

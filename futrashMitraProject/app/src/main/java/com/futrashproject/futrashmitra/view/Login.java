@@ -96,7 +96,7 @@ public class Login extends AppCompatActivity {
                     spHandle.setSpPhoneMitra(SpHandle.SP_PHONE_MITRA,foodTrashLoginMitraRespon.getPhone());
                     // Shared Pref ini berfungsi untuk menjadi trigger session login
                     spHandle.saveSPBoolean(SpHandle.SP_HAVE_LOGIN, true);
-                    startActivity(new Intent(context, BottomNav.class)
+                    startActivity(new Intent(Login.this, BottomNav.class)
                             .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
                     finish();
 

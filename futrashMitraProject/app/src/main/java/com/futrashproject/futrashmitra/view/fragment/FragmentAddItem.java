@@ -122,7 +122,7 @@ public class FragmentAddItem extends Fragment {
 
 
                }else {
-                   postItem();
+                //   postItem();
 
 
                }
@@ -131,7 +131,7 @@ public class FragmentAddItem extends Fragment {
 
         return  view;
     }
-
+/*
     public void postItem(){
         String jenisMakanan= editText_jenis_makanan.getText().toString();
         String tidakDikonsumsi=editText_tidak_dikonsumsi_sejak.getText().toString();
@@ -213,5 +213,9 @@ public class FragmentAddItem extends Fragment {
 
 
 
+
+
     }
+
+ */
 }

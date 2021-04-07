@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,7 +33,7 @@ public class Regis extends AppCompatActivity {
     private TextView textView_btn_submmit_regis;
     private  SpHandle spHandle;
     private Context context;
-
+    private ImageView imageView_have_accoount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,14 +44,26 @@ public class Regis extends AppCompatActivity {
         editText_email=findViewById(R.id.et_regis_email);
         editText_phone=findViewById(R.id.et_regis_phone);
         editText_password=findViewById(R.id.et_regis_password);
+        imageView_have_accoount=findViewById(R.id.iv_regis_hava_account);
+
 
         spHandle= new SpHandle(Regis.this);
 
+        imageView_have_accoount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Regis.this, Login.class);
+                startActivity(intent);
+            }
+        });
+/*
         if (spHandle.getHaveLogin()){
             startActivity(new Intent(Regis.this, Login.class)
                     .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
             finish();
         }
+
+ */
 
         textView_btn_submmit_regis=findViewById(R.id.tv_regis_btn_subbmit);
 
@@ -105,10 +118,14 @@ public class Regis extends AppCompatActivity {
                 if(response.isSuccessful()){
                     FoodTrashRegisMitraRespon foodTrashRegisMitraRespon=response.body();
                     foodTrashRegisMitraRespon.getMessage();
-                    spHandle.saveSPBoolean(SpHandle.SP_HAVE_LOGIN, true);
-                    startActivity(new Intent(context, Login.class)
+                    Intent intent = new Intent(Regis.this,Login.class);
+                    startActivity(intent);
+                 /*   spHandle.saveSPBoolean(SpHandle.SP_HAVE_LOGIN, true);
+                    startActivity(new Intent(Regis.this, Login.class)
                             .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
                     finish();
+
+                  */
 
 
 
