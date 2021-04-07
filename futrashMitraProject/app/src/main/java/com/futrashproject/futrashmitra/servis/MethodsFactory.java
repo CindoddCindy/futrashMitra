@@ -55,4 +55,10 @@ public interface MethodsFactory {
     Call<FoodTrashMitraGetItemRespon> getItem(@Path ("id") Long id, @HeaderMap Map<String,String > Map);
 
 
+    @Headers({
+            "Content-Type:application/json"
+    })
+    @POST("confirm/users/{id}/confirm")
+    Call<FoodTrashMitraGetItemRespon> postConfirm(@Path ("id") Long id, @HeaderMap Map<String,String > Map);
+
 }

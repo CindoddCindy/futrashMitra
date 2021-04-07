@@ -83,6 +83,7 @@ public class DetailOrder extends AppCompatActivity {
             textView_kandungan_kimia.setText(bundle.getString("kk"));
             textView_phone_number.setText(bundle.getString("pn"));
             textView_tanggal_item_di_post.setText(bundle.getString("ca"));
+            textView_tgl_order.setText(bundle.getString("di"));
 
 
 
@@ -93,9 +94,21 @@ public class DetailOrder extends AppCompatActivity {
     }
 
     public void btnKonfirm(){
-        Intent intent = new Intent(DetailOrder.this, OrderKonfirmasi.class);
-        startActivity(intent);
+        Bundle setData = new Bundle();
+        Intent toConfirmOrder = new Intent(DetailOrder.this, OrderKonfirmasi.class);
+        setData.putString("ca", textView_tgl_order.getText().toString());
+        setData.putString("jm", textView_nama_food.getText().toString());
+        setData.putString("di", textView_tanggal_item_di_post.getText().toString());
+        setData.putString("cl", textView_lokasi_cust.getText().toString());
+        setData.putString("cn", textView_nama_cust.getText().toString());
+        setData.putString("cp", textView_phone_cust.getText().toString());
+        setData.putString("cst", textView_shipping_type.getText().toString());
+        setData.putString("np", textView_nama_penjual.getText().toString());
+        setData.putString("lm", textView_lokasi_makanan.getText().toString());
+        setData.putString("pn", textView_phone_number.getText().toString());
 
+        toConfirmOrder.putExtras(setData);
+        startActivity(toConfirmOrder);
     }
 
 

@@ -49,4 +49,8 @@ public class OrderKonfirmasi extends AppCompatActivity {
     public void confirmOder(){
 
     }
+
+    public void getDataOrder(){
+
+    }
 }
