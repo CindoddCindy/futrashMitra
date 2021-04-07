@@ -18,7 +18,7 @@ public class ConfirmOrderDetail extends AppCompatActivity {
 
         textView_nama_penjual=findViewById(R.id.tv_confirm_detail_nama_penjual);
         textView_nama_makanan=findViewById(R.id.tv_confirm_detail_jenis_makanan);
-        textView_date_item=findViewById(R.id.tv_confirm_detail_date_item);
+        textView_date_item=findViewById(R.id.tv_confirm_detail_date_order);
         textView_lokasi_customer=findViewById(R.id.tv_confirm_detail_location_customer);
         textView_nama_customer=findViewById(R.id.tv_confirm_detail_cutomer_name);
         textView_phone_customer=findViewById(R.id.tv_confirm_detail_cust_phone);
@@ -42,5 +42,29 @@ public class ConfirmOrderDetail extends AppCompatActivity {
     }
     public void backConfirm(){
 
+    }
+
+    public void getConfirmDetail(){
+
+        if(getIntent().getExtras()!=null){
+            /**
+             * Jika Bundle ada, ambil data dari Bundle
+             */
+            Bundle bundle = getIntent().getExtras();
+            textView_nama_penjual.setText(bundle.getString("nm"));
+            textView_konfirm_terima_tidak.setText(bundle.getString("tt"));
+            textView_catata_alasan.setText(bundle.getString("ca"));
+            textView_date_item.setText(bundle.getString("od"));
+            textView_nama_makanan.setText(bundle.getString("jm"));
+            textView_lokasi_customer.setText(bundle.getString("cl"));
+            textView_nama_customer.setText(bundle.getString("cn"));
+            textView_phone_customer.setText(bundle.getString("ct"));
+            textView_tanggal_konfirmasi_order.setText(bundle.getString("cd"));
+            textView_shipping_type.setText(bundle.getString("st"));
+
+
+
+
+        }
     }
 }
