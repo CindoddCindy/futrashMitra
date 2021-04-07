@@ -3,6 +3,7 @@ package com.futrashproject.futrashmitra.servis;
 import com.futrashproject.futrashmitra.model.pojo_item.pojo_get_item.FoodTrashMitraGetItemRespon;
 import com.futrashproject.futrashmitra.model.pojo_item.pojo_post_item.FoodTrashMitraPostItemRespon;
 import com.futrashproject.futrashmitra.model.pojo_login.FoodTrashLoginMitraRespon;
+import com.futrashproject.futrashmitra.model.pojo_order.get_order.FoodTrashGetOrderMitraRespon;
 import com.futrashproject.futrashmitra.model.pojo_regis.FoodTrashRegisMitraRespon;
 import com.google.gson.JsonObject;
 
@@ -44,7 +45,7 @@ public interface MethodsFactory {
             "Content-Type:application/json"
     })
     @GET("order/users/1/orders")
-    Call<FoodTrashMitraPostItemRespon> getOrder( @Path ("id") Long id,@HeaderMap Map<String,String > Map);
+    Call<FoodTrashGetOrderMitraRespon> getOrder(@Path ("id") Long id, @HeaderMap Map<String,String > Map);
 
 
     @Headers({
