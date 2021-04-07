@@ -1,6 +1,8 @@
 package com.futrashproject.futrashmitra.view.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.futrashproject.futrashmitra.R;
 import com.futrashproject.futrashmitra.model.pojo_confirm.confirm_get.Content;
+import com.futrashproject.futrashmitra.view.ConfirmOrderDetail;
+import com.futrashproject.futrashmitra.view.DetailOrder;
 
 import java.util.List;
 
@@ -54,6 +58,22 @@ public class ConfirmAdapter extends RecyclerView.Adapter<ConfirmAdapter.ConfirmA
             @Override
             public void onClick(View v) {
 
+                Bundle bundle = new Bundle();
+                bundle.putString("nm",content.getNamaMitra());
+                bundle.putString("tt",content.getTerimaTolak());
+                bundle.putString("ca",content.getCatatanAlasan());
+                bundle.putString("od",content.getOrderDate());
+                bundle.putString("jm", content.getJenisMakanan());
+                bundle.putString("cl",content.getLokasiCustomer());
+                bundle.putString("cn",content.getNamaCustomer());
+                bundle.putString("ct",content.getPhoneCustomer());
+                bundle.putString("cd",content.getCreatedAt());
+                bundle.putString("st", content.getShippingType());
+
+
+                Intent intent = new Intent(context, ConfirmOrderDetail.class);
+                intent.putExtras(bundle);
+                context.startActivity(intent);
             }
         });
 
@@ -63,7 +83,7 @@ public class ConfirmAdapter extends RecyclerView.Adapter<ConfirmAdapter.ConfirmA
 
     @Override
     public int getItemCount() {
-        return 0;
+        return contentList.size();
     }
 
     public class ConfirmAdapterChild extends  RecyclerView.ViewHolder{
