@@ -3,13 +3,31 @@ package com.futrashproject.futrashmitra.view.fragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.futrashproject.futrashmitra.R;
+import com.futrashproject.futrashmitra.model.pojo_item.pojo_get_item.Content;
+import com.futrashproject.futrashmitra.model.pojo_item.pojo_get_item.FoodTrashMitraGetItemRespon;
+import com.futrashproject.futrashmitra.servis.MethodsFactory;
+import com.futrashproject.futrashmitra.servis.RetrofitHandle;
+import com.futrashproject.futrashmitra.shared_preference.SpHandle;
+import com.futrashproject.futrashmitra.view.adapter.ItemAdapter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,6 +46,12 @@ public class FragmentItem extends Fragment {
     private String mParam2;
 
     private TextView textView_name, textView_email;
+
+    private RecyclerView recyclerView;
+    private ItemAdapter itemAdapter;
+    private List<Content> contentList = new ArrayList<>();
+    private MethodsFactory methodsFactory;
+    private SpHandle spHandle;
 
     public FragmentItem() {
         // Required empty public constructor
@@ -68,6 +92,70 @@ public class FragmentItem extends Fragment {
         textView_name=view.findViewById(R.id.tv_fragment_item_name);
         textView_email=view.findViewById(R.id.tv_fragment_item_email);
 
+        spHandle = new SpHandle(getContext());
+
+        recyclerView = view.findViewById(R.id.rv_item_mitra_list);
+        itemAdapter = new ItemAdapter( getContext(),contentList);
+        recyclerView.setAdapter(itemAdapter);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
+
+
         return  view;
     }
+
+
+    public void getDataPropinsi(){
+        Long id = spHandle.getSpIdUser();
+
+        String tokenUser = spHandle.getSpTokenUser();
+        Map<String,String> token = new HashMap<>();
+        token.put("Authorization", "Bearer "+tokenUser);
+
+
+        methodsFactory = RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
+        Call<FoodTrashMitraGetItemRespon> orderListCall=methodsFactory.getItem(id, token);
+        orderListCall.enqueue(new Callback<FoodTrashMitraGetItemRespon>() {
+            @Override
+            public void onResponse(Call<FoodTrashMitraGetItemRespon> call, Response<FoodTrashMitraGetItemRespon> response) {
+
+                if (response.isSuccessful()) {
+                    // response.body().getData();
+                    List<Content> content = response.body().getContent();
+                    itemAdapter = new ItemAdapter(getContext(),content);
+                    recyclerView.setAdapter(itemAdapter);
+                    //adapterIndonesia = new AdapterIndonesia(getContext(),propinsiAtributes);
+                    //recyclerView.setAdapter(adapterIndonesia);
+                    itemAdapter.notifyDataSetChanged();
+                }
+                else {
+                    // error case
+                    switch (response.code()) {
+                        case 404:
+                            Toast.makeText(getContext(), "404 not found", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 500:
+                            Toast.makeText(getContext(), "500 internal server error", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 401:
+                            Toast.makeText(getContext(), "401 unauthorized", Toast.LENGTH_SHORT).show();
+                            break;
+
+                        default:
+                            Toast.makeText(getContext(), "unknown error", Toast.LENGTH_SHORT).show();
+                            break;
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<FoodTrashMitraGetItemRespon> call, Throwable t) {
+                Toast.makeText(getContext(), "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+    }
+
 }
