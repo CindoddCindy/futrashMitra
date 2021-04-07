@@ -1,5 +1,7 @@
 package com.futrashproject.futrashmitra.view.adapter;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -9,17 +11,53 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.futrashproject.futrashmitra.R;
+import com.futrashproject.futrashmitra.model.pojo_confirm.confirm_get.Content;
+
+import java.util.List;
 
 public class ConfirmAdapter extends RecyclerView.Adapter<ConfirmAdapter.ConfirmAdapterChild> {
+
+    public List<com.futrashproject.futrashmitra.model.pojo_confirm.confirm_get.Content> contentList;
+    public Context context;
+
+    public  ConfirmAdapter(List<com.futrashproject.futrashmitra.model.pojo_confirm.confirm_get.Content> contentList, Context context){
+        this.contentList=contentList;
+        this.context=context;
+
+    }
+
+
 
     @NonNull
     @Override
     public ConfirmAdapterChild onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+
+        View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.confirmitem, parent, false);
+        ConfirmAdapterChild mViewHolder = new ConfirmAdapterChild(mView);
+
+        return mViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ConfirmAdapterChild holder, int position) {
+        final Content content= contentList.get(position);
+        holder.textView_nama_penjual.setText(content.getNamaMitra());
+        holder.textView_status_order.setText(content.getTerimaTolak());
+        holder.textView_catatan_mitra.setText(content.getCatatanAlasan());
+        holder.textView_tanggal_confirm.setText(content.getCreatedAt());
+        holder.textView_nama_makanan.setText(content.getJenisMakanan());
+        holder.textView_lokasi_customer.setText(content.getLokasiCustomer());
+        holder.textView_nama_customer.setText(content.getNamaCustomer());
+        holder.textView_customer_phone.setText(content.getPhoneCustomer());
+
+        holder.cardView_confirm_confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
 
     }
 
