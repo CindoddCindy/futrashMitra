@@ -12,8 +12,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.futrashproject.futrashmitra.R;
-import com.futrashproject.futrashmitra.model.pojo_confirm.confirm_get.Content;
-import com.futrashproject.futrashmitra.model.pojo_confirm.confirm_get.FoodTrashGetConfirmMitraRespon;
+import com.futrashproject.futrashmitra.model.pojo_confirm.get_confirm.Content;
+import com.futrashproject.futrashmitra.model.pojo_confirm.get_confirm.GetConfirmRespon;
 import com.futrashproject.futrashmitra.model.pojo_item.pojo_get_item.FoodTrashMitraGetItemRespon;
 import com.futrashproject.futrashmitra.servis.MethodsFactory;
 import com.futrashproject.futrashmitra.servis.RetrofitHandle;
@@ -113,10 +113,10 @@ public class FragmentConfirm extends Fragment {
 
 
         methodsFactory = RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
-        Call<FoodTrashGetConfirmMitraRespon> orderListCall=methodsFactory.getListConfirm(id, token);
-        orderListCall.enqueue(new Callback<FoodTrashGetConfirmMitraRespon>() {
+        Call<GetConfirmRespon> orderListCall=methodsFactory.getListConfirm(id, token);
+        orderListCall.enqueue(new Callback<GetConfirmRespon>() {
             @Override
-            public void onResponse(Call<FoodTrashGetConfirmMitraRespon> call, Response<FoodTrashGetConfirmMitraRespon> response) {
+            public void onResponse(Call<GetConfirmRespon> call, Response<GetConfirmRespon> response) {
 
                 if (response.isSuccessful()) {
                     // response.body().getData();
@@ -148,7 +148,7 @@ public class FragmentConfirm extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<FoodTrashGetConfirmMitraRespon> call, Throwable t) {
+            public void onFailure(Call<GetConfirmRespon> call, Throwable t) {
                 Toast.makeText(getContext(), "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
 
             }

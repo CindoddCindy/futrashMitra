@@ -13,7 +13,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.futrashproject.futrashmitra.R;
-import com.futrashproject.futrashmitra.model.pojo_confirm.confirm_get.Content;
+import com.futrashproject.futrashmitra.model.pojo_confirm.get_confirm.Content;
 import com.futrashproject.futrashmitra.view.ConfirmOrderDetail;
 import com.futrashproject.futrashmitra.view.DetailOrder;
 
@@ -21,10 +21,10 @@ import java.util.List;
 
 public class ConfirmAdapter extends RecyclerView.Adapter<ConfirmAdapter.ConfirmAdapterChild> {
 
-    public List<com.futrashproject.futrashmitra.model.pojo_confirm.confirm_get.Content> contentList;
+    public List<Content> contentList;
     public Context context;
 
-    public  ConfirmAdapter(List<com.futrashproject.futrashmitra.model.pojo_confirm.confirm_get.Content> contentList, Context context){
+    public  ConfirmAdapter(List<Content> contentList, Context context){
         this.contentList=contentList;
         this.context=context;
 
