@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.futrashproject.futrashmitra.R;
-import com.futrashproject.futrashmitra.model.pojo_confirm.post_confirm.FoodTrashPostConfirmMitraRespon;
+import com.futrashproject.futrashmitra.model.pojo_confirm.post_confirm.MitraPostConfirmRespon;
 import com.futrashproject.futrashmitra.model.pojo_regis.FoodTrashRegisMitraRespon;
 import com.futrashproject.futrashmitra.servis.MethodsFactory;
 import com.futrashproject.futrashmitra.servis.RetrofitHandle;
@@ -133,10 +133,10 @@ public class OrderKonfirmasi extends AppCompatActivity {
 
 
         MethodsFactory methodsFactory =  RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
-        Call<FoodTrashPostConfirmMitraRespon> call= methodsFactory.postConfirm(id, token,jsonObject);
-        call.enqueue(new Callback<FoodTrashPostConfirmMitraRespon>() {
+        Call<MitraPostConfirmRespon> call= methodsFactory.postConfirm(id, token,jsonObject);
+        call.enqueue(new Callback<MitraPostConfirmRespon>() {
             @Override
-            public void onResponse(Call<FoodTrashPostConfirmMitraRespon> call, Response<FoodTrashPostConfirmMitraRespon> response) {
+            public void onResponse(Call<MitraPostConfirmRespon> call, Response<MitraPostConfirmRespon> response) {
                 if(response.isSuccessful()){
                     Intent intent = new Intent(OrderKonfirmasi.this,BottomNav.class);
                     startActivity(intent);
@@ -167,7 +167,7 @@ public class OrderKonfirmasi extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<FoodTrashPostConfirmMitraRespon> call, Throwable t) {
+            public void onFailure(Call<MitraPostConfirmRespon> call, Throwable t) {
                 Toast.makeText(OrderKonfirmasi.this, "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
 
             }
@@ -257,10 +257,10 @@ public class OrderKonfirmasi extends AppCompatActivity {
 
 
         MethodsFactory methodsFactory =  RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
-        Call<FoodTrashPostConfirmMitraRespon> call= methodsFactory.postConfirm(id, token,jsonObject);
-        call.enqueue(new Callback<FoodTrashPostConfirmMitraRespon>() {
+        Call<MitraPostConfirmRespon> call= methodsFactory.postConfirm(id, token,jsonObject);
+        call.enqueue(new Callback<MitraPostConfirmRespon>() {
             @Override
-            public void onResponse(Call<FoodTrashPostConfirmMitraRespon> call, Response<FoodTrashPostConfirmMitraRespon> response) {
+            public void onResponse(Call<MitraPostConfirmRespon> call, Response<MitraPostConfirmRespon> response) {
                 if(response.isSuccessful()){
                     Intent intent = new Intent(OrderKonfirmasi.this,BottomNav.class);
                     startActivity(intent);
@@ -291,7 +291,7 @@ public class OrderKonfirmasi extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<FoodTrashPostConfirmMitraRespon> call, Throwable t) {
+            public void onFailure(Call<MitraPostConfirmRespon> call, Throwable t) {
                 Toast.makeText(OrderKonfirmasi.this, "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
 
             }
