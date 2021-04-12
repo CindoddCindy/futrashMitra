@@ -1,5 +1,5 @@
 
-package com.futrashproject.futrashmitra.model.pojo_confirm.confirm_get;
+package com.futrashproject.futrashmitra.model.pojo_confirm.get_confirm;
 
 //import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
@@ -56,6 +56,9 @@ public class Content {
     @SerializedName("shipping_type")
     @Expose
     private String shippingType;
+    @SerializedName("user")
+    @Expose
+    private User user;
 
     /**
      * No args constructor for use in serialization
@@ -78,12 +81,13 @@ public class Content {
      * @param catatanAlasan
      * @param phoneCustomer
      * @param orderDate
+     * @param user
      * @param lokasiCustomer
      * @param updatedAt
      * @param lokasiMitra
      * @param phoneMitra
      */
-    public Content(String createdAt, String updatedAt, long id, String imageUrl, String terimaTolak, String catatanAlasan, String jenisMakanan, String lokasiCustomer, String namaCustomer, String phoneCustomer, String lokasiMitra, String namaMitra, String phoneMitra, String itemDate, String orderDate, String shippingType) {
+    public Content(String createdAt, String updatedAt, long id, String imageUrl, String terimaTolak, String catatanAlasan, String jenisMakanan, String lokasiCustomer, String namaCustomer, String phoneCustomer, String lokasiMitra, String namaMitra, String phoneMitra, String itemDate, String orderDate, String shippingType, User user) {
         super();
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
@@ -101,6 +105,7 @@ public class Content {
         this.itemDate = itemDate;
         this.orderDate = orderDate;
         this.shippingType = shippingType;
+        this.user = user;
     }
 
     public String getCreatedAt() {
@@ -229,6 +234,14 @@ public class Content {
 
     public void setShippingType(String shippingType) {
         this.shippingType = shippingType;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
 }

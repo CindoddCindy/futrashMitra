@@ -1,5 +1,5 @@
 
-package com.futrashproject.futrashmitra.model.pojo_confirm.confirm_get;
+package com.futrashproject.futrashmitra.model.pojo_confirm.get_confirm;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 //@Generated("jsonschema2pojo")
-public class FoodTrashGetConfirmMitraRespon {
+public class GetConfirmRespon {
 
     @SerializedName("content")
     @Expose
@@ -48,7 +48,7 @@ public class FoodTrashGetConfirmMitraRespon {
      * No args constructor for use in serialization
      * 
      */
-    public FoodTrashGetConfirmMitraRespon() {
+    public GetConfirmRespon() {
     }
 
     /**
@@ -65,7 +65,7 @@ public class FoodTrashGetConfirmMitraRespon {
      * @param totalElements
      * @param empty
      */
-    public FoodTrashGetConfirmMitraRespon(List<Content> content, Pageable pageable, long totalElements, long totalPages, boolean last, long size, long number, Sort__1 sort, long numberOfElements, boolean first, boolean empty) {
+    public GetConfirmRespon(List<Content> content, Pageable pageable, long totalElements, long totalPages, boolean last, long size, long number, Sort__1 sort, long numberOfElements, boolean first, boolean empty) {
         super();
         this.content = content;
         this.pageable = pageable;

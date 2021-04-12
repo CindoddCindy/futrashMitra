@@ -1,5 +1,5 @@
 
-package com.futrashproject.futrashmitra.model.pojo_confirm.confirm_get;
+package com.futrashproject.futrashmitra.model.pojo_confirm.get_confirm;
 
 //import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
