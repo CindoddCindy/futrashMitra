@@ -6,7 +6,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 //@Generated("jsonschema2pojo")
-public class FoodTrashPostConfirmMitraRespon {
+public class MitraPostConfirmRespon {
 
     @SerializedName("createdAt")
     @Expose
@@ -56,12 +56,15 @@ public class FoodTrashPostConfirmMitraRespon {
     @SerializedName("shipping_type")
     @Expose
     private String shippingType;
+    @SerializedName("user")
+    @Expose
+    private User user;
 
     /**
      * No args constructor for use in serialization
      * 
      */
-    public FoodTrashPostConfirmMitraRespon() {
+    public MitraPostConfirmRespon() {
     }
 
     /**
@@ -78,12 +81,13 @@ public class FoodTrashPostConfirmMitraRespon {
      * @param catatanAlasan
      * @param phoneCustomer
      * @param orderDate
+     * @param user
      * @param lokasiCustomer
      * @param updatedAt
      * @param lokasiMitra
      * @param phoneMitra
      */
-    public FoodTrashPostConfirmMitraRespon(String createdAt, String updatedAt, long id, String imageUrl, String terimaTolak, String catatanAlasan, String jenisMakanan, String lokasiCustomer, String namaCustomer, String phoneCustomer, String lokasiMitra, String namaMitra, String phoneMitra, String itemDate, String orderDate, String shippingType) {
+    public MitraPostConfirmRespon(String createdAt, String updatedAt, long id, String imageUrl, String terimaTolak, String catatanAlasan, String jenisMakanan, String lokasiCustomer, String namaCustomer, String phoneCustomer, String lokasiMitra, String namaMitra, String phoneMitra, String itemDate, String orderDate, String shippingType, User user) {
         super();
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
@@ -101,6 +105,7 @@ public class FoodTrashPostConfirmMitraRespon {
         this.itemDate = itemDate;
         this.orderDate = orderDate;
         this.shippingType = shippingType;
+        this.user = user;
     }
 
     public String getCreatedAt() {
@@ -229,6 +234,14 @@ public class FoodTrashPostConfirmMitraRespon {
 
     public void setShippingType(String shippingType) {
         this.shippingType = shippingType;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
 }
