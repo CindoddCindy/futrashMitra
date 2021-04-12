@@ -61,6 +61,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderAdapter
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
+                bundle.putLong("id_order_buyer", content.getUser().getId());
                 bundle.putString("cn",content.getCustomerName());
                 bundle.putString("cl",content.getCustomerLocation());
                 bundle.putString("cp",content.getCustomerPhone());

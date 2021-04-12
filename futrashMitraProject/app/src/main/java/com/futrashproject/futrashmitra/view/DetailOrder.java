@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.futrashproject.futrashmitra.R;
+import com.futrashproject.futrashmitra.shared_preference.SpHandle;
 
 public class DetailOrder extends AppCompatActivity {
 
@@ -21,10 +22,14 @@ public class DetailOrder extends AppCompatActivity {
     private TextView textView_btn_konfirm, textView_btn_hbgni_customer,
     textView_btn_hapus, textView_kembali;
 
+    public SpHandle spHandle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_order);
+
+        spHandle= new SpHandle(DetailOrder.this);
 
         textView_tgl_order=findViewById(R.id.tv_detail_order_tanggal);
         textView_nama_food=findViewById(R.id.tv_detail_order_nama_makanan);
@@ -67,6 +72,7 @@ public class DetailOrder extends AppCompatActivity {
              * Jika Bundle ada, ambil data dari Bundle
              */
             Bundle bundle = getIntent().getExtras();
+            spHandle.setSpIdOrderBuyer(SpHandle.SP_ID_ORDER_BUYER, bundle.getLong("id_order_buyer"));
             textView_nama_cust.setText(bundle.getString("cn"));
             textView_lokasi_cust.setText(bundle.getString("cl"));
             textView_phone_cust.setText(bundle.getString("cp"));
@@ -96,6 +102,7 @@ public class DetailOrder extends AppCompatActivity {
     public void btnKonfirm(){
         Bundle setData = new Bundle();
         Intent toConfirmOrder = new Intent(DetailOrder.this, OrderKonfirmasi.class);
+        setData.putLong("id_order_buyer", spHandle.getSpIdBuyer());
         setData.putString("ca", textView_tgl_order.getText().toString());
         setData.putString("jm", textView_nama_food.getText().toString());
         setData.putString("di", textView_tanggal_item_di_post.getText().toString());

@@ -8,7 +8,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 //@Generated("jsonschema2pojo")
-public class FoodTrashGetOrderMitraRespon {
+public class MitraGetOrderRespon {
 
     @SerializedName("content")
     @Expose
@@ -16,15 +16,15 @@ public class FoodTrashGetOrderMitraRespon {
     @SerializedName("pageable")
     @Expose
     private Pageable pageable;
+    @SerializedName("last")
+    @Expose
+    private boolean last;
     @SerializedName("totalElements")
     @Expose
     private long totalElements;
     @SerializedName("totalPages")
     @Expose
     private long totalPages;
-    @SerializedName("last")
-    @Expose
-    private boolean last;
     @SerializedName("size")
     @Expose
     private long size;
@@ -34,12 +34,12 @@ public class FoodTrashGetOrderMitraRespon {
     @SerializedName("sort")
     @Expose
     private Sort__1 sort;
-    @SerializedName("numberOfElements")
-    @Expose
-    private long numberOfElements;
     @SerializedName("first")
     @Expose
     private boolean first;
+    @SerializedName("numberOfElements")
+    @Expose
+    private long numberOfElements;
     @SerializedName("empty")
     @Expose
     private boolean empty;
@@ -48,7 +48,7 @@ public class FoodTrashGetOrderMitraRespon {
      * No args constructor for use in serialization
      * 
      */
-    public FoodTrashGetOrderMitraRespon() {
+    public MitraGetOrderRespon() {
     }
 
     /**
@@ -65,18 +65,18 @@ public class FoodTrashGetOrderMitraRespon {
      * @param totalElements
      * @param empty
      */
-    public FoodTrashGetOrderMitraRespon(List<Content> content, Pageable pageable, long totalElements, long totalPages, boolean last, long size, long number, Sort__1 sort, long numberOfElements, boolean first, boolean empty) {
+    public MitraGetOrderRespon(List<Content> content, Pageable pageable, boolean last, long totalElements, long totalPages, long size, long number, Sort__1 sort, boolean first, long numberOfElements, boolean empty) {
         super();
         this.content = content;
         this.pageable = pageable;
+        this.last = last;
         this.totalElements = totalElements;
         this.totalPages = totalPages;
-        this.last = last;
         this.size = size;
         this.number = number;
         this.sort = sort;
-        this.numberOfElements = numberOfElements;
         this.first = first;
+        this.numberOfElements = numberOfElements;
         this.empty = empty;
     }
 
@@ -96,6 +96,14 @@ public class FoodTrashGetOrderMitraRespon {
         this.pageable = pageable;
     }
 
+    public boolean isLast() {
+        return last;
+    }
+
+    public void setLast(boolean last) {
+        this.last = last;
+    }
+
     public long getTotalElements() {
         return totalElements;
     }
@@ -110,14 +118,6 @@ public class FoodTrashGetOrderMitraRespon {
 
     public void setTotalPages(long totalPages) {
         this.totalPages = totalPages;
-    }
-
-    public boolean isLast() {
-        return last;
-    }
-
-    public void setLast(boolean last) {
-        this.last = last;
     }
 
     public long getSize() {
@@ -144,20 +144,20 @@ public class FoodTrashGetOrderMitraRespon {
         this.sort = sort;
     }
 
-    public long getNumberOfElements() {
-        return numberOfElements;
-    }
-
-    public void setNumberOfElements(long numberOfElements) {
-        this.numberOfElements = numberOfElements;
-    }
-
     public boolean isFirst() {
         return first;
     }
 
     public void setFirst(boolean first) {
         this.first = first;
+    }
+
+    public long getNumberOfElements() {
+        return numberOfElements;
+    }
+
+    public void setNumberOfElements(long numberOfElements) {
+        this.numberOfElements = numberOfElements;
     }
 
     public boolean isEmpty() {
