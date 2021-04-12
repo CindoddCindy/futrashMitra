@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.futrashproject.futrashmitra.R;
 import com.futrashproject.futrashmitra.model.pojo_item.pojo_get_item.FoodTrashMitraGetItemRespon;
 import com.futrashproject.futrashmitra.model.pojo_order.get_order.Content;
-import com.futrashproject.futrashmitra.model.pojo_order.get_order.FoodTrashGetOrderMitraRespon;
+import com.futrashproject.futrashmitra.model.pojo_order.get_order.MitraGetOrderRespon;
 import com.futrashproject.futrashmitra.servis.MethodsFactory;
 import com.futrashproject.futrashmitra.servis.RetrofitHandle;
 import com.futrashproject.futrashmitra.shared_preference.SpHandle;
@@ -120,10 +120,10 @@ public class FragmentOrder extends Fragment {
 
 
         methodsFactory = RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
-        Call<FoodTrashGetOrderMitraRespon> orderListCall=methodsFactory.getOrder(id, token);
-        orderListCall.enqueue(new Callback<FoodTrashGetOrderMitraRespon>() {
+        Call<MitraGetOrderRespon> orderListCall=methodsFactory.getOrder(id, token);
+        orderListCall.enqueue(new Callback<MitraGetOrderRespon>() {
             @Override
-            public void onResponse(Call<FoodTrashGetOrderMitraRespon> call, Response<FoodTrashGetOrderMitraRespon> response) {
+            public void onResponse(Call<MitraGetOrderRespon> call, Response<MitraGetOrderRespon> response) {
 
                 if (response.isSuccessful()) {
                     // response.body().getData();
@@ -155,7 +155,7 @@ public class FragmentOrder extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<FoodTrashGetOrderMitraRespon> call, Throwable t) {
+            public void onFailure(Call<MitraGetOrderRespon> call, Throwable t) {
                 Toast.makeText(getContext(), "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
 
             }

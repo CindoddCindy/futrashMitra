@@ -30,6 +30,8 @@ public class ConfirmOrderDetail extends AppCompatActivity {
         textView_hapus=findViewById(R.id.tv_confirm_detail_btn_hapus);
         textView_back=findViewById(R.id.tv_confirm_detail_btn_kembali);
 
+        getConfirmDetail();
+
 
     }
 
