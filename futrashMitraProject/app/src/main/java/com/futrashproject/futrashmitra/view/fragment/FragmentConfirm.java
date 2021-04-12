@@ -99,7 +99,7 @@ public class FragmentConfirm extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
-
+        getConfirmList();
         return view;
     }
 

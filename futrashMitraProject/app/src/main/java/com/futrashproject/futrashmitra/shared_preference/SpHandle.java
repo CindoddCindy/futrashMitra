@@ -19,6 +19,9 @@ public class SpHandle {
     public static final String SP_PHONE_MITRA="spPhoneMitra";
     public static final String SP_ROLE_MITRA="spRoleMitra";
 
+    public static  final String SP_ID_ORDER_BUYER= "spIdOrderBuyer";
+
+
     public static final String SP_HAVE_LOGIN = "spHaveLogin";
 
     SharedPreferences sp;
@@ -36,6 +39,11 @@ public class SpHandle {
 
     public void setSpIdUser(String keySP, Long value){
         spEditor.putLong(keySP, value);
+        spEditor.commit();
+    }
+
+    public  void setSpIdOrderBuyer(String keySp, Long value){
+        spEditor.putLong(keySp,value);
         spEditor.commit();
     }
 
@@ -102,6 +110,10 @@ public class SpHandle {
 
     public Long getSpIdConfirm(){
         return  sp.getLong(SP_ID_CONFIRM_ORDER,0);
+    }
+
+    public  Long getSpIdBuyer(){
+        return sp.getLong(SP_ID_ORDER_BUYER,0);
     }
 
     public String getSpNamaMitra(){
