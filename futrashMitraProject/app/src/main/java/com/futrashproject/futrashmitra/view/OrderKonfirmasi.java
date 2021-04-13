@@ -47,7 +47,7 @@ public class OrderKonfirmasi extends AppCompatActivity {
         textView_tanggal_makanan_post=findViewById(R.id.tv_confirm_activity_date_item);
         textView_lokasi_customer=findViewById(R.id.tv_confirm_activity_customer_location);
         textView_nama_customer=findViewById(R.id.tv_confirm_activity_cutomer_name);
-        textView_phone_customer=findViewById(R.id.tv_confirm_item_phone_customer);
+        textView_phone_customer=findViewById(R.id.tv_confirm_activity_cust_phone);
         textView_shipping_type=findViewById(R.id.tv_confirm_activity_jenis_pengiriman);
         textView_confirmation_btn_order=findViewById(R.id.tv_confirm_activity_btn_konfirm_order);
 
@@ -123,7 +123,7 @@ public class OrderKonfirmasi extends AppCompatActivity {
         jsonObject.addProperty("shipping_type", shippingType);
 
 
-        Long id = spHandle.getSpIdBuyer();
+        Long id = spHandle.getSpIdBuyerDua();
 
         String tokenUser = spHandle.getSpTokenUser();
 
@@ -133,7 +133,7 @@ public class OrderKonfirmasi extends AppCompatActivity {
 
 
         MethodsFactory methodsFactory =  RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
-        Call<MitraPostConfirmRespon> call= methodsFactory.postConfirm(id, token,jsonObject);
+        Call<MitraPostConfirmRespon> call= methodsFactory.postConfirmToBuyer(id, token,jsonObject);
         call.enqueue(new Callback<MitraPostConfirmRespon>() {
             @Override
             public void onResponse(Call<MitraPostConfirmRespon> call, Response<MitraPostConfirmRespon> response) {
@@ -189,7 +189,8 @@ public class OrderKonfirmasi extends AppCompatActivity {
             Bundle bundle = getIntent().getExtras();
             //ambil id order user buyer utk krim konfirm ke buyer
 
-            spHandle.setSpIdOrderBuyer(SpHandle.SP_ID_ORDER_BUYER, bundle.getLong("id_order_buyer"));
+            spHandle.setSpIdOrderBuyerDua(SpHandle.SP_ID_ORDER_BUYER_DUA,bundle.getLong(("id_order_buyer")));
+
             textView_tanggal_order.setText(bundle.getString("ca"));
             textView_nama_makanan.setText(bundle.getString("jm"));
             textView_tanggal_makanan_post.setText(bundle.getString("di"));
@@ -257,7 +258,7 @@ public class OrderKonfirmasi extends AppCompatActivity {
 
 
         MethodsFactory methodsFactory =  RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
-        Call<MitraPostConfirmRespon> call= methodsFactory.postConfirm(id, token,jsonObject);
+        Call<MitraPostConfirmRespon> call= methodsFactory.postConfirmToMySelf(id, token,jsonObject);
         call.enqueue(new Callback<MitraPostConfirmRespon>() {
             @Override
             public void onResponse(Call<MitraPostConfirmRespon> call, Response<MitraPostConfirmRespon> response) {

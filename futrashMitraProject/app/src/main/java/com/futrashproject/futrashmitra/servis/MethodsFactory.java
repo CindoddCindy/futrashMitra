@@ -61,7 +61,14 @@ public interface MethodsFactory {
             "Content-Type:application/json"
     })
     @POST("confirm/users/{id}/confirm")
-    Call<MitraPostConfirmRespon> postConfirm(@Path ("id") Long id, @HeaderMap Map<String,String > Map, @Body JsonObject body);
+    Call<MitraPostConfirmRespon> postConfirmToMySelf(@Path ("id") Long id, @HeaderMap Map<String,String > Map, @Body JsonObject body);
+
+    @Headers({
+            "Content-Type:application/json"
+    })
+    @POST("confirm/users/{id}/confirm")
+    Call<MitraPostConfirmRespon> postConfirmToBuyer(@Path ("id") Long id, @HeaderMap Map<String,String > Map, @Body JsonObject body);
+
 
 
 

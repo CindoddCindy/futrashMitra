@@ -47,7 +47,7 @@ public class DetailOrder extends AppCompatActivity {
         textView_saran_penggunaan=findViewById(R.id.tv_detail_order_saran_penggunaan);
         textView_kandungan_kimia=findViewById(R.id.tv_detail_order_kandungan_kimia);
         textView_phone_number=findViewById(R.id.tv_detail_order_phone_makanan);
-        textView_tanggal_item_di_post=findViewById(R.id.tv_item_detail_tanggal_item_di_post);
+        textView_tanggal_item_di_post=findViewById(R.id.tv_detail_order_tanggal_item_dipost);
         textView_btn_konfirm=findViewById(R.id.tv_detail_order_btn_konfirm_order);
         textView_btn_hbgni_customer=findViewById(R.id.tv_detail_order_btn_hbngi_customer);
         textView_btn_hapus=findViewById(R.id.tv_detail_order_btn_hapus_order);
@@ -60,7 +60,7 @@ public class DetailOrder extends AppCompatActivity {
             }
         });
 
-
+detailOrder();
 
     }
 
@@ -102,7 +102,7 @@ public class DetailOrder extends AppCompatActivity {
     public void btnKonfirm(){
         Bundle setData = new Bundle();
         Intent toConfirmOrder = new Intent(DetailOrder.this, OrderKonfirmasi.class);
-        setData.putLong("id_order_buyer", spHandle.getSpIdBuyer());
+        setData.putLong("id_order_buyer", spHandle.getSpIdOrderBuyer());
         setData.putString("ca", textView_tgl_order.getText().toString());
         setData.putString("jm", textView_nama_food.getText().toString());
         setData.putString("di", textView_tanggal_item_di_post.getText().toString());
