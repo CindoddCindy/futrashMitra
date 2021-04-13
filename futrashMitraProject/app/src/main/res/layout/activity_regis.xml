@@ -75,6 +75,7 @@
             </TextView>
 
             <EditText
+                android:textSize="10dp"
                 android:id="@+id/et_regis_name"
                 android:gravity="center"
                 android:textColor="#BFBABA"
@@ -98,6 +99,7 @@
             </TextView>
 
             <EditText
+                android:textSize="10dp"
                 android:gravity="center"
                 android:id="@+id/et_regis_email"
                 android:textColor="#BFBABA"
@@ -120,6 +122,7 @@
             </TextView>
 
             <EditText
+                android:textSize="10dp"
                 android:gravity="center"
                 android:id="@+id/et_regis_phone"
                 android:textColor="#BFBABA"
@@ -142,6 +145,7 @@
             </TextView>
 
             <EditText
+                android:textSize="10dp"
                 android:id="@+id/et_regis_password"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
@@ -172,10 +176,11 @@
             </TextView>
 
                 <ImageView
+                    android:layout_gravity="center"
                     android:id="@+id/iv_regis_hava_account"
                     android:layout_marginTop="50dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
                     android:src="@drawable/have_account">
 
                 </ImageView>
