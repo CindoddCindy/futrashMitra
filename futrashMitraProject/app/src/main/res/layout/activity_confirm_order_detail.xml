@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_gravity="center"
-    android:gravity="center"
     android:background="#232740"
     tools:context=".view.ConfirmOrderDetail">
+
 
     <LinearLayout
         android:layout_gravity="center"
@@ -26,8 +25,8 @@
             android:textStyle="bold"
             android:layout_marginBottom="15dp"
             android:textColor="#BFBABA"
-            android:layout_marginTop="12dp"
-            android:textSize="15dp"
+            android:layout_marginTop="5dp"
+            android:textSize="10dp"
             android:gravity="center"
             android:drawablePadding="5dp"
             android:text="Nama Penjual"
@@ -43,6 +42,7 @@
             android:layout_gravity="center"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginBottom="5dp"
             android:src="@drawable/example_image"
             tools:layout_editor_absoluteX="139dp"
             tools:layout_editor_absoluteY="239dp">
@@ -84,8 +84,8 @@
                     android:layout_weight="1">
                     <TextView
                         android:id="@+id/tv_confirm_detail_jenis_makanan"
-                        android:padding="5dp"
-                        android:textSize="12dp"
+                        android:padding="2dp"
+                        android:textSize="10dp"
                         android:textColor="#BFBABA"
                         android:drawablePadding="5dp"
                         android:drawableLeft="@drawable/ic_baseline_local_dining_24"
@@ -95,8 +95,8 @@
                         />
                     <TextView
                         android:id="@+id/tv_confirm_detail_date_order"
-                        android:padding="5dp"
-                        android:textSize="12dp"
+                        android:padding="2dp"
+                        android:textSize="10dp"
                         android:textColor="#BFBABA"
                         android:drawablePadding="5dp"
                         android:drawableLeft="@drawable/ic_baseline_date_range_24"
@@ -107,8 +107,8 @@
 
                     <TextView
                         android:id="@+id/tv_confirm_detail_location_customer"
-                        android:padding="5dp"
-                        android:textSize="12dp"
+                        android:padding="2dp"
+                        android:textSize="10dp"
                         android:textColor="#BFBABA"
                         android:drawablePadding="5dp"
                         android:drawableLeft="@drawable/ic_baseline_location_on_24"
@@ -130,8 +130,8 @@
                     <TextView
                         android:id="@+id/tv_confirm_detail_cutomer_name"
                         android:textColor="#BFBABA"
-                        android:padding="5dp"
-                        android:textSize="12dp"
+                        android:padding="2dp"
+                        android:textSize="10dp"
                         android:drawablePadding="5dp"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
                         android:layout_width="wrap_content"
@@ -140,8 +140,8 @@
                         />
                     <TextView
                         android:id="@+id/tv_confirm_detail_cust_phone"
-                        android:padding="5dp"
-                        android:textSize="12dp"
+                        android:padding="2dp"
+                        android:textSize="10dp"
                         android:textColor="#BFBABA"
                         android:drawablePadding="5dp"
                         android:drawableLeft="@drawable/ic_baseline_phone_24"
@@ -151,8 +151,8 @@
                         />
                     <TextView
                         android:id="@+id/tv_confirm_detail_shiping_type"
-                        android:padding="5dp"
-                        android:textSize="12dp"
+                        android:padding="2dp"
+                        android:textSize="10dp"
                         android:textColor="#BFBABA"
                         android:drawablePadding="5dp"
                         android:drawableLeft="@drawable/ic_baseline_local_shipping_24"
@@ -181,8 +181,8 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="15dp"
                 android:textColor="#BFBABA"
-                android:layout_marginTop="12dp"
-                android:textSize="15dp"
+                android:layout_marginTop="5dp"
+                android:textSize="12dp"
                 android:gravity="center"
                 android:drawablePadding="5dp"
                 android:text="Konfirmasi Order"
@@ -261,18 +261,29 @@
 
             </TextView>
 
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
 
             <TextView
                 android:id="@+id/tv_confirm_detail_btn_Edit"
                 android:textColor="#BFBABA"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:text="Edit"
                 android:gravity="center"
-                android:textSize="15dp"
+                android:textSize="12dp"
                 android:textStyle="bold"
-                android:padding="10dp"
+                android:padding="5dp"
                 android:background="@drawable/bakron_kembali"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -282,14 +293,14 @@
             <TextView
                 android:id="@+id/tv_confirm_detail_btn_kembali"
                 android:textColor="#BFBABA"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:text="Kembali"
                 android:gravity="center"
-                android:textSize="15dp"
+                android:textSize="12dp"
                 android:textStyle="bold"
-                android:padding="10dp"
+                android:padding="5dp"
                 android:background="@drawable/bakron_kembali"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -299,20 +310,23 @@
             <TextView
                 android:id="@+id/tv_confirm_detail_btn_hapus"
                 android:textColor="#BFBABA"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:text="Hapus"
                 android:gravity="center"
-                android:textSize="15dp"
+                android:textSize="12dp"
                 android:textStyle="bold"
-                android:padding="10dp"
+                android:padding="5dp"
                 android:background="@drawable/bakron_kembali"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
             </TextView>
+            </LinearLayout>
 
+
+            </ScrollView>
 
 
 
@@ -327,4 +341,5 @@
 
 
 
-</ScrollView>
+
+</LinearLayout>
