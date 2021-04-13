@@ -50,8 +50,8 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:padding="5dp"
                     android:layout_gravity="center"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:src="@drawable/example_image">
 
                 </de.hdodenhof.circleimageview.CircleImageView>
@@ -106,24 +106,13 @@
 
                         </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/tv_order_cust_id"
-                            android:padding="5dp"
-                            android:textSize="12dp"
-                            android:textColor="#BFBABA"
-                            android:drawablePadding="5dp"
-                            android:drawableLeft="@drawable/ic_baseline_person_24"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Customer Name"
-                            />
 
 
 
                         <TextView
                             android:id="@+id/tv_order_cust_name"
-                            android:padding="5dp"
-                            android:textSize="12dp"
+                            android:padding="2dp"
+                            android:textSize="10dp"
                             android:textColor="#BFBABA"
                             android:drawablePadding="5dp"
                             android:drawableLeft="@drawable/ic_baseline_person_24"
@@ -134,8 +123,8 @@
 
                         <TextView
                             android:id="@+id/tv_order_cust_location"
-                            android:padding="5dp"
-                            android:textSize="12dp"
+                            android:padding="2dp"
+                            android:textSize="10dp"
                             android:textColor="#BFBABA"
                             android:drawablePadding="5dp"
                             android:drawableLeft="@drawable/ic_baseline_location_on_24"
@@ -146,8 +135,8 @@
 
                         <TextView
                             android:id="@+id/tv_order_cust_phone"
-                            android:padding="5dp"
-                            android:textSize="12dp"
+                            android:padding="2dp"
+                            android:textSize="10dp"
                             android:textColor="#BFBABA"
                             android:drawablePadding="5dp"
                             android:drawableLeft="@drawable/ic_baseline_phone_24"
@@ -158,8 +147,8 @@
 
                         <TextView
                             android:id="@+id/tv_order_cust_shipp_type"
-                            android:padding="5dp"
-                            android:textSize="12dp"
+                            android:padding="2dp"
+                            android:textSize="10dp"
                             android:textColor="#BFBABA"
                             android:drawablePadding="5dp"
                             android:drawableLeft="@drawable/ic_baseline_local_shipping_24"
@@ -170,8 +159,8 @@
 
                         <TextView
                             android:id="@+id/tv_order_date_"
-                            android:padding="5dp"
-                            android:textSize="12dp"
+                            android:padding="2dp"
+                            android:textSize="10dp"
                             android:textColor="#BFBABA"
                             android:drawablePadding="5dp"
                             android:drawableLeft="@drawable/ic_baseline_date_range_24"
