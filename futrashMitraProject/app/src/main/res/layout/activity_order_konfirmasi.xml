@@ -23,7 +23,7 @@
             android:layout_marginBottom="20dp"
             android:textColor="#BFBABA"
             android:layout_marginTop="12dp"
-            android:textSize="15dp"
+            android:textSize="12dp"
             android:gravity="center"
             android:drawablePadding="5dp"
             android:text="Order Data"
@@ -53,7 +53,7 @@
                     android:text="Tanggal Order"
                     android:gravity="center"
                     android:textStyle="bold"
-                    android:textSize="12dp"
+                    android:textSize="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     >
@@ -69,9 +69,9 @@
                     android:shadowDy="1"
                     android:textColor="#EDE5E5"
                     android:text="Tanggal Order"
-                    android:gravity="center"
+                    android:gravity="left"
                     android:textStyle="normal"
-                    android:textSize="12dp"
+                    android:textSize="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     >
@@ -101,8 +101,8 @@
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
             android:layout_gravity="center"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:src="@drawable/example_image"
             tools:layout_editor_absoluteX="139dp"
             tools:layout_editor_absoluteY="239dp">
@@ -148,8 +148,8 @@
                     android:layout_weight="1">
                     <TextView
                         android:id="@+id/tv_confirm_activity_jenis_makanan"
-                        android:padding="5dp"
-                        android:textSize="12dp"
+                        android:padding="2dp"
+                        android:textSize="10dp"
                         android:textColor="#BFBABA"
                         android:drawablePadding="5dp"
                         android:drawableLeft="@drawable/ic_baseline_local_dining_24"
@@ -160,8 +160,8 @@
 
                     <TextView
                         android:id="@+id/tv_confirm_activity_date_item"
-                        android:padding="5dp"
-                        android:textSize="12dp"
+                        android:padding="2dp"
+                        android:textSize="10dp"
                         android:textColor="#BFBABA"
                         android:drawablePadding="5dp"
                         android:drawableLeft="@drawable/ic_baseline_date_range_24"
@@ -172,8 +172,8 @@
 
                     <TextView
                         android:id="@+id/tv_confirm_activity_customer_location"
-                        android:padding="5dp"
-                        android:textSize="12dp"
+                        android:padding="2dp"
+                        android:textSize="10dp"
                         android:textColor="#BFBABA"
                         android:drawablePadding="5dp"
                         android:drawableLeft="@drawable/ic_baseline_location_on_24"
@@ -195,8 +195,8 @@
                     <TextView
                         android:id="@+id/tv_confirm_activity_cutomer_name"
                         android:textColor="#BFBABA"
-                        android:padding="5dp"
-                        android:textSize="12dp"
+                        android:padding="2dp"
+                        android:textSize="10dp"
                         android:drawablePadding="5dp"
                         android:drawableLeft="@drawable/ic_baseline_person_24"
                         android:layout_width="wrap_content"
@@ -205,8 +205,8 @@
                         />
                     <TextView
                         android:id="@+id/tv_confirm_activity_cust_phone"
-                        android:padding="5dp"
-                        android:textSize="12dp"
+                        android:padding="2dp"
+                        android:textSize="10dp"
                         android:textColor="#BFBABA"
                         android:drawablePadding="5dp"
                         android:drawableLeft="@drawable/ic_baseline_phone_24"
@@ -217,8 +217,8 @@
 
                     <TextView
                         android:id="@+id/tv_confirm_activity_jenis_pengiriman"
-                        android:padding="5dp"
-                        android:textSize="12dp"
+                        android:padding="2dp"
+                        android:textSize="10dp"
                         android:textColor="#BFBABA"
                         android:drawablePadding="5dp"
                         android:drawableLeft="@drawable/ic_baseline_local_shipping_24"
@@ -245,10 +245,10 @@
             </ImageView>
             <TextView
                 android:textStyle="bold"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="12dp"
                 android:textColor="#BFBABA"
-                android:layout_marginTop="12dp"
-                android:textSize="15dp"
+                android:layout_marginTop="10dp"
+                android:textSize="12dp"
                 android:gravity="center"
                 android:drawablePadding="5dp"
                 android:text="Konfirmasi Order"
@@ -378,7 +378,7 @@
                 android:layout_marginRight="10dp"
                 android:text="Konfirmasi Order"
                 android:gravity="center"
-                android:textSize="15dp"
+                android:textSize="12dp"
                 android:textStyle="bold"
                 android:padding="10dp"
                 android:background="@drawable/bakron_kembali"
