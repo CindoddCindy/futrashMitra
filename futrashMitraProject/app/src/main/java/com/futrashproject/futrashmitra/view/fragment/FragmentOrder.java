@@ -15,6 +15,7 @@ import com.futrashproject.futrashmitra.R;
 import com.futrashproject.futrashmitra.model.pojo_item.pojo_get_item.FoodTrashMitraGetItemRespon;
 import com.futrashproject.futrashmitra.model.pojo_order.get_order.Content;
 import com.futrashproject.futrashmitra.model.pojo_order.get_order.MitraGetOrderRespon;
+import com.futrashproject.futrashmitra.model.pojo_order.get_order.User;
 import com.futrashproject.futrashmitra.servis.MethodsFactory;
 import com.futrashproject.futrashmitra.servis.RetrofitHandle;
 import com.futrashproject.futrashmitra.shared_preference.SpHandle;
@@ -93,7 +94,7 @@ public class FragmentOrder extends Fragment {
         spHandle = new SpHandle(getContext());
 
         recyclerView = view.findViewById(R.id.rv_order);
-        orderAdapter = new OrderAdapter( contentList,getContext());
+        orderAdapter = new OrderAdapter( contentList, getContext());
         recyclerView.setAdapter(orderAdapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -128,7 +129,7 @@ public class FragmentOrder extends Fragment {
                 if (response.isSuccessful()) {
                     // response.body().getData();
                     List<Content> content = response.body().getContent();
-                    orderAdapter = new OrderAdapter(content,getContext());
+                    orderAdapter = new OrderAdapter(content, getContext());
                     recyclerView.setAdapter(orderAdapter);
                     //adapterIndonesia = new AdapterIndonesia(getContext(),propinsiAtributes);
                     //recyclerView.setAdapter(adapterIndonesia);

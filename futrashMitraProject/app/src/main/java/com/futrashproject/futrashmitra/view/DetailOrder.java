@@ -20,7 +20,7 @@ public class DetailOrder extends AppCompatActivity {
     textView_phone_number, textView_tanggal_item_di_post;
 
     private TextView textView_btn_konfirm, textView_btn_hbgni_customer,
-    textView_btn_hapus, textView_kembali;
+    textView_btn_hapus, textView_kembali, textView_test_id;
 
     public SpHandle spHandle;
 
@@ -32,6 +32,9 @@ public class DetailOrder extends AppCompatActivity {
         spHandle= new SpHandle(DetailOrder.this);
 
         textView_tgl_order=findViewById(R.id.tv_detail_order_tanggal);
+
+        textView_test_id=findViewById(R.id.tv_test_id);
+
         textView_nama_food=findViewById(R.id.tv_detail_order_nama_makanan);
         textView_nama_cust=findViewById(R.id.tv_detail_order_nama_customer);
         textView_lokasi_cust=findViewById(R.id.tv_detail_order_lokasi_customer);
@@ -73,6 +76,7 @@ detailOrder();
              */
             Bundle bundle = getIntent().getExtras();
             spHandle.setSpIdOrderBuyer(SpHandle.SP_ID_ORDER_BUYER, bundle.getLong("id_order_buyer"));
+            textView_test_id.setText(String .valueOf(bundle.getLong("id_order_buyer")));
             textView_nama_cust.setText(bundle.getString("cn"));
             textView_lokasi_cust.setText(bundle.getString("cl"));
             textView_phone_cust.setText(bundle.getString("cp"));

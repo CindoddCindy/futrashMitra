@@ -106,6 +106,17 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            android:id="@+id/tv_order_cust_id"
+                            android:padding="5dp"
+                            android:textSize="12dp"
+                            android:textColor="#BFBABA"
+                            android:drawablePadding="5dp"
+                            android:drawableLeft="@drawable/ic_baseline_person_24"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Customer Name"
+                            />
 
 
 

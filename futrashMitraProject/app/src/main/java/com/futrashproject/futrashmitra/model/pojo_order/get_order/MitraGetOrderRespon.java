@@ -16,15 +16,15 @@ public class MitraGetOrderRespon {
     @SerializedName("pageable")
     @Expose
     private Pageable pageable;
-    @SerializedName("last")
-    @Expose
-    private boolean last;
     @SerializedName("totalElements")
     @Expose
     private long totalElements;
     @SerializedName("totalPages")
     @Expose
     private long totalPages;
+    @SerializedName("last")
+    @Expose
+    private boolean last;
     @SerializedName("size")
     @Expose
     private long size;
@@ -34,12 +34,12 @@ public class MitraGetOrderRespon {
     @SerializedName("sort")
     @Expose
     private Sort__1 sort;
-    @SerializedName("first")
-    @Expose
-    private boolean first;
     @SerializedName("numberOfElements")
     @Expose
     private long numberOfElements;
+    @SerializedName("first")
+    @Expose
+    private boolean first;
     @SerializedName("empty")
     @Expose
     private boolean empty;
@@ -65,18 +65,18 @@ public class MitraGetOrderRespon {
      * @param totalElements
      * @param empty
      */
-    public MitraGetOrderRespon(List<Content> content, Pageable pageable, boolean last, long totalElements, long totalPages, long size, long number, Sort__1 sort, boolean first, long numberOfElements, boolean empty) {
+    public MitraGetOrderRespon(List<Content> content, Pageable pageable, long totalElements, long totalPages, boolean last, long size, long number, Sort__1 sort, long numberOfElements, boolean first, boolean empty) {
         super();
         this.content = content;
         this.pageable = pageable;
-        this.last = last;
         this.totalElements = totalElements;
         this.totalPages = totalPages;
+        this.last = last;
         this.size = size;
         this.number = number;
         this.sort = sort;
-        this.first = first;
         this.numberOfElements = numberOfElements;
+        this.first = first;
         this.empty = empty;
     }
 
@@ -96,14 +96,6 @@ public class MitraGetOrderRespon {
         this.pageable = pageable;
     }
 
-    public boolean isLast() {
-        return last;
-    }
-
-    public void setLast(boolean last) {
-        this.last = last;
-    }
-
     public long getTotalElements() {
         return totalElements;
     }
@@ -118,6 +110,14 @@ public class MitraGetOrderRespon {
 
     public void setTotalPages(long totalPages) {
         this.totalPages = totalPages;
+    }
+
+    public boolean isLast() {
+        return last;
+    }
+
+    public void setLast(boolean last) {
+        this.last = last;
     }
 
     public long getSize() {
@@ -144,20 +144,20 @@ public class MitraGetOrderRespon {
         this.sort = sort;
     }
 
-    public boolean isFirst() {
-        return first;
-    }
-
-    public void setFirst(boolean first) {
-        this.first = first;
-    }
-
     public long getNumberOfElements() {
         return numberOfElements;
     }
 
     public void setNumberOfElements(long numberOfElements) {
         this.numberOfElements = numberOfElements;
+    }
+
+    public boolean isFirst() {
+        return first;
+    }
+
+    public void setFirst(boolean first) {
+        this.first = first;
     }
 
     public boolean isEmpty() {

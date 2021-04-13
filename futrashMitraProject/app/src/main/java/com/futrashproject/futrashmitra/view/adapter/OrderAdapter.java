@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.futrashproject.futrashmitra.R;
 import com.futrashproject.futrashmitra.model.pojo_order.get_order.Content;
+import com.futrashproject.futrashmitra.model.pojo_order.get_order.User;
 import com.futrashproject.futrashmitra.view.DetailItem;
 import com.futrashproject.futrashmitra.view.DetailOrder;
 
@@ -24,11 +25,13 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderAdapter
     public List<Content> contentList;
     public Context context;
 
-    public  OrderAdapter(List<Content> contentList, Context context){
+    public  OrderAdapter(List<Content> contentList,  Context context){
         this.contentList=contentList;
         this.context=context;
 
     }
+
+
 
 
     @NonNull
@@ -43,6 +46,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderAdapter
     @Override
     public void onBindViewHolder(@NonNull OrderAdapterChild holder, int position) {
         final Content content= contentList.get(position);
+        final Content user=contentList.get(position);
         holder.textView_name.setText(content.getCustomerName());
         holder.textView_food_name.setText(content.getJenisMakanan());
         holder.textView_location.setText(content.getCustomerLocation());
@@ -61,7 +65,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderAdapter
             @Override
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
-                bundle.putLong("id_order_buyer", content.getUser().getId());
+                bundle.putLong("id_order_buyer",content.getIdBuyer());
                 bundle.putString("cn",content.getCustomerName());
                 bundle.putString("cl",content.getCustomerLocation());
                 bundle.putString("cp",content.getCustomerPhone());
@@ -98,7 +102,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderAdapter
 
     public class OrderAdapterChild extends RecyclerView.ViewHolder{
 
-        private TextView textView_name, textView_location, textView_phone, textView_shipping_type, textView_food_name,textView_date, textView_delete;
+        private TextView textView_name, textView_location, textView_phone, textView_shipping_type, textView_food_name,textView_date, textView_delete,textView_id_test;
 
         private CardView cardView_order_order;
 
@@ -113,6 +117,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderAdapter
             textView_date=itemView.findViewById(R.id.tv_order_date_);
             textView_delete=itemView.findViewById(R.id.tv_order_delete);
             cardView_order_order=itemView.findViewById(R.id.cv_order_order);
+            textView_id_test=itemView.findViewById(R.id.tv_test_id);
 
         }
     }
