@@ -101,14 +101,6 @@
 
         </androidx.cardview.widget.CardView>
 
-
-        <androidx.appcompat.widget.SearchView
-            android:layout_margin="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="30dp">
-
-        </androidx.appcompat.widget.SearchView>
-
         <TextView
             android:layout_margin="3dp"
             android:shadowColor="#6E7475"
@@ -125,6 +117,16 @@
             >
 
         </TextView>
+
+
+
+        <androidx.appcompat.widget.SearchView
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+
+        </androidx.appcompat.widget.SearchView>
+
 
 
 
