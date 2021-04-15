@@ -63,6 +63,13 @@ public class DetailOrder extends AppCompatActivity {
             }
         });
 
+        textView_btn_hapus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
 detailOrder();
 
     }
@@ -120,6 +127,10 @@ detailOrder();
 
         toConfirmOrder.putExtras(setData);
         startActivity(toConfirmOrder);
+    }
+
+    public void hapusOrder(){
+
     }
 
 

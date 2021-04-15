@@ -53,7 +53,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemAdapterChi
         holder.textView_delete_item_from_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(context, DetailItem.class);
+                context.startActivity(intent);
             }
         });
 

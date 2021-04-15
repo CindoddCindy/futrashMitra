@@ -2,6 +2,7 @@ package com.futrashproject.futrashmitra.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -40,6 +41,9 @@ public class DetailItem extends AppCompatActivity {
         textView_btn_tambah_product.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(DetailItem.this, BottomNav.class);
+                startActivity(intent);
+                finish();
 
             }
         });
@@ -47,6 +51,7 @@ public class DetailItem extends AppCompatActivity {
         textView_btn_edit_product.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
             }
         });

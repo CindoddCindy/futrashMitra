@@ -57,6 +57,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderAdapter
         holder.textView_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(context, DetailOrder.class);
+                context.startActivity(intent);
 
             }
         });

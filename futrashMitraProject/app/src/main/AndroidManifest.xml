@@ -12,8 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FutrashMitra"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".view.ConfirmOrderDetail"></activity>
+        <activity android:name=".view.EditConfrimActivity"></activity>
+        <activity android:name=".view.EditProductActivity" />
+        <activity android:name=".view.ConfirmOrderDetail" />
         <activity android:name=".view.OrderKonfirmasi" />
         <activity android:name=".view.MyAccount" />
         <activity android:name=".view.DetailItem" />
