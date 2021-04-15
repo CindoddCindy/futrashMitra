@@ -18,7 +18,7 @@
 
 
         <TextView
-            android:id="@+id/tv_confirm_detail_nama_penjual"
+            android:id="@+id/tv_confirm_detail_edit_nama_penjual"
             android:layout_margin="10dp"
             android:textStyle="bold"
             android:layout_marginBottom="15dp"
@@ -81,7 +81,7 @@
                     android:orientation="vertical"
                     android:layout_weight="1">
                     <TextView
-                        android:id="@+id/tv_confirm_detail_jenis_makanan"
+                        android:id="@+id/tv_confirm_detail_edit_jenis_makanan"
                         android:padding="2dp"
                         android:textSize="10dp"
                         android:textColor="#BFBABA"
@@ -92,7 +92,7 @@
                         android:text="Jenis Makanan "
                         />
                     <TextView
-                        android:id="@+id/tv_confirm_detail_date_order"
+                        android:id="@+id/tv_confirm_detail_edit_date_order"
                         android:padding="2dp"
                         android:textSize="10dp"
                         android:textColor="#BFBABA"
@@ -104,7 +104,7 @@
                         />
 
                     <TextView
-                        android:id="@+id/tv_confirm_detail_location_customer"
+                        android:id="@+id/tv_confirm_detail_edit_location_customer"
                         android:padding="2dp"
                         android:textSize="10dp"
                         android:textColor="#BFBABA"
@@ -126,7 +126,7 @@
                     android:orientation="vertical"
                     android:layout_weight="1">
                     <TextView
-                        android:id="@+id/tv_confirm_detail_cutomer_name"
+                        android:id="@+id/tv_confirm_detail_edit_cutomer_name"
                         android:textColor="#BFBABA"
                         android:padding="2dp"
                         android:textSize="10dp"
@@ -137,7 +137,7 @@
                         android:text="Nama Cutomer"
                         />
                     <TextView
-                        android:id="@+id/tv_confirm_detail_cust_phone"
+                        android:id="@+id/tv_confirm_detail_edit_cust_phone"
                         android:padding="2dp"
                         android:textSize="10dp"
                         android:textColor="#BFBABA"
@@ -148,7 +148,7 @@
                         android:text="Phone"
                         />
                     <TextView
-                        android:id="@+id/tv_confirm_detail_shiping_type"
+                        android:id="@+id/tv_confirm_detail_edit_shiping_type"
                         android:padding="2dp"
                         android:textSize="10dp"
                         android:textColor="#BFBABA"
@@ -201,7 +201,7 @@
             </TextView>
 
             <TextView
-                android:id="@+id/tv_confirm_detail_tgal_confirm"
+                android:id="@+id/tv_confirm_detail_edit_tgal_confirm"
                 android:textColor="#BFBABA"
                 android:gravity="center"
                 android:layout_margin="10dp"
@@ -226,7 +226,7 @@
             </TextView>
 
             <TextView
-                android:id="@+id/tv_confirm_detail_terima_tolak"
+                android:id="@+id/tv_confirm_detail_edit_terima_tolak"
                 android:textColor="#BFBABA"
                 android:gravity="center"
                 android:layout_margin="10dp"
@@ -248,7 +248,7 @@
             </TextView>
 
             <TextView
-                android:id="@+id/tv_confirm_detail_catatan_alasan"
+                android:id="@+id/tv_confirm_detail_edit_catatan_alasan"
                 android:textColor="#BFBABA"
                 android:gravity="center"
                 android:layout_margin="10dp"
@@ -272,7 +272,7 @@
 
 
                     <TextView
-                        android:id="@+id/tv_confirm_detail_btn_Edit"
+                        android:id="@+id/tv_confirm_detail_edit_btn_Edit"
                         android:textColor="#BFBABA"
                         android:layout_marginTop="15dp"
                         android:layout_marginLeft="10dp"
@@ -289,7 +289,7 @@
                     </TextView>
 
                     <TextView
-                        android:id="@+id/tv_confirm_detail_btn_kembali"
+                        android:id="@+id/tv_confirm_detail_edit_btn_kembali"
                         android:textColor="#BFBABA"
                         android:layout_marginTop="15dp"
                         android:layout_marginLeft="10dp"
@@ -306,7 +306,7 @@
                     </TextView>
 
                     <TextView
-                        android:id="@+id/tv_confirm_detail_btn_hapus"
+                        android:id="@+id/tv_confirm_detail_edit_btn_hapus"
                         android:textColor="#BFBABA"
                         android:layout_marginTop="15dp"
                         android:layout_marginLeft="10dp"

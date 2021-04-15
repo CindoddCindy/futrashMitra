@@ -78,7 +78,7 @@
             </TextView>
 
             <EditText
-                android:id="@+id/et_add_item_jenis_makanan"
+                android:id="@+id/et_add_item_edit_jenis_makanan"
                 android:gravity="center"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
@@ -100,7 +100,7 @@
             </TextView>
 
             <EditText
-                android:id="@+id/et_add_item_tidak_dikonsumsi_sejak"
+                android:id="@+id/et_add_item_edit_tidak_dikonsumsi_sejak"
                 android:gravity="center"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
@@ -121,7 +121,7 @@
             </TextView>
 
             <EditText
-                android:id="@+id/et_add_item_di_posting_karena"
+                android:id="@+id/et_add_item_edit_di_posting_karena"
                 android:gravity="center"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
@@ -142,7 +142,7 @@
             </TextView>
 
             <EditText
-                android:id="@+id/et_add_item_berat_makanan"
+                android:id="@+id/et_add_item_edit_berat_makanan"
                 android:gravity="center"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
@@ -164,7 +164,7 @@
             </TextView>
 
             <EditText
-                android:id="@+id/et_add_item_nama_toko"
+                android:id="@+id/et_add_item_edit_nama_toko"
                 android:gravity="center"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
@@ -186,7 +186,7 @@
             </TextView>
 
             <EditText
-                android:id="@+id/et_add_item_nama_penjual"
+                android:id="@+id/et_add_item_edit_nama_penjual"
                 android:gravity="center"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
@@ -207,7 +207,7 @@
             </TextView>
 
             <EditText
-                android:id="@+id/et_add_item_lokasi_makanan"
+                android:id="@+id/et_add_item_edit_lokasi_makanan"
                 android:gravity="center"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
@@ -227,7 +227,7 @@
             </TextView>
 
             <EditText
-                android:id="@+id/et_add_item_harga_makanan"
+                android:id="@+id/et_add_item_edit_harga_makanan"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
                 android:padding="5dp"
@@ -247,7 +247,7 @@
             </TextView>
 
             <EditText
-                android:id="@+id/et_add_item_saran_penggunaan"
+                android:id="@+id/et_add_item_edit_saran_penggunaan"
                 android:gravity="center"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
@@ -269,7 +269,7 @@
             </TextView>
 
             <EditText
-                android:id="@+id/et_add_item_kandungan_kimia"
+                android:id="@+id/et_add_item_edit_kandungan_kimia"
                 android:gravity="center"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
@@ -290,7 +290,7 @@
             </TextView>
 
             <EditText
-                android:id="@+id/et_add_item_phone_number"
+                android:id="@+id/et_add_item_edit_phone_number"
                 android:gravity="center"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
@@ -309,7 +309,7 @@
 
 
             <TextView
-                android:id="@+id/tv_add_item_btn_subbmit_makanan"
+                android:id="@+id/tv_add_item_edit_btn_subbmit_makanan"
                 android:textColor="#BFBABA"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
