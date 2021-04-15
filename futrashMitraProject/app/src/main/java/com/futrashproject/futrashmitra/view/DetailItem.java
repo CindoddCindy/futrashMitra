@@ -51,6 +51,10 @@ public class DetailItem extends AppCompatActivity {
         textView_btn_edit_product.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(DetailItem.this, EditProductActivity.class);
+                startActivity(intent);
+                finish();
+
 
 
             }

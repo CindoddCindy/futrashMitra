@@ -2,6 +2,7 @@ package com.futrashproject.futrashmitra.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -36,6 +37,9 @@ public class ConfirmOrderDetail extends AppCompatActivity {
     }
 
     public void editConfirm(){
+        Intent intent = new Intent(ConfirmOrderDetail.this, EditConfrimActivity.class);
+        startActivity(intent);
+        finish();
 
     }
 
