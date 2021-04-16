@@ -62,6 +62,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemAdapterChi
             @Override
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
+                bundle.putLong("id_item",content.getId());
                 bundle.putString("jm", content.getJenisMakanan());
                 bundle.putString("tds",content.getTidakDikonsumsiSejak());
                 bundle.putString("dk",content.getDijualKarena());

@@ -59,6 +59,7 @@ public class ConfirmAdapter extends RecyclerView.Adapter<ConfirmAdapter.ConfirmA
             public void onClick(View v) {
 
                 Bundle bundle = new Bundle();
+                bundle.putLong("id_confirm",content.getId());
                 bundle.putString("nm",content.getNamaMitra());
                 bundle.putString("tt",content.getTerimaTolak());
                 bundle.putString("ca",content.getCatatanAlasan());
