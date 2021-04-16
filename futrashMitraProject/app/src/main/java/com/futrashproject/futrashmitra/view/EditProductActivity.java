@@ -173,7 +173,34 @@ public class EditProductActivity extends AppCompatActivity {
 
     }
     public void getDataMakanan(){
+        getDetail();
 
     }
 
-}
+    public void getDetail(){
+
+
+        if(getIntent().getExtras()!=null) {
+            /**
+             * Jika Bundle ada, ambil data dari Bundle
+             */
+            Bundle bundle = getIntent().getExtras();
+            spHandle.setSpIdItem(SpHandle.SP_ID_ITEM, bundle.getLong("id_item"));
+            editText_jenis_makanan.setText(bundle.getString("jm"));
+            editText_tidak_dikonsumsi_sejak.setText(bundle.getString("tds"));
+            editText_dijual_karena.setText(bundle.getString("dk"));
+            editText_berat_makanan.setText(bundle.getString("bm"));
+            editText_nama_toko.setText(bundle.getString("nt"));
+            editText_nama_penjual.setText(bundle.getString("np"));
+            editText_lokasi_makanan.setText(bundle.getString("lm"));
+            editText_harga_makanan.setText(bundle.getString("hm"));
+            editText_saran_penggunaan.setText(bundle.getString("sp"));
+            editText_kandungan_kimia.setText(bundle.getString("kk"));
+            editText_phone_number.setText(bundle.getString("pn"));
+            //textView_tanggal_post_makanan.setText(bundle.getString("ca"));
+
+
+        }}
+
+
+    }
