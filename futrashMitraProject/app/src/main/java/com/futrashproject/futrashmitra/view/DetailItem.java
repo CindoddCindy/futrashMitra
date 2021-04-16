@@ -6,9 +6,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.futrashproject.futrashmitra.R;
+import com.futrashproject.futrashmitra.model.pojo_item.pojo_get_item.Content;
+import com.futrashproject.futrashmitra.model.pojo_item.pojo_get_item.FoodTrashMitraGetItemRespon;
+import com.futrashproject.futrashmitra.servis.MethodsFactory;
+import com.futrashproject.futrashmitra.servis.RetrofitHandle;
 import com.futrashproject.futrashmitra.shared_preference.SpHandle;
+import com.futrashproject.futrashmitra.view.adapter.ItemAdapter;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class DetailItem extends AppCompatActivity {
     private TextView textView_jenis_makanan, textView_tidak_dikonsumsi_sejak, textView_dijual_karena, textView_phone_numb,
@@ -137,6 +151,57 @@ public class DetailItem extends AppCompatActivity {
     }
 
     public void hapusItem(){
+
+    }
+
+
+    public void deleteItem(){
+        Long id = spHandle.getSpIdUser();
+        Long idItem= spHandle.getSpIdItem();
+
+        String tokenUser = spHandle.getSpTokenUser();
+        Map<String,String> token = new HashMap<>();
+        token.put("Authorization", "Bearer "+tokenUser);
+
+
+     MethodsFactory   methodsFactory = RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
+        Call<String> orderListCall=methodsFactory.deleteItem(id,idItem, token);
+        orderListCall.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+
+                if (response.isSuccessful()) {
+                    Toast.makeText(DetailItem.this,"Product Di Hapus",Toast.LENGTH_LONG).show();
+
+
+                }
+                else {
+                    // error case
+                    switch (response.code()) {
+                        case 404:
+                            Toast.makeText(DetailItem.this, "404 not found", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 500:
+                            Toast.makeText(DetailItem.this, "500 internal server error", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 401:
+                            Toast.makeText(DetailItem.this, "401 unauthorized", Toast.LENGTH_SHORT).show();
+                            break;
+
+                        default:
+                            Toast.makeText(DetailItem.this, "unknown error", Toast.LENGTH_SHORT).show();
+                            break;
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<String > call, Throwable t) {
+                Toast.makeText(DetailItem.this, "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
 
     }
 }

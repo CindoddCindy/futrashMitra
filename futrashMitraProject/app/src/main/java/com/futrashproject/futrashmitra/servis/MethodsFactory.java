@@ -13,10 +13,12 @@ import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.HeaderMap;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface MethodsFactory {
@@ -84,34 +86,41 @@ public interface MethodsFactory {
     @Headers({
             "Content-Type:application/json"
     })
-    @GET("")
-    Call<GetConfirmRespon> editItem(@Path ("id") Long id, @HeaderMap Map<String,String > Map);
+    @PUT("")
+    Call<String> editItem(@Path ("id") Long id, @Path ("id") Long idEditItem,@HeaderMap Map<String,String > Map, @Body JsonObject body);
 
     @Headers({
             "Content-Type:application/json"
     })
-    @GET("")
-    Call<GetConfirmRespon> editConfirm(@Path ("id") Long id, @HeaderMap Map<String,String > Map);
+    @PUT("")
+    Call<String> editConfirm(@Path ("id") Long id,@Path ("id") Long idConfirmEdit, @HeaderMap Map<String,String > Map,@Body JsonObject body);
+
+    @Headers({
+            "Content-Type:application/json"
+    })
+    @PUT("")
+    Call<String> editConfirmToOwnSelf(@Path ("id") Long id,@Path ("id") Long idConfirmEdit, @HeaderMap Map<String,String > Map,@Body JsonObject body);
+
 
 
     @Headers({
             "Content-Type:application/json"
     })
-    @GET("")
-    Call<GetConfirmRespon> deleteItem(@Path ("id") Long id, @HeaderMap Map<String,String > Map);
+    @DELETE("")
+    Call<String> deleteItem(@Path ("id") Long id,@Path ("id") Long idItem, @HeaderMap Map<String,String > Map);
 
 
     @Headers({
             "Content-Type:application/json"
     })
-    @GET("")
-    Call<GetConfirmRespon> deleteOrder(@Path ("id") Long id, @HeaderMap Map<String,String > Map);
+    @DELETE("")
+    Call<GetConfirmRespon> deleteOrder(@Path ("id") Long id, @Path ("id") Long idOrder,@HeaderMap Map<String,String > Map);
 
     @Headers({
             "Content-Type:application/json"
     })
-    @GET("")
-    Call<GetConfirmRespon> deleteConfirm(@Path ("id") Long id, @HeaderMap Map<String,String > Map);
+    @DELETE("")
+    Call<GetConfirmRespon> deleteConfirm(@Path ("id") Long id, @Path ("id") Long idConfirm, @HeaderMap Map<String,String > Map);
 
 
 

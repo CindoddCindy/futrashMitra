@@ -73,7 +73,7 @@ public class EditProductActivity extends AppCompatActivity {
 
 
                 }else {
-                    postItem();
+                    postEditItem();
 
 
                 }
@@ -82,7 +82,7 @@ public class EditProductActivity extends AppCompatActivity {
 
     }
 
-    public void postItem(){
+    public void postEditItem(){
         String jenisMakanan= editText_jenis_makanan.getText().toString();
         String tidakDikonsumsi=editText_tidak_dikonsumsi_sejak.getText().toString();
         String dijualKarena=editText_dijual_karena.getText().toString();
@@ -113,6 +113,7 @@ public class EditProductActivity extends AppCompatActivity {
 
 
         Long id = spHandle.getSpIdUser();
+        Long idItem=spHandle.getSpIdItem();
 
         String tokenUser = spHandle.getSpTokenUser();
         Map<String,String> token = new HashMap<>();
@@ -122,14 +123,12 @@ public class EditProductActivity extends AppCompatActivity {
 
 
         MethodsFactory methodsFactory =  RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
-        Call<FoodTrashMitraPostItemRespon> call= methodsFactory.isPostDataItem(id,token ,jsonObject);
-        call.enqueue(new Callback<FoodTrashMitraPostItemRespon>() {
+        Call<String > call= methodsFactory.editItem(id,id,token ,jsonObject);
+        call.enqueue(new Callback<String>() {
             @Override
-            public void onResponse(Call<FoodTrashMitraPostItemRespon> call, Response<FoodTrashMitraPostItemRespon> response) {
+            public void onResponse(Call<String> call, Response<String> response) {
                 if(response.isSuccessful()){
 
-                    FoodTrashMitraPostItemRespon foodTrashMitraPostItemRespon= response.body();
-                    spHandle.setSpIdItem(SpHandle.SP_ID_ITEM, foodTrashMitraPostItemRespon.getId() );
 
                     Intent intent = new Intent(EditProductActivity.this,BottomNav.class);
                     startActivity(intent);
@@ -158,7 +157,7 @@ public class EditProductActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<FoodTrashMitraPostItemRespon> call, Throwable t) {
+            public void onFailure(Call<String> call, Throwable t) {
                 Toast.makeText(EditProductActivity.this, "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
 
             }
