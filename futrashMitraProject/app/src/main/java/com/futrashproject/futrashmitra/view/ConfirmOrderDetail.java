@@ -53,8 +53,9 @@ public class ConfirmOrderDetail extends AppCompatActivity {
     public void editConfirm(){
 
         Bundle bundle = new Bundle();
-        spHandle.setSpIdConfirm(SpHandle.SP_ID_CONFIRM_ORDER, bundle.getLong("id_confirm"));
+       // spHandle.setSpIdConfirm(SpHandle.SP_ID_CONFIRM_ORDER, bundle.getLong("id_confirm"));
        // bundle.putLong("id_confirm",content.getId());
+        bundle.putLong("id_confirm",spHandle.getSpIdConfirm());
         bundle.putString("nm",textView_nama_penjual.getText().toString());
         bundle.putString("tt",textView_konfirm_terima_tidak.getText().toString());
         bundle.putString("ca",textView_catata_alasan.getText().toString());
@@ -89,6 +90,7 @@ public class ConfirmOrderDetail extends AppCompatActivity {
              */
             Bundle bundle = getIntent().getExtras();
 
+            spHandle.setSpIdConfirm(SpHandle.SP_ID_CONFIRM_ORDER,bundle.getLong("id_confirm"));
             textView_nama_penjual.setText(bundle.getString("nm"));
             textView_konfirm_terima_tidak.setText(bundle.getString("tt"));
             textView_catata_alasan.setText(bundle.getString("ca"));
