@@ -114,13 +114,16 @@ public interface MethodsFactory {
             "Content-Type:application/json"
     })
     @DELETE("")
-    Call<GetConfirmRespon> deleteOrder(@Path ("id") Long id, @Path ("id") Long idOrder,@HeaderMap Map<String,String > Map);
+    Call<String> deleteOrderForMe(@Path ("id") Long id, @Path ("id") Long idOrder,@HeaderMap Map<String,String > Map);
 
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("")
-    Call<GetConfirmRespon> deleteConfirm(@Path ("id") Long id, @Path ("id") Long idConfirm, @HeaderMap Map<String,String > Map);
+    Call<String> deleteConfirm(@Path ("id") Long id, @Path ("id") Long idConfirm, @HeaderMap Map<String,String > Map);
+
+    @DELETE("")
+    Call<String> deleteConfirmForCustomer(@Path ("id") Long id, @Path ("id") Long idConfirm, @HeaderMap Map<String,String > Map);
 
 
 

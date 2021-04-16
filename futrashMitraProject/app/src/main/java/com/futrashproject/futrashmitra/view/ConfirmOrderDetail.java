@@ -5,9 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.futrashproject.futrashmitra.R;
+import com.futrashproject.futrashmitra.servis.MethodsFactory;
+import com.futrashproject.futrashmitra.servis.RetrofitHandle;
 import com.futrashproject.futrashmitra.shared_preference.SpHandle;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ConfirmOrderDetail extends AppCompatActivity {
     private TextView textView_nama_penjual, textView_nama_makanan,textView_date_item, textView_lokasi_customer, textView_nama_customer,
@@ -95,4 +105,110 @@ public class ConfirmOrderDetail extends AppCompatActivity {
 
         }
     }
+
+
+
+    public void deleteConfirm(){
+        Long id = spHandle.getSpIdUser();
+        Long idConfirm= spHandle.getSpIdConfirm();
+
+        String tokenUser = spHandle.getSpTokenUser();
+        Map<String,String> token = new HashMap<>();
+        token.put("Authorization", "Bearer "+tokenUser);
+
+
+        MethodsFactory methodsFactory = RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
+        Call<String> orderListCall=methodsFactory.deleteConfirm(id,idConfirm, token);
+        orderListCall.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+
+                if (response.isSuccessful()) {
+                    Toast.makeText(ConfirmOrderDetail.this,"Order Di Hapus",Toast.LENGTH_LONG).show();
+
+
+                }
+                else {
+                    // error case
+                    switch (response.code()) {
+                        case 404:
+                            Toast.makeText(ConfirmOrderDetail.this, "404 not found", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 500:
+                            Toast.makeText(ConfirmOrderDetail.this, "500 internal server error", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 401:
+                            Toast.makeText(ConfirmOrderDetail.this, "401 unauthorized", Toast.LENGTH_SHORT).show();
+                            break;
+
+                        default:
+                            Toast.makeText(ConfirmOrderDetail.this, "unknown error", Toast.LENGTH_SHORT).show();
+                            break;
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<String > call, Throwable t) {
+                Toast.makeText(ConfirmOrderDetail.this, "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+    }
+
+    public void deleteConfirmToSeller(){
+        Long id = spHandle.getSpIdBuyerDua();
+        Long idConfirm= spHandle.getSpIdConfirm();
+
+        String tokenUser = spHandle.getSpTokenUser();
+        Map<String,String> token = new HashMap<>();
+        token.put("Authorization", "Bearer "+tokenUser);
+
+
+        MethodsFactory methodsFactory = RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
+        Call<String> orderListCall=methodsFactory.deleteOrderForMe(id,idConfirm, token);
+        orderListCall.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+
+                if (response.isSuccessful()) {
+                    Toast.makeText(ConfirmOrderDetail.this,"Order Di Hapus",Toast.LENGTH_LONG).show();
+
+
+                }
+                else {
+                    // error case
+                    switch (response.code()) {
+                        case 404:
+                            Toast.makeText(ConfirmOrderDetail.this, "404 not found", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 500:
+                            Toast.makeText(ConfirmOrderDetail.this, "500 internal server error", Toast.LENGTH_SHORT).show();
+                            break;
+                        case 401:
+                            Toast.makeText(ConfirmOrderDetail.this, "401 unauthorized", Toast.LENGTH_SHORT).show();
+                            break;
+
+                        default:
+                            Toast.makeText(ConfirmOrderDetail.this, "unknown error", Toast.LENGTH_SHORT).show();
+                            break;
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<String > call, Throwable t) {
+                Toast.makeText(ConfirmOrderDetail.this, "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+    }
+
+
+
+
 }
