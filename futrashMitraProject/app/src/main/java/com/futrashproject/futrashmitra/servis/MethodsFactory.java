@@ -79,4 +79,43 @@ public interface MethodsFactory {
     Call<GetConfirmRespon> getListConfirm(@Path ("id") Long id, @HeaderMap Map<String,String > Map);
 
 
+    //edit delete
+
+    @Headers({
+            "Content-Type:application/json"
+    })
+    @GET("")
+    Call<GetConfirmRespon> editItem(@Path ("id") Long id, @HeaderMap Map<String,String > Map);
+
+    @Headers({
+            "Content-Type:application/json"
+    })
+    @GET("")
+    Call<GetConfirmRespon> editConfirm(@Path ("id") Long id, @HeaderMap Map<String,String > Map);
+
+
+    @Headers({
+            "Content-Type:application/json"
+    })
+    @GET("")
+    Call<GetConfirmRespon> deleteItem(@Path ("id") Long id, @HeaderMap Map<String,String > Map);
+
+
+    @Headers({
+            "Content-Type:application/json"
+    })
+    @GET("")
+    Call<GetConfirmRespon> deleteOrder(@Path ("id") Long id, @HeaderMap Map<String,String > Map);
+
+    @Headers({
+            "Content-Type:application/json"
+    })
+    @GET("")
+    Call<GetConfirmRespon> deleteConfirm(@Path ("id") Long id, @HeaderMap Map<String,String > Map);
+
+
+
+
+
+
 }
