@@ -86,7 +86,7 @@ public interface MethodsFactory {
     @Headers({
             "Content-Type:application/json"
     })
-    @PUT("")
+    @PUT("item/users/1/items/3")
     Call<String> editItem(@Path ("id") Long id, @Path ("id") Long idEditItem,@HeaderMap Map<String,String > Map, @Body JsonObject body);
 
     @Headers({
@@ -106,7 +106,7 @@ public interface MethodsFactory {
     @Headers({
             "Content-Type:application/json"
     })
-    @DELETE("")
+    @DELETE("item/users/{id}/items/{id}")
     Call<String> deleteItem(@Path ("id") Long id,@Path ("id") Long idItem, @HeaderMap Map<String,String > Map);
 
 
