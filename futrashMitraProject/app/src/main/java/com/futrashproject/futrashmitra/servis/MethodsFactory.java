@@ -42,34 +42,34 @@ public interface MethodsFactory {
     @Headers({
             "Content-Type:application/json"
     })
-    @POST("item/users/{id}/items")
+    @POST("item/users/{userId}/items")
     Call<FoodTrashMitraPostItemRespon> isPostDataItem(@Path ("userId") Long id, @HeaderMap Map<String,String > Map, @Body JsonObject body);
 
 
     @Headers({
             "Content-Type:application/json"
     })
-    @GET("order/users/{id}/orders")
+    @GET("order/users/{userId}/orders")
     Call<MitraGetOrderRespon> getOrder(@Path ("userId") Long id, @HeaderMap Map<String,String > Map);
 
 
     @Headers({
             "Content-Type:application/json"
     })
-    @GET("item/users/{id}/items")
+    @GET("item/users/{userId}/items")
     Call<FoodTrashMitraGetItemRespon> getItem(@Path ("userId") Long id, @HeaderMap Map<String,String > Map);
 
 
     @Headers({
             "Content-Type:application/json"
     })
-    @POST("confirm/users/{id}/confirm")
+    @POST("confirm/users/{userId}/confirm")
     Call<MitraPostConfirmRespon> postConfirmToMySelf(@Path ("userId") Long id, @HeaderMap Map<String,String > Map, @Body JsonObject body);
 
     @Headers({
             "Content-Type:application/json"
     })
-    @POST("confirm/users/{id}/confirm")
+    @POST("confirm/users/{userId}/confirm")
     Call<MitraPostConfirmRespon> postConfirmToBuyer(@Path ("userId") Long id, @HeaderMap Map<String,String > Map, @Body JsonObject body);
 
 
@@ -78,7 +78,7 @@ public interface MethodsFactory {
     @Headers({
             "Content-Type:application/json"
     })
-    @GET("confirm/users/{id}/confirm")
+    @GET("confirm/users/{userId}/confirm")
     Call<GetConfirmRespon> getListConfirm(@Path ("userId") Long id, @HeaderMap Map<String,String > Map);
 
 
@@ -87,7 +87,7 @@ public interface MethodsFactory {
     @Headers({
             "Content-Type:application/json"
     })
-    @PUT("item/users/{id}/items/{id}")
+    @PUT("item/users/{userId}/items/{itemId}")
     Call<MitraEditItemRespon> editItem(@Path ("userId") Long id, @Path ("itemId") Long idEditItem, @HeaderMap Map<String,String > Map, @Body JsonObject body);
 
     @Headers({
