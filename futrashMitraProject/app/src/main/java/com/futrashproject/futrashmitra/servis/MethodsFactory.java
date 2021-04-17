@@ -2,6 +2,7 @@ package com.futrashproject.futrashmitra.servis;
 
 import com.futrashproject.futrashmitra.model.pojo_confirm.get_confirm.GetConfirmRespon;
 import com.futrashproject.futrashmitra.model.pojo_confirm.post_confirm.MitraPostConfirmRespon;
+import com.futrashproject.futrashmitra.model.pojo_item.pojo_edit_item.MitraEditItemRespon;
 import com.futrashproject.futrashmitra.model.pojo_item.pojo_get_item.FoodTrashMitraGetItemRespon;
 import com.futrashproject.futrashmitra.model.pojo_item.pojo_post_item.FoodTrashMitraPostItemRespon;
 import com.futrashproject.futrashmitra.model.pojo_login.FoodTrashLoginMitraRespon;
@@ -42,34 +43,34 @@ public interface MethodsFactory {
             "Content-Type:application/json"
     })
     @POST("item/users/{id}/items")
-    Call<FoodTrashMitraPostItemRespon> isPostDataItem(@Path ("id") Long id, @HeaderMap Map<String,String > Map, @Body JsonObject body);
+    Call<FoodTrashMitraPostItemRespon> isPostDataItem(@Path ("userId") Long id, @HeaderMap Map<String,String > Map, @Body JsonObject body);
 
 
     @Headers({
             "Content-Type:application/json"
     })
     @GET("order/users/{id}/orders")
-    Call<MitraGetOrderRespon> getOrder(@Path ("id") Long id, @HeaderMap Map<String,String > Map);
+    Call<MitraGetOrderRespon> getOrder(@Path ("userId") Long id, @HeaderMap Map<String,String > Map);
 
 
     @Headers({
             "Content-Type:application/json"
     })
     @GET("item/users/{id}/items")
-    Call<FoodTrashMitraGetItemRespon> getItem(@Path ("id") Long id, @HeaderMap Map<String,String > Map);
+    Call<FoodTrashMitraGetItemRespon> getItem(@Path ("userId") Long id, @HeaderMap Map<String,String > Map);
 
 
     @Headers({
             "Content-Type:application/json"
     })
     @POST("confirm/users/{id}/confirm")
-    Call<MitraPostConfirmRespon> postConfirmToMySelf(@Path ("id") Long id, @HeaderMap Map<String,String > Map, @Body JsonObject body);
+    Call<MitraPostConfirmRespon> postConfirmToMySelf(@Path ("userId") Long id, @HeaderMap Map<String,String > Map, @Body JsonObject body);
 
     @Headers({
             "Content-Type:application/json"
     })
     @POST("confirm/users/{id}/confirm")
-    Call<MitraPostConfirmRespon> postConfirmToBuyer(@Path ("id") Long id, @HeaderMap Map<String,String > Map, @Body JsonObject body);
+    Call<MitraPostConfirmRespon> postConfirmToBuyer(@Path ("userId") Long id, @HeaderMap Map<String,String > Map, @Body JsonObject body);
 
 
 
@@ -78,7 +79,7 @@ public interface MethodsFactory {
             "Content-Type:application/json"
     })
     @GET("confirm/users/{id}/confirm")
-    Call<GetConfirmRespon> getListConfirm(@Path ("id") Long id, @HeaderMap Map<String,String > Map);
+    Call<GetConfirmRespon> getListConfirm(@Path ("userId") Long id, @HeaderMap Map<String,String > Map);
 
 
     //edit delete
@@ -87,7 +88,7 @@ public interface MethodsFactory {
             "Content-Type:application/json"
     })
     @PUT("item/users/{id}/items/{id}")
-    Call<String> editItem(@Path ("id") Long id, @Path ("id") Long idEditItem,@HeaderMap Map<String,String > Map, @Body JsonObject body);
+    Call<MitraEditItemRespon> editItem(@Path ("userId") Long id, @Path ("itemId") Long idEditItem, @HeaderMap Map<String,String > Map, @Body JsonObject body);
 
     @Headers({
             "Content-Type:application/json"

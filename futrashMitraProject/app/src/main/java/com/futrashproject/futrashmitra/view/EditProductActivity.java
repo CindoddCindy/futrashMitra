@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.futrashproject.futrashmitra.R;
+import com.futrashproject.futrashmitra.model.pojo_item.pojo_edit_item.MitraEditItemRespon;
 import com.futrashproject.futrashmitra.model.pojo_item.pojo_post_item.FoodTrashMitraPostItemRespon;
 import com.futrashproject.futrashmitra.servis.MethodsFactory;
 import com.futrashproject.futrashmitra.servis.RetrofitHandle;
@@ -125,10 +126,10 @@ public class EditProductActivity extends AppCompatActivity {
 
 
         MethodsFactory methodsFactory =  RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
-        Call<String > call= methodsFactory.editItem(id,id,token ,jsonObject);
-        call.enqueue(new Callback<String>() {
+        Call<MitraEditItemRespon> call= methodsFactory.editItem(id,idItem,token ,jsonObject);
+        call.enqueue(new Callback<MitraEditItemRespon>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
+            public void onResponse(Call<MitraEditItemRespon> call, Response<MitraEditItemRespon> response) {
                 if(response.isSuccessful()){
 
 
@@ -159,7 +160,8 @@ public class EditProductActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<MitraEditItemRespon> call, Throwable t) {
+                t.printStackTrace();
                 Toast.makeText(EditProductActivity.this, "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
 
             }
