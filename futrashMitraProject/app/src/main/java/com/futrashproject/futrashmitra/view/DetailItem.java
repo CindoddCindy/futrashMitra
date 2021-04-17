@@ -70,11 +70,13 @@ public class DetailItem extends AppCompatActivity {
         textView_btn_edit_product.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DetailItem.this, EditProductActivity.class);
+               /* Intent intent = new Intent(DetailItem.this, EditProductActivity.class);
                 startActivity(intent);
                 finish();
 
+                */
 
+                editItem();
 
             }
         });
@@ -116,7 +118,6 @@ public class DetailItem extends AppCompatActivity {
             textView_kandungan_kimia.setText(bundle.getString("kk"));
             textView_tanggal_post_makanan.setText(bundle.getString("ca"));
             textView_phone_numb.setText(bundle.getString("pn"));
-            textView_tanggal_post_makanan.setText(bundle.getString("ca"));
 
 
 

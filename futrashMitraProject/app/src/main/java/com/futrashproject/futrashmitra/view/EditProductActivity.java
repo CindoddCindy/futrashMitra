@@ -80,6 +80,8 @@ public class EditProductActivity extends AppCompatActivity {
             }
         });
 
+        getDataMakanan();
+
     }
 
     public void postEditItem(){

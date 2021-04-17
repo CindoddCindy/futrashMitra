@@ -86,7 +86,7 @@ public interface MethodsFactory {
     @Headers({
             "Content-Type:application/json"
     })
-    @PUT("item/users/1/items/3")
+    @PUT("item/users/{id}/items/{id}")
     Call<String> editItem(@Path ("id") Long id, @Path ("id") Long idEditItem,@HeaderMap Map<String,String > Map, @Body JsonObject body);
 
     @Headers({
