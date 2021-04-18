@@ -94,9 +94,6 @@ public class DetailItem extends AppCompatActivity {
 
     }
 
-    public void addItem(){
-
-    }
 
     public void getDetail(){
 
@@ -152,9 +149,7 @@ public class DetailItem extends AppCompatActivity {
 
     }
 
-    public void hapusItem(){
 
-    }
 
 
     public void deleteItem(){
