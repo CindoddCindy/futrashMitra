@@ -10,6 +10,9 @@
     android:background="#232740"
     tools:context=".view.DetailItem">
 
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:background="@drawable/abuabu"
@@ -36,7 +39,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="5dp"
                     android:layout_weight="1"
                     android:shadowColor="#F0F5F6"
                     android:shadowRadius="2"
@@ -58,7 +61,7 @@
             </LinearLayout>
 
             <ImageView
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/garis">
@@ -530,64 +533,75 @@
 
                 </LinearLayout>
             </LinearLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+        <TextView
+            android:id="@+id/tv_item_detail_btn_tambah_item"
+            android:textColor="#BFBABA"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Tambah Item"
+            android:gravity="center"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:padding="2dp"
+            android:background="@drawable/bakron_kembali"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_item_detail_btn_edit"
+            android:textColor="#BFBABA"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Edit"
+            android:gravity="center"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:padding="2dp"
+            android:background="@drawable/bakron_kembali"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <TextView
+            android:id="@+id/tv_item_detail_btn_hapus"
+            android:textColor="#BFBABA"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Hapus"
+            android:gravity="center"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:padding="2dp"
+            android:background="@drawable/bakron_kembali"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
 
 
 
 
-            <TextView
-                android:id="@+id/tv_item_detail_btn_tambah_item"
-                android:textColor="#BFBABA"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:text="Tambah Item"
-                android:gravity="center"
-                android:textSize="12dp"
-                android:textStyle="bold"
-                android:padding="2dp"
-                android:background="@drawable/bakron_kembali"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </TextView>
-
-            <TextView
-                android:id="@+id/tv_item_detail_btn_edit"
-                android:textColor="#BFBABA"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:text="Edit"
-                android:gravity="center"
-                android:textSize="12dp"
-                android:textStyle="bold"
-                android:padding="2dp"
-                android:background="@drawable/bakron_kembali"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </TextView>
-            <TextView
-                android:id="@+id/tv_item_detail_btn_hapus"
-                android:textColor="#BFBABA"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:text="Hapus"
-                android:gravity="center"
-                android:textSize="12dp"
-                android:textStyle="bold"
-                android:padding="2dp"
-                android:background="@drawable/bakron_kembali"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </TextView>
 
 
+    </LinearLayout>
 
-
-
+</ScrollView>
 
         </LinearLayout>
 </ScrollView>
@@ -597,6 +611,7 @@
     </LinearLayout>
 
 
+</ScrollView>
 
 
 </LinearLayout>
