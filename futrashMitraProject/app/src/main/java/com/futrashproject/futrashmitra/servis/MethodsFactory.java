@@ -1,5 +1,6 @@
 package com.futrashproject.futrashmitra.servis;
 
+import com.futrashproject.futrashmitra.model.pojo_confirm.edit_confirm.EditConfirmRespon;
 import com.futrashproject.futrashmitra.model.pojo_confirm.get_confirm.GetConfirmRespon;
 import com.futrashproject.futrashmitra.model.pojo_confirm.post_confirm.MitraPostConfirmRespon;
 import com.futrashproject.futrashmitra.model.pojo_item.pojo_edit_item.MitraEditItemRespon;
@@ -93,14 +94,14 @@ public interface MethodsFactory {
     @Headers({
             "Content-Type:application/json"
     })
-    @PUT("")
-    Call<String> editConfirm(@Path ("id") Long id,@Path ("id") Long idConfirmEdit, @HeaderMap Map<String,String > Map,@Body JsonObject body);
+    @PUT("confirm/users/{userId}/confirm/{confirmId}")
+    Call<EditConfirmRespon> editConfirm(@Path ("userId") Long id, @Path ("confirmId") Long idConfirmEdit, @HeaderMap Map<String,String > Map, @Body JsonObject body);
 
     @Headers({
             "Content-Type:application/json"
     })
-    @PUT("")
-    Call<String> editConfirmToOwnSelf(@Path ("id") Long id,@Path ("id") Long idConfirmEdit, @HeaderMap Map<String,String > Map,@Body JsonObject body);
+    @PUT("confirm/users/{userId}/confirm/{confirmId}")
+    Call<EditConfirmRespon> editConfirmToOwnSelf(@Path ("userId") Long id,@Path ("confirmId") Long idConfirmEdit, @HeaderMap Map<String,String > Map,@Body JsonObject body);
 
 
 

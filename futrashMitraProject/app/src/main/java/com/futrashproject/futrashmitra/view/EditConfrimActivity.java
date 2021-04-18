@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.futrashproject.futrashmitra.R;
+import com.futrashproject.futrashmitra.model.pojo_confirm.edit_confirm.EditConfirmRespon;
 import com.futrashproject.futrashmitra.model.pojo_confirm.post_confirm.MitraPostConfirmRespon;
 import com.futrashproject.futrashmitra.servis.MethodsFactory;
 import com.futrashproject.futrashmitra.servis.RetrofitHandle;
@@ -74,6 +75,8 @@ public class EditConfrimActivity extends AppCompatActivity {
 
             }
         });
+
+        getDataEdit();
 
     }
 
@@ -159,10 +162,10 @@ public class EditConfrimActivity extends AppCompatActivity {
 
 
         MethodsFactory methodsFactory =  RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
-        Call<String> call= methodsFactory.editConfirmToOwnSelf(id,idConfirmOwnSelf, token,jsonObject);
-        call.enqueue(new Callback<String>() {
+        Call<EditConfirmRespon> call= methodsFactory.editConfirmToOwnSelf(id,idConfirmOwnSelf, token,jsonObject);
+        call.enqueue(new Callback<EditConfirmRespon>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
+            public void onResponse(Call<EditConfirmRespon> call, Response<EditConfirmRespon> response) {
                 if(response.isSuccessful()){
                     Intent intent = new Intent(EditConfrimActivity.this,BottomNav.class);
                     startActivity(intent);
@@ -193,7 +196,7 @@ public class EditConfrimActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<EditConfirmRespon> call, Throwable t) {
                 Toast.makeText(EditConfrimActivity.this, "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
 
             }
@@ -254,10 +257,10 @@ public class EditConfrimActivity extends AppCompatActivity {
 
 
         MethodsFactory methodsFactory =  RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
-        Call<String> call= methodsFactory.editConfirm(id, idConfirmToBuyer,token,jsonObject);
-        call.enqueue(new Callback<String>() {
+        Call<EditConfirmRespon> call= methodsFactory.editConfirm(id, idConfirmToBuyer,token,jsonObject);
+        call.enqueue(new Callback<EditConfirmRespon>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
+            public void onResponse(Call<EditConfirmRespon> call, Response<EditConfirmRespon> response) {
                 if(response.isSuccessful()){
                     Intent intent = new Intent(EditConfrimActivity.this,BottomNav.class);
                     startActivity(intent);
@@ -288,7 +291,7 @@ public class EditConfrimActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<EditConfirmRespon> call, Throwable t) {
                 Toast.makeText(EditConfrimActivity.this, "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
 
             }
