@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,7 +37,7 @@ public class ConfirmOrderDetail extends AppCompatActivity {
         textView_nama_customer=findViewById(R.id.tv_confirm_detail_cutomer_name);
         textView_phone_customer=findViewById(R.id.tv_confirm_detail_cust_phone);
         textView_shipping_type=findViewById(R.id.tv_confirm_detail_shiping_type);
-        textView_tanggal_konfirmasi_order=findViewById(R.id.tv_confirm_item_tanggal_confirm);
+        textView_tanggal_konfirmasi_order=findViewById(R.id.tv_confirm_detail_tgal_confirm);
         textView_konfirm_terima_tidak=findViewById(R.id.tv_confirm_detail_terima_tolak);
         textView_catata_alasan=findViewById(R.id.tv_confirm_detail_catatan_alasan);
         textView_edit=findViewById(R.id.tv_confirm_detail_btn_Edit);
@@ -45,6 +46,21 @@ public class ConfirmOrderDetail extends AppCompatActivity {
 
         spHandle= new SpHandle(ConfirmOrderDetail.this);
 
+        textView_edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editConfirm();
+
+            }
+        });
+
+        textView_hapus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hapusConfirm();
+
+            }
+        });
         getConfirmDetail();
 
 
@@ -76,6 +92,8 @@ public class ConfirmOrderDetail extends AppCompatActivity {
     }
 
     public void hapusConfirm(){
+        deleteConfirm();
+        deleteConfirmToSeller();
 
     }
     public void backConfirm(){
