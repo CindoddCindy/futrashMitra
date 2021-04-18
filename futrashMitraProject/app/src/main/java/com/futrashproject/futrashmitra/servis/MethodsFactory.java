@@ -107,8 +107,8 @@ public interface MethodsFactory {
     @Headers({
             "Content-Type:application/json"
     })
-    @DELETE("item/users/{id}/items/{id}")
-    Call<String> deleteItem(@Path ("id") Long id,@Path ("id") Long idItem, @HeaderMap Map<String,String > Map);
+    @DELETE("item/users/{userId}/items/{itemId}")
+    Call<String> deleteItem(@Path ("userId") Long id,@Path ("itemId") Long idItem, @HeaderMap Map<String,String > Map);
 
 
     @Headers({

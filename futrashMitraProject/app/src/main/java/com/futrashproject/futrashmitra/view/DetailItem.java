@@ -84,6 +84,7 @@ public class DetailItem extends AppCompatActivity {
         textView_btn_hapus_product.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                deleteItem();
 
             }
         });
@@ -173,6 +174,9 @@ public class DetailItem extends AppCompatActivity {
 
                 if (response.isSuccessful()) {
                     Toast.makeText(DetailItem.this,"Product Di Hapus",Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(DetailItem.this,BottomNav.class);
+                    startActivity(intent);
+                    finish();
 
 
                 }
