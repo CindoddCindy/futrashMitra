@@ -43,7 +43,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:shadowColor="#F0F5F6"
                     android:shadowRadius="2"
                     android:shadowDx="1"
@@ -108,41 +108,6 @@
 
         </de.hdodenhof.circleimageview.CircleImageView>
 
-        <TextView
-
-            android:id="@+id/tv_confirm_activity_edit_id_customer"
-            android:layout_margin="10dp"
-            android:textStyle="bold"
-            android:layout_marginBottom="20dp"
-            android:textColor="#BFBABA"
-            android:layout_marginTop="12dp"
-            android:textSize="12dp"
-            android:gravity="center"
-            android:drawablePadding="5dp"
-            android:text="Order Data"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-
-        </TextView>
-
-        <TextView
-
-            android:id="@+id/tv_confirm_activity_edit_id_confirm_item"
-            android:layout_margin="10dp"
-            android:textStyle="bold"
-            android:layout_marginBottom="20dp"
-            android:textColor="#BFBABA"
-            android:layout_marginTop="12dp"
-            android:textSize="12dp"
-            android:gravity="center"
-            android:drawablePadding="5dp"
-            android:text="Order Data"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-
-        </TextView>
 
 
         <LinearLayout

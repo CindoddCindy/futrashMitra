@@ -31,9 +31,6 @@ public class EditConfrimActivity extends AppCompatActivity {
 
     private EditText editText_nama_penjual, editText_lokasi_makanan, editText_nomor_telepon, editText_terima_tolak, editText_catatan_mitra;
 
-    TextView textView_id_customer;
-
-    TextView textView_id_confirm;
 
     private SpHandle spHandle;
 
@@ -59,9 +56,6 @@ public class EditConfrimActivity extends AppCompatActivity {
         editText_terima_tolak=findViewById(R.id.et_confirm_activity_edit_terima_tolak);
         editText_catatan_mitra=findViewById(R.id.et_confirm_activity_edit_catatan_mitra);
 
-         textView_id_customer= findViewById(R.id.tv_confirm_activity_edit_id_customer);
-
-          textView_id_confirm= findViewById(R.id.tv_confirm_activity_edit_id_confirm_item);
 
 
         textView_confirmation_btn_order.setOnClickListener(new View.OnClickListener() {
@@ -102,10 +96,10 @@ public class EditConfrimActivity extends AppCompatActivity {
              */
             Bundle bundle = getIntent().getExtras();
             spHandle.setSpIdConfirmOrderEdit(SpHandle.SP_ID_CONFIRM_ORDER_EDIT,bundle.getLong("id_customer"));
-            textView_id_customer.setText(String.valueOf(bundle.getLong("id_customer")));
+          //  textView_id_customer.setText(String.valueOf(bundle.getLong("id_customer")));
 
             spHandle.setSpIdConfirmDua(SpHandle.SP_ID_CONFIRM_DUA, bundle.getLong("id_confirm"));
-            textView_id_confirm.setText(String.valueOf(bundle.getLong("id_confirm")));
+           // textView_id_confirm.setText(String.valueOf(bundle.getLong("id_confirm")));
 
 
             editText_nama_penjual.setText(bundle.getString("nm"));
@@ -268,10 +262,10 @@ public class EditConfrimActivity extends AppCompatActivity {
 
 
 
-       // Long idConfirm = spHandle.getIdConfirmDua();
-        Long idConfirm= Long.valueOf(textView_id_confirm.getText().toString());
-        //Long idConfirmToBuyer=spHandle.getSpIdEditConfirm();
-        Long idConfirmToBuyer= Long.valueOf(textView_id_customer.getText().toString());
+        Long idConfirm = spHandle.getIdConfirmDua();
+        //Long idConfirm= Long.valueOf(textView_id_confirm.getText().toString());
+        Long idConfirmToBuyer=spHandle.getSpIdEditConfirm();
+      //  Long idConfirmToBuyer= Long.valueOf(textView_id_customer.getText().toString());
 
         String tokenUser = spHandle.getSpTokenUser();
 

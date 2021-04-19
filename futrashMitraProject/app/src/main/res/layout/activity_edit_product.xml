@@ -304,11 +304,6 @@
 
 
 
-
-
-
-
-
             <TextView
                 android:id="@+id/tv_add_item_edit_btn_subbmit_makanan"
                 android:textColor="#232740"

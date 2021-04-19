@@ -25,8 +25,6 @@ public class ConfirmOrderDetail extends AppCompatActivity {
     textView_phone_customer, textView_shipping_type,textView_tanggal_konfirmasi_order, textView_konfirm_terima_tidak, textView_catata_alasan, textView_edit, textView_hapus, textView_back;
 
     private TextView textView_nama_mitra, textView_phone_mitra, textView_alamat_mitra;
-    private TextView textView_id_confirm;
-    private TextView textView_id_buyer;
     private SpHandle spHandle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +49,6 @@ public class ConfirmOrderDetail extends AppCompatActivity {
         textView_alamat_mitra=findViewById(R.id.tv_confirm_detail_lokasi_mitra);
         textView_phone_mitra=findViewById(R.id.tv_confirm_detail_phone_mitra);
 
-        textView_id_confirm=findViewById(R.id.tv_confirm_detail_id_confirm);
-        textView_id_buyer=findViewById(R.id.tv_confirm_detail_id_buyer);
 
         spHandle= new SpHandle(ConfirmOrderDetail.this);
 
@@ -127,8 +123,6 @@ public class ConfirmOrderDetail extends AppCompatActivity {
 
             spHandle.setSpIdConfirmOrderEdit(SpHandle.SP_ID_CONFIRM_ORDER_EDIT, bundle.getLong("id_customer"));
             spHandle.setSpIdConfirmOrder(SpHandle.SP_ID_CONFIRM_ORDER,bundle.getLong("id_confirm"));
-            textView_id_confirm.setText(String.valueOf(bundle.getLong("id_confirm")));
-            textView_id_buyer.setText(String.valueOf(bundle.getLong("id_customer")));
             textView_nama_penjual.setText(bundle.getString("nm"));
             textView_konfirm_terima_tidak.setText(bundle.getString("tt"));
             textView_catata_alasan.setText(bundle.getString("ca"));

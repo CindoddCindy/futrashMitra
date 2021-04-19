@@ -88,7 +88,7 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
+                            android:layout_weight="2"
                             android:shadowColor="#F0F5F6"
                             android:shadowRadius="2"
                             android:shadowDx="1"
@@ -113,9 +113,9 @@
                             android:shadowDy="1"
                             android:textColor="#EDE5E5"
                             android:text="Tanggal Post"
-                            android:gravity="center"
+                            android:gravity="left"
                             android:textStyle="normal"
-                            android:textSize="10dp"
+                            android:textSize="7dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             >
