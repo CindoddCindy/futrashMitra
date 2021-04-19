@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.futrashproject.futrashmitra.R;
 import com.futrashproject.futrashmitra.model.pojo_confirm.edit_confirm.EditConfirmRespon;
+import com.futrashproject.futrashmitra.model.pojo_confirm.post_confirm.PostConfirmRespon;
 import com.futrashproject.futrashmitra.servis.MethodsFactory;
 import com.futrashproject.futrashmitra.servis.RetrofitHandle;
 import com.futrashproject.futrashmitra.shared_preference.SpHandle;
@@ -278,10 +279,10 @@ public class EditConfrimActivity extends AppCompatActivity {
 
 
         MethodsFactory methodsFactory =  RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
-        Call<EditConfirmRespon> call= methodsFactory.editConfirm( idConfirmToBuyer, idConfirm, token,jsonObject);
-        call.enqueue(new Callback<EditConfirmRespon>() {
+        Call<PostConfirmRespon> call= methodsFactory.postConfirmToBuyer( idConfirmToBuyer, token,jsonObject);
+        call.enqueue(new Callback<PostConfirmRespon>() {
             @Override
-            public void onResponse(Call<EditConfirmRespon> call, Response<EditConfirmRespon> response) {
+            public void onResponse(Call<PostConfirmRespon> call, Response<PostConfirmRespon> response) {
                 if(response.isSuccessful()){
                     Intent intent = new Intent(EditConfrimActivity.this,BottomNav.class);
                     startActivity(intent);
@@ -312,7 +313,7 @@ public class EditConfrimActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<EditConfirmRespon> call, Throwable t) {
+            public void onFailure(Call<PostConfirmRespon> call, Throwable t) {
                 Toast.makeText(EditConfrimActivity.this, "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
 
             }
@@ -328,6 +329,6 @@ public class EditConfrimActivity extends AppCompatActivity {
 
     public  void metodKirim(){
         confirmOderToBuyerEdit();
-        //sendDataConfirmEditToOwnSelf();
+        sendDataConfirmEditToOwnSelf();
     }
 }

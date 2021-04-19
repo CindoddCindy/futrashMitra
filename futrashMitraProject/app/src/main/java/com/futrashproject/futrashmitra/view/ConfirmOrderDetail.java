@@ -101,7 +101,7 @@ public class ConfirmOrderDetail extends AppCompatActivity {
 
     public void hapusConfirm(){
         deleteConfirm();
-        deleteConfirmToSeller();
+       // deleteConfirmToSeller();
 
     }
     public void backConfirm(){
@@ -199,7 +199,7 @@ public class ConfirmOrderDetail extends AppCompatActivity {
 
 
         MethodsFactory methodsFactory = RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
-        Call<String> orderListCall=methodsFactory.deleteOrderForMe(id,idConfirm, token);
+        Call<String> orderListCall=methodsFactory.deleteConfirmForCustomer(id,idConfirm, token);
         orderListCall.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {

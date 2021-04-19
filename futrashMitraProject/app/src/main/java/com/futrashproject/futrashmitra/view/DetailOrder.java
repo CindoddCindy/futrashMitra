@@ -156,7 +156,7 @@ detailOrder();
 
 
         MethodsFactory methodsFactory = RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
-        Call<String> orderListCall=methodsFactory.deleteOrderForMe(id,idOrder, token);
+        Call<String> orderListCall=methodsFactory.deleteConfirm(id,idOrder, token);
         orderListCall.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {

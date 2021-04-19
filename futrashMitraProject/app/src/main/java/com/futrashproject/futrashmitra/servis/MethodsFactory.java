@@ -91,11 +91,15 @@ public interface MethodsFactory {
     @PUT("item/users/{userId}/items/{itemId}")
     Call<MitraEditItemRespon> editItem(@Path ("userId") Long id, @Path ("itemId") Long idEditItem, @HeaderMap Map<String,String > Map, @Body JsonObject body);
 
+
     @Headers({
             "Content-Type:application/json"
     })
+
+
+    //@HeaderMap Map<String,String > Map,
     @PUT("confirm/users/{userId}/confirm/{confirmId}")
-    Call<EditConfirmRespon> editConfirm(@Path ("userId") Long id, @Path ("confirmId") Long idConfirmEdit, @HeaderMap Map<String,String > Map, @Body JsonObject body);
+    Call<EditConfirmRespon> editConfirm(@Path ("userId") Long id, @Path ("confirmId") Long idConfirmEdit,@HeaderMap Map<String,String > Map,  @Body JsonObject body);
 
     @Headers({
             "Content-Type:application/json"
@@ -111,21 +115,26 @@ public interface MethodsFactory {
     @DELETE("item/users/{userId}/items/{itemId}")
     Call<String> deleteItem(@Path ("userId") Long id,@Path ("itemId") Long idItem, @HeaderMap Map<String,String > Map);
 
-
+/*
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("")
     Call<String> deleteOrderForMe(@Path ("id") Long id, @Path ("id") Long idOrder,@HeaderMap Map<String,String > Map);
 
+
+ */
     @Headers({
             "Content-Type:application/json"
     })
-    @DELETE("")
-    Call<String> deleteConfirm(@Path ("id") Long id, @Path ("id") Long idConfirm, @HeaderMap Map<String,String > Map);
+    @DELETE("confirm/users/{userId}/confirm/{confirmId}")
+    Call<String> deleteConfirm(@Path ("userId") Long id, @Path ("confirmId") Long idConfirm, @HeaderMap Map<String,String > Map);
 
-    @DELETE("")
-    Call<String> deleteConfirmForCustomer(@Path ("id") Long id, @Path ("id") Long idConfirm, @HeaderMap Map<String,String > Map);
+    @Headers({
+            "Content-Type:application/json"
+    })
+    @DELETE("confirm/users/{userId}/confirm/{confirmId}")
+    Call<String> deleteConfirmForCustomer(@Path ("userId") Long id, @Path ("confirmId") Long idConfirm, @HeaderMap Map<String,String > Map);
 
 
 
