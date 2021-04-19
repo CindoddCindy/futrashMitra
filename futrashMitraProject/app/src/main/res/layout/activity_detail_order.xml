@@ -26,7 +26,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_weight="2"
+                    android:layout_weight="1"
                     android:shadowColor="#F0F5F6"
                     android:shadowRadius="2"
                     android:shadowDx="1"
