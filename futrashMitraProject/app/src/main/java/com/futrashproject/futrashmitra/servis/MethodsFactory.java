@@ -115,21 +115,22 @@ public interface MethodsFactory {
     @DELETE("item/users/{userId}/items/{itemId}")
     Call<String> deleteItem(@Path ("userId") Long id,@Path ("itemId") Long idItem, @HeaderMap Map<String,String > Map);
 
-/*
+
     @Headers({
             "Content-Type:application/json"
     })
-    @DELETE("")
-    Call<String> deleteOrderForMe(@Path ("id") Long id, @Path ("id") Long idOrder,@HeaderMap Map<String,String > Map);
+    @DELETE("order/users/{userId}/orders/{orderId}")
+    Call<String> deleteOrderForMe(@Path ("userId") Long id, @Path ("orderId") Long idOrder,@HeaderMap Map<String,String > Map);
 
 
- */
+
     @Headers({
             "Content-Type:application/json"
     })
     @DELETE("confirm/users/{userId}/confirm/{confirmId}")
     Call<String> deleteConfirm(@Path ("userId") Long id, @Path ("confirmId") Long idConfirm, @HeaderMap Map<String,String > Map);
 
+    //gabisa congs
     @Headers({
             "Content-Type:application/json"
     })

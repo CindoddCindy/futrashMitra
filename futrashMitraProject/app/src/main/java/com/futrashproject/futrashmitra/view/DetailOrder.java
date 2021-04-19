@@ -76,7 +76,7 @@ public class DetailOrder extends AppCompatActivity {
         textView_btn_hapus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                deleteOrderForMe();
             }
         });
 
@@ -139,14 +139,11 @@ detailOrder();
         startActivity(toConfirmOrder);
     }
 
-    public void hapusOrder(){
-
-    }
 
 
 
 
-    public void deleteItem(){
+    public void deleteOrderForMe(){
         Long id = spHandle.getSpIdUser();
         Long idOrder= spHandle.getSpIdOrder();
 
@@ -156,7 +153,7 @@ detailOrder();
 
 
         MethodsFactory methodsFactory = RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
-        Call<String> orderListCall=methodsFactory.deleteConfirm(id,idOrder, token);
+        Call<String> orderListCall=methodsFactory.deleteOrderForMe(id,idOrder, token);
         orderListCall.enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
