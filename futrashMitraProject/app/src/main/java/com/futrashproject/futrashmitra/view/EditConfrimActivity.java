@@ -109,6 +109,8 @@ public class EditConfrimActivity extends AppCompatActivity {
 
 
             editText_nama_penjual.setText(bundle.getString("nm"));
+            editText_lokasi_makanan.setText(bundle.getString("lm"));
+            editText_nomor_telepon.setText(bundle.getString("pm"));
             editText_terima_tolak.setText(bundle.getString("tt"));
             editText_catatan_mitra.setText(bundle.getString("ca"));
             textView_tanggal_order.setText(bundle.getString("od"));

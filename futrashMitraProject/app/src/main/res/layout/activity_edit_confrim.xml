@@ -20,6 +20,7 @@
             android:textStyle="bold"
             android:layout_marginBottom="20dp"
             android:textColor="#BFBABA"
+
             android:layout_marginTop="12dp"
             android:textSize="12dp"
             android:gravity="center"
@@ -407,18 +408,22 @@
 
             <TextView
                 android:id="@+id/tv_confirm_activity_edit_btn_konfirm_order"
-                android:textColor="#BFBABA"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:text="Konfirmasi Order"
+                android:textColor="#232740"
+                android:shadowColor="#E6ECED"
+                android:shadowRadius="2"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:text="Post Edit"
                 android:gravity="center"
                 android:textSize="12dp"
                 android:textStyle="bold"
-                android:padding="10dp"
-                android:background="@drawable/bakron_kembali"
+                android:background="@drawable/username_bakron"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="25dp">
 
             </TextView>
 

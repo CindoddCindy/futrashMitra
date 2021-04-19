@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -16,7 +16,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
 
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
 
         <TextView
@@ -297,6 +306,76 @@
 
             </TextView>
 
+            <TextView
+                android:textColor="#BFBABA"
+                android:drawablePadding="5dp"
+                android:text="Nama Penjuala"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_confirm_detail_nama_mitra"
+                android:textColor="#BFBABA"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:background="@drawable/bakron_kembali"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+            <TextView
+                android:textColor="#BFBABA"
+                android:drawablePadding="5dp"
+                android:text="Phone Penjual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_confirm_detail_phone_mitra"
+                android:textColor="#BFBABA"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:background="@drawable/bakron_kembali"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <TextView
+                android:textColor="#BFBABA"
+                android:drawablePadding="5dp"
+                android:text="Lokasi Penjual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_confirm_detail_lokasi_mitra"
+                android:textColor="#BFBABA"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:padding="5dp"
+                android:background="@drawable/bakron_kembali"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+
+
+
+
+
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -311,7 +390,11 @@
 
             <TextView
                 android:id="@+id/tv_confirm_detail_btn_Edit"
-                android:textColor="#BFBABA"
+                android:textColor="#232740"
+                android:shadowColor="#E6ECED"
+                android:shadowRadius="2"
+                android:shadowDx="1"
+                android:shadowDy="1"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -320,15 +403,19 @@
                 android:textSize="12dp"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:background="@drawable/bakron_kembali"
+                android:background="@drawable/username_bakron"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="25dp">
 
             </TextView>
 
             <TextView
                 android:id="@+id/tv_confirm_detail_btn_kembali"
-                android:textColor="#BFBABA"
+                android:textColor="#232740"
+                android:shadowColor="#E6ECED"
+                android:shadowRadius="2"
+                android:shadowDx="1"
+                android:shadowDy="1"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -337,26 +424,31 @@
                 android:textSize="12dp"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:background="@drawable/bakron_kembali"
+                android:background="@drawable/username_bakron"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="25dp">
 
             </TextView>
 
             <TextView
                 android:id="@+id/tv_confirm_detail_btn_hapus"
-                android:textColor="#BFBABA"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
+                android:textColor="#232740"
+                android:shadowColor="#E6ECED"
+                android:shadowRadius="2"
+                android:shadowDx="1"
+                android:shadowDy="1"
                 android:text="Hapus"
                 android:gravity="center"
                 android:textSize="12dp"
                 android:textStyle="bold"
                 android:padding="5dp"
-                android:background="@drawable/bakron_kembali"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/username_bakron"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="25dp">
 
             </TextView>
             </LinearLayout>
@@ -370,6 +462,9 @@
 
 
         </LinearLayout>
+</LinearLayout>
+
+        </ScrollView>
 
     </LinearLayout>
 
@@ -378,4 +473,4 @@
 
 
 
-</ScrollView>
+</LinearLayout>

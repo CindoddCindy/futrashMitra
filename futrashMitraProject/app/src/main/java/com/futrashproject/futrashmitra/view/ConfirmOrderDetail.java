@@ -24,6 +24,7 @@ public class ConfirmOrderDetail extends AppCompatActivity {
     private TextView textView_nama_penjual, textView_nama_makanan,textView_date_item, textView_lokasi_customer, textView_nama_customer,
     textView_phone_customer, textView_shipping_type,textView_tanggal_konfirmasi_order, textView_konfirm_terima_tidak, textView_catata_alasan, textView_edit, textView_hapus, textView_back;
 
+    private TextView textView_nama_mitra, textView_phone_mitra, textView_alamat_mitra;
     private TextView textView_id_confirm;
     private TextView textView_id_buyer;
     private SpHandle spHandle;
@@ -45,6 +46,10 @@ public class ConfirmOrderDetail extends AppCompatActivity {
         textView_edit=findViewById(R.id.tv_confirm_detail_btn_Edit);
         textView_hapus=findViewById(R.id.tv_confirm_detail_btn_hapus);
         textView_back=findViewById(R.id.tv_confirm_detail_btn_kembali);
+
+        textView_nama_mitra=findViewById(R.id.tv_confirm_detail_nama_mitra);
+        textView_alamat_mitra=findViewById(R.id.tv_confirm_detail_lokasi_mitra);
+        textView_phone_mitra=findViewById(R.id.tv_confirm_detail_phone_mitra);
 
         textView_id_confirm=findViewById(R.id.tv_confirm_detail_id_confirm);
         textView_id_buyer=findViewById(R.id.tv_confirm_detail_id_buyer);
@@ -89,6 +94,10 @@ public class ConfirmOrderDetail extends AppCompatActivity {
         bundle.putString("ct",textView_phone_customer.getText().toString());
        bundle.putString("cd",textView_date_item.getText().toString());
         bundle.putString("st", textView_shipping_type.getText().toString());
+        bundle.putString("nm",textView_nama_mitra.getText().toString());
+        bundle.putString("pm", textView_phone_mitra.getText().toString());
+        bundle.putString("lm", textView_alamat_mitra.getText().toString());
+
        // bundle.putLong("lm", );
 
 
@@ -130,6 +139,9 @@ public class ConfirmOrderDetail extends AppCompatActivity {
             textView_phone_customer.setText(bundle.getString("ct"));
             textView_tanggal_konfirmasi_order.setText(bundle.getString("cd"));
             textView_shipping_type.setText(bundle.getString("st"));
+            textView_nama_mitra.setText(bundle.getString("nm"));
+            textView_phone_mitra.setText(bundle.getString("pm"));
+            textView_alamat_mitra.setText(bundle.getString("lm"));
 
 
 

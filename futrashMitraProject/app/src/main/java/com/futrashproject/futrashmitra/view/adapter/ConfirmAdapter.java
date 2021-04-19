@@ -71,6 +71,8 @@ public class ConfirmAdapter extends RecyclerView.Adapter<ConfirmAdapter.ConfirmA
                 bundle.putString("ct",content.getPhoneCustomer());
                 bundle.putString("cd",content.getCreatedAt());
                 bundle.putString("st", content.getShippingType());
+                bundle.putString("pm", content.getPhoneMitra());
+                bundle.putString("lm",content.getLokasiMitra());
 
 
                 Intent intent = new Intent(context, ConfirmOrderDetail.class);

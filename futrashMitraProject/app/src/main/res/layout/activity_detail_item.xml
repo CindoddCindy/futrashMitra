@@ -10,15 +10,18 @@
     android:background="#232740"
     tools:context=".view.DetailItem">
 
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
 
     <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+
         android:background="@drawable/abuabu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
 
     <LinearLayout
@@ -79,6 +82,8 @@
 
 
         <LinearLayout
+            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_margin="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -546,7 +551,12 @@
 
         <TextView
             android:id="@+id/tv_item_detail_btn_tambah_item"
-            android:textColor="#BFBABA"
+            android:background="@drawable/username_bakron"
+            android:textColor="#232740"
+            android:shadowColor="#E6ECED"
+            android:shadowRadius="2"
+            android:shadowDx="1"
+            android:shadowDy="1"
             android:layout_marginTop="15dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -555,15 +565,20 @@
             android:textSize="12dp"
             android:textStyle="bold"
             android:padding="2dp"
-            android:background="@drawable/bakron_kembali"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="25dp">
 
         </TextView>
 
         <TextView
             android:id="@+id/tv_item_detail_btn_edit"
-            android:textColor="#BFBABA"
+            android:background="@drawable/username_bakron"
+            android:textColor="#232740"
+            android:shadowColor="#E6ECED"
+            android:shadowRadius="2"
+            android:shadowDx="1"
+            android:shadowDy="1"
+
             android:layout_marginTop="15dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -572,14 +587,19 @@
             android:textSize="12dp"
             android:textStyle="bold"
             android:padding="2dp"
-            android:background="@drawable/bakron_kembali"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="25dp">
 
         </TextView>
         <TextView
             android:id="@+id/tv_item_detail_btn_hapus"
-            android:textColor="#BFBABA"
+            android:background="@drawable/username_bakron"
+            android:textColor="#232740"
+            android:shadowColor="#E6ECED"
+            android:shadowRadius="2"
+            android:shadowDx="1"
+            android:shadowDy="1"
+
             android:layout_marginTop="15dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -588,9 +608,8 @@
             android:textSize="12dp"
             android:textStyle="bold"
             android:padding="2dp"
-            android:background="@drawable/bakron_kembali"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="25dp">
 
         </TextView>
 
@@ -608,10 +627,11 @@
 
         <!--tutup sc-->
     </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 
 
-</ScrollView>
+
 
 
 </LinearLayout>
