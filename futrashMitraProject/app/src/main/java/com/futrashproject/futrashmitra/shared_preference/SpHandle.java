@@ -23,6 +23,8 @@ public class SpHandle {
 
     public static  final String SP_ID_ORDER_BUYER_DUA= "spIdOrderBuyerDua";
 
+    public static final String SP_ID_CONFIRM_ORDER_EDIT="spIdConfirmOrderEdit";
+
 
 
     public static final String SP_HAVE_LOGIN = "spHaveLogin";
@@ -95,6 +97,11 @@ public class SpHandle {
         spEditor.commit();
     }
 
+    public void setSpIdConfirmOrderEdit(String keySp, Long value){
+        spEditor.putLong(keySp,value);
+        spEditor.commit();
+    }
+
     public void saveSPBoolean(String keySP, boolean value){
         spEditor.putBoolean(keySP, value);
         spEditor.commit();
@@ -128,6 +135,10 @@ public class SpHandle {
         return  sp.getLong(SP_ID_ORDER_BUYER_DUA,0);
     }
 
+
+    public Long getSpIdEditConfirm(){
+        return  sp.getLong(SP_ID_CONFIRM_ORDER_EDIT, 0);
+    }
     public String getSpNamaMitra(){
         return  sp.getString(SP_NAMA_MITRA,"");
 

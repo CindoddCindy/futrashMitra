@@ -6,7 +6,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 //@Generated("jsonschema2pojo")
-public class MitraPostConfirmRespon {
+public class PostConfirmRespon {
 
     @SerializedName("createdAt")
     @Expose
@@ -56,6 +56,9 @@ public class MitraPostConfirmRespon {
     @SerializedName("shipping_type")
     @Expose
     private String shippingType;
+    @SerializedName("id_order_buyer")
+    @Expose
+    private long idOrderBuyer;
     @SerializedName("user")
     @Expose
     private User user;
@@ -64,11 +67,12 @@ public class MitraPostConfirmRespon {
      * No args constructor for use in serialization
      * 
      */
-    public MitraPostConfirmRespon() {
+    public PostConfirmRespon() {
     }
 
     /**
      * 
+     * @param idOrderBuyer
      * @param shippingType
      * @param itemDate
      * @param namaCustomer
@@ -87,7 +91,7 @@ public class MitraPostConfirmRespon {
      * @param lokasiMitra
      * @param phoneMitra
      */
-    public MitraPostConfirmRespon(String createdAt, String updatedAt, long id, String imageUrl, String terimaTolak, String catatanAlasan, String jenisMakanan, String lokasiCustomer, String namaCustomer, String phoneCustomer, String lokasiMitra, String namaMitra, String phoneMitra, String itemDate, String orderDate, String shippingType, User user) {
+    public PostConfirmRespon(String createdAt, String updatedAt, long id, String imageUrl, String terimaTolak, String catatanAlasan, String jenisMakanan, String lokasiCustomer, String namaCustomer, String phoneCustomer, String lokasiMitra, String namaMitra, String phoneMitra, String itemDate, String orderDate, String shippingType, long idOrderBuyer, User user) {
         super();
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
@@ -105,6 +109,7 @@ public class MitraPostConfirmRespon {
         this.itemDate = itemDate;
         this.orderDate = orderDate;
         this.shippingType = shippingType;
+        this.idOrderBuyer = idOrderBuyer;
         this.user = user;
     }
 
@@ -234,6 +239,14 @@ public class MitraPostConfirmRespon {
 
     public void setShippingType(String shippingType) {
         this.shippingType = shippingType;
+    }
+
+    public long getIdOrderBuyer() {
+        return idOrderBuyer;
+    }
+
+    public void setIdOrderBuyer(long idOrderBuyer) {
+        this.idOrderBuyer = idOrderBuyer;
     }
 
     public User getUser() {
