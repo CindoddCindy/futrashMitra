@@ -40,6 +40,10 @@
                     android:orientation="vertical"
                     android:layout_weight="1">
 
+
+
+
+
                     <TextView
                         android:shadowColor="#E6ECED"
                         android:shadowRadius="2"

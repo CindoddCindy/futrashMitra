@@ -2,7 +2,7 @@ package com.futrashproject.futrashmitra.servis;
 
 import com.futrashproject.futrashmitra.model.pojo_confirm.edit_confirm.EditConfirmRespon;
 import com.futrashproject.futrashmitra.model.pojo_confirm.get_confirm.GetConfirmRespon;
-import com.futrashproject.futrashmitra.model.pojo_confirm.post_confirm.MitraPostConfirmRespon;
+import com.futrashproject.futrashmitra.model.pojo_confirm.post_confirm.PostConfirmRespon;
 import com.futrashproject.futrashmitra.model.pojo_item.pojo_edit_item.MitraEditItemRespon;
 import com.futrashproject.futrashmitra.model.pojo_item.pojo_get_item.FoodTrashMitraGetItemRespon;
 import com.futrashproject.futrashmitra.model.pojo_item.pojo_post_item.FoodTrashMitraPostItemRespon;
@@ -65,13 +65,13 @@ public interface MethodsFactory {
             "Content-Type:application/json"
     })
     @POST("confirm/users/{userId}/confirm")
-    Call<MitraPostConfirmRespon> postConfirmToMySelf(@Path ("userId") Long id, @HeaderMap Map<String,String > Map, @Body JsonObject body);
+    Call<PostConfirmRespon> postConfirmToMySelf(@Path ("userId") Long id, @HeaderMap Map<String,String > Map, @Body JsonObject body);
 
     @Headers({
             "Content-Type:application/json"
     })
     @POST("confirm/users/{userId}/confirm")
-    Call<MitraPostConfirmRespon> postConfirmToBuyer(@Path ("userId") Long id, @HeaderMap Map<String,String > Map, @Body JsonObject body);
+    Call<PostConfirmRespon> postConfirmToBuyer(@Path ("userId") Long id, @HeaderMap Map<String,String > Map, @Body JsonObject body);
 
 
 

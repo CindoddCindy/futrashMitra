@@ -24,6 +24,8 @@ public class ConfirmOrderDetail extends AppCompatActivity {
     private TextView textView_nama_penjual, textView_nama_makanan,textView_date_item, textView_lokasi_customer, textView_nama_customer,
     textView_phone_customer, textView_shipping_type,textView_tanggal_konfirmasi_order, textView_konfirm_terima_tidak, textView_catata_alasan, textView_edit, textView_hapus, textView_back;
 
+    private TextView textView_id_confirm;
+    private TextView textView_id_buyer;
     private SpHandle spHandle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,9 @@ public class ConfirmOrderDetail extends AppCompatActivity {
         textView_edit=findViewById(R.id.tv_confirm_detail_btn_Edit);
         textView_hapus=findViewById(R.id.tv_confirm_detail_btn_hapus);
         textView_back=findViewById(R.id.tv_confirm_detail_btn_kembali);
+
+        textView_id_confirm=findViewById(R.id.tv_confirm_detail_id_confirm);
+        textView_id_buyer=findViewById(R.id.tv_confirm_detail_id_buyer);
 
         spHandle= new SpHandle(ConfirmOrderDetail.this);
 
@@ -71,8 +76,10 @@ public class ConfirmOrderDetail extends AppCompatActivity {
         Bundle bundle = new Bundle();
        // spHandle.setSpIdConfirm(SpHandle.SP_ID_CONFIRM_ORDER, bundle.getLong("id_confirm"));
        // bundle.putLong("id_confirm",content.getId());
-        bundle.putLong("id_confirm",spHandle.getSpIdConfirm());
-        bundle.putString("nm",textView_nama_penjual.getText().toString());
+        bundle.putLong("id_customer",spHandle.getSpIdEditConfirm());
+        bundle.putLong("id_confirm",spHandle.getSpIdConfirmOrder());
+      //  bundle.putLong("id_confirm", Long.parseLong((textView_id_confirm.getText().toString())));
+        bundle.putString("np",textView_nama_penjual.getText().toString());
         bundle.putString("tt",textView_konfirm_terima_tidak.getText().toString());
         bundle.putString("ca",textView_catata_alasan.getText().toString());
         bundle.putString("od",textView_tanggal_konfirmasi_order.getText().toString());
@@ -80,8 +87,9 @@ public class ConfirmOrderDetail extends AppCompatActivity {
         bundle.putString("cl",textView_lokasi_customer.getText().toString());
         bundle.putString("cn",textView_nama_customer.getText().toString());
         bundle.putString("ct",textView_phone_customer.getText().toString());
-      //  bundle.putString("cd",content.getCreatedAt());
+       bundle.putString("cd",textView_date_item.getText().toString());
         bundle.putString("st", textView_shipping_type.getText().toString());
+       // bundle.putLong("lm", );
 
 
         Intent intent = new Intent(ConfirmOrderDetail.this, EditConfrimActivity.class);
@@ -108,7 +116,10 @@ public class ConfirmOrderDetail extends AppCompatActivity {
              */
             Bundle bundle = getIntent().getExtras();
 
-            spHandle.setSpIdConfirm(SpHandle.SP_ID_CONFIRM_ORDER,bundle.getLong("id_confirm"));
+            spHandle.setSpIdConfirmOrderEdit(SpHandle.SP_ID_CONFIRM_ORDER_EDIT, bundle.getLong("id_customer"));
+            spHandle.setSpIdConfirmOrder(SpHandle.SP_ID_CONFIRM_ORDER,bundle.getLong("id_confirm"));
+            textView_id_confirm.setText(String.valueOf(bundle.getLong("id_confirm")));
+            textView_id_buyer.setText(String.valueOf(bundle.getLong("id_customer")));
             textView_nama_penjual.setText(bundle.getString("nm"));
             textView_konfirm_terima_tidak.setText(bundle.getString("tt"));
             textView_catata_alasan.setText(bundle.getString("ca"));
@@ -130,7 +141,7 @@ public class ConfirmOrderDetail extends AppCompatActivity {
 
     public void deleteConfirm(){
         Long id = spHandle.getSpIdUser();
-        Long idConfirm= spHandle.getSpIdConfirm();
+        Long idConfirm= spHandle.getSpIdConfirmOrder();
 
         String tokenUser = spHandle.getSpTokenUser();
         Map<String,String> token = new HashMap<>();
@@ -180,7 +191,7 @@ public class ConfirmOrderDetail extends AppCompatActivity {
 
     public void deleteConfirmToSeller(){
         Long id = spHandle.getSpIdBuyerDua();
-        Long idConfirm= spHandle.getSpIdConfirm();
+        Long idConfirm= spHandle.getSpIdConfirmOrder();
 
         String tokenUser = spHandle.getSpTokenUser();
         Map<String,String> token = new HashMap<>();

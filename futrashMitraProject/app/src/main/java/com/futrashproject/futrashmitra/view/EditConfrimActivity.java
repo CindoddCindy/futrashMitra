@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import com.futrashproject.futrashmitra.R;
 import com.futrashproject.futrashmitra.model.pojo_confirm.edit_confirm.EditConfirmRespon;
-import com.futrashproject.futrashmitra.model.pojo_confirm.post_confirm.MitraPostConfirmRespon;
 import com.futrashproject.futrashmitra.servis.MethodsFactory;
 import com.futrashproject.futrashmitra.servis.RetrofitHandle;
 import com.futrashproject.futrashmitra.shared_preference.SpHandle;
@@ -30,6 +29,10 @@ public class EditConfrimActivity extends AppCompatActivity {
             textView_phone_customer, textView_shipping_type, textView_confirmation_btn_order;
 
     private EditText editText_nama_penjual, editText_lokasi_makanan, editText_nomor_telepon, editText_terima_tolak, editText_catatan_mitra;
+
+    TextView textView_id_customer;
+
+    TextView textView_id_confirm;
 
     private SpHandle spHandle;
 
@@ -54,6 +57,11 @@ public class EditConfrimActivity extends AppCompatActivity {
         editText_nomor_telepon=findViewById(R.id.et_confirm_activity_edit_phone_mitra);
         editText_terima_tolak=findViewById(R.id.et_confirm_activity_edit_terima_tolak);
         editText_catatan_mitra=findViewById(R.id.et_confirm_activity_edit_catatan_mitra);
+
+         textView_id_customer= findViewById(R.id.tv_confirm_activity_edit_id_customer);
+
+          textView_id_confirm= findViewById(R.id.tv_confirm_activity_edit_id_confirm_item);
+
 
         textView_confirmation_btn_order.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +100,12 @@ public class EditConfrimActivity extends AppCompatActivity {
              * Jika Bundle ada, ambil data dari Bundle
              */
             Bundle bundle = getIntent().getExtras();
+            spHandle.setSpIdConfirmOrderEdit(SpHandle.SP_ID_CONFIRM_ORDER_EDIT,bundle.getLong("id_customer"));
+            textView_id_customer.setText(String.valueOf(bundle.getLong("id_customer")));
+
+            spHandle.setSpIdConfirmDua(SpHandle.SP_ID_CONFIRM_DUA, bundle.getLong("id_confirm"));
+            textView_id_confirm.setText(String.valueOf(bundle.getLong("id_confirm")));
+
 
             editText_nama_penjual.setText(bundle.getString("nm"));
             editText_terima_tolak.setText(bundle.getString("tt"));
@@ -136,6 +150,7 @@ public class EditConfrimActivity extends AppCompatActivity {
 
          */
 
+        Long id_confirm_buyer = spHandle.getSpIdEditConfirm();
         jsonObject.addProperty("image_url", imageUrl);
         jsonObject.addProperty("terima_tolak", terimaTolak);
         jsonObject.addProperty("catatan_alasan", catatanAlasan);
@@ -149,10 +164,11 @@ public class EditConfrimActivity extends AppCompatActivity {
         jsonObject.addProperty("item_date", itemDate);
         jsonObject.addProperty("order_date", orderDate);
         jsonObject.addProperty("shipping_type", shippingType);
+        jsonObject.addProperty("id_order_buyer",id_confirm_buyer);
 
 
         Long id = spHandle.getSpIdUser();
-        Long idConfirmOwnSelf= spHandle.getSpIdConfirm();
+        Long idConfirmOwnSelf= spHandle.getIdConfirmDua();
 
         String tokenUser = spHandle.getSpTokenUser();
 
@@ -230,6 +246,7 @@ public class EditConfrimActivity extends AppCompatActivity {
         jsonArray.add("user");
 
          */
+         Long id_confirm_buyer= spHandle.getSpIdEditConfirm();
 
         jsonObject.addProperty("image_url", imageUrl);
         jsonObject.addProperty("terima_tolak", terimaTolak);
@@ -244,10 +261,14 @@ public class EditConfrimActivity extends AppCompatActivity {
         jsonObject.addProperty("item_date", itemDate);
         jsonObject.addProperty("order_date", orderDate);
         jsonObject.addProperty("shipping_type", shippingType);
+        jsonObject.addProperty("id_order_buyer",id_confirm_buyer);
 
 
-        Long id = spHandle.getSpIdBuyerDua();
-        Long idConfirmToBuyer=spHandle.getSpIdConfirm();
+
+       // Long idConfirm = spHandle.getIdConfirmDua();
+        Long idConfirm= Long.valueOf(textView_id_confirm.getText().toString());
+        //Long idConfirmToBuyer=spHandle.getSpIdEditConfirm();
+        Long idConfirmToBuyer= Long.valueOf(textView_id_customer.getText().toString());
 
         String tokenUser = spHandle.getSpTokenUser();
 
@@ -257,7 +278,7 @@ public class EditConfrimActivity extends AppCompatActivity {
 
 
         MethodsFactory methodsFactory =  RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
-        Call<EditConfirmRespon> call= methodsFactory.editConfirm(id, idConfirmToBuyer,token,jsonObject);
+        Call<EditConfirmRespon> call= methodsFactory.editConfirm( idConfirmToBuyer, idConfirm, token,jsonObject);
         call.enqueue(new Callback<EditConfirmRespon>() {
             @Override
             public void onResponse(Call<EditConfirmRespon> call, Response<EditConfirmRespon> response) {
@@ -307,6 +328,6 @@ public class EditConfrimActivity extends AppCompatActivity {
 
     public  void metodKirim(){
         confirmOderToBuyerEdit();
-        sendDataConfirmEditToOwnSelf();
+        //sendDataConfirmEditToOwnSelf();
     }
 }

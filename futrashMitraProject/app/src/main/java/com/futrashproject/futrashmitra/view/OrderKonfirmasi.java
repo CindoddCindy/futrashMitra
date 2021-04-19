@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.futrashproject.futrashmitra.R;
-import com.futrashproject.futrashmitra.model.pojo_confirm.post_confirm.MitraPostConfirmRespon;
+import com.futrashproject.futrashmitra.model.pojo_confirm.post_confirm.PostConfirmRespon;
 import com.futrashproject.futrashmitra.model.pojo_regis.FoodTrashRegisMitraRespon;
 import com.futrashproject.futrashmitra.servis.MethodsFactory;
 import com.futrashproject.futrashmitra.servis.RetrofitHandle;
@@ -99,6 +99,7 @@ public class OrderKonfirmasi extends AppCompatActivity {
         String terimaTolak=editText_terima_tolak.getText().toString();
         String catatanAlasan=editText_catatan_mitra.getText().toString();
 
+        Long idCustomerOrder = spHandle.getSpIdBuyerDua();
 
 
         JsonObject jsonObject = new JsonObject();
@@ -121,9 +122,9 @@ public class OrderKonfirmasi extends AppCompatActivity {
         jsonObject.addProperty("item_date", itemDate);
         jsonObject.addProperty("order_date", orderDate);
         jsonObject.addProperty("shipping_type", shippingType);
+        jsonObject.addProperty("id_order_buyer",idCustomerOrder);
 
 
-        Long id = spHandle.getSpIdBuyerDua();
 
         String tokenUser = spHandle.getSpTokenUser();
 
@@ -133,10 +134,10 @@ public class OrderKonfirmasi extends AppCompatActivity {
 
 
         MethodsFactory methodsFactory =  RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
-        Call<MitraPostConfirmRespon> call= methodsFactory.postConfirmToBuyer(id, token,jsonObject);
-        call.enqueue(new Callback<MitraPostConfirmRespon>() {
+        Call<PostConfirmRespon> call= methodsFactory.postConfirmToBuyer(idCustomerOrder, token,jsonObject);
+        call.enqueue(new Callback<PostConfirmRespon>() {
             @Override
-            public void onResponse(Call<MitraPostConfirmRespon> call, Response<MitraPostConfirmRespon> response) {
+            public void onResponse(Call<PostConfirmRespon> call, Response<PostConfirmRespon> response) {
                 if(response.isSuccessful()){
                     Intent intent = new Intent(OrderKonfirmasi.this,BottomNav.class);
                     startActivity(intent);
@@ -167,7 +168,7 @@ public class OrderKonfirmasi extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<MitraPostConfirmRespon> call, Throwable t) {
+            public void onFailure(Call<PostConfirmRespon> call, Throwable t) {
                 Toast.makeText(OrderKonfirmasi.this, "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
 
             }
@@ -226,12 +227,15 @@ public class OrderKonfirmasi extends AppCompatActivity {
 
 
 
+
         JsonObject jsonObject = new JsonObject();
         /*JsonArray jsonArray = new JsonArray();
         jsonArray.add("seller");
         jsonArray.add("user");
 
          */
+        Long idCustomerOrder = spHandle.getSpIdBuyerDua();
+
 
         jsonObject.addProperty("image_url", imageUrl);
         jsonObject.addProperty("terima_tolak", terimaTolak);
@@ -246,6 +250,8 @@ public class OrderKonfirmasi extends AppCompatActivity {
         jsonObject.addProperty("item_date", itemDate);
         jsonObject.addProperty("order_date", orderDate);
         jsonObject.addProperty("shipping_type", shippingType);
+        jsonObject.addProperty("id_order_buyer",idCustomerOrder);
+
 
 
         Long id = spHandle.getSpIdUser();
@@ -258,10 +264,10 @@ public class OrderKonfirmasi extends AppCompatActivity {
 
 
         MethodsFactory methodsFactory =  RetrofitHandle.getRetrofitLink().create(MethodsFactory.class);
-        Call<MitraPostConfirmRespon> call= methodsFactory.postConfirmToMySelf(id, token,jsonObject);
-        call.enqueue(new Callback<MitraPostConfirmRespon>() {
+        Call<PostConfirmRespon> call= methodsFactory.postConfirmToMySelf(id, token,jsonObject);
+        call.enqueue(new Callback<PostConfirmRespon>() {
             @Override
-            public void onResponse(Call<MitraPostConfirmRespon> call, Response<MitraPostConfirmRespon> response) {
+            public void onResponse(Call<PostConfirmRespon> call, Response<PostConfirmRespon> response) {
                 if(response.isSuccessful()){
                     Intent intent = new Intent(OrderKonfirmasi.this,BottomNav.class);
                     startActivity(intent);
@@ -292,7 +298,7 @@ public class OrderKonfirmasi extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<MitraPostConfirmRespon> call, Throwable t) {
+            public void onFailure(Call<PostConfirmRespon> call, Throwable t) {
                 Toast.makeText(OrderKonfirmasi.this, "network failure :( inform the user and possibly retry ", Toast.LENGTH_SHORT).show();
 
             }
