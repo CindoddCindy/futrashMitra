@@ -120,7 +120,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderAdapter
             textView_date=itemView.findViewById(R.id.tv_order_date_);
             textView_delete=itemView.findViewById(R.id.tv_order_delete);
             cardView_order_order=itemView.findViewById(R.id.cv_order_order);
-            textView_id_test=itemView.findViewById(R.id.tv_test_id);
+            //textView_id_test=itemView.findViewById(R.id.tv_test_id);
 
         }
     }

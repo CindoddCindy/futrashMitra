@@ -78,7 +78,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
                         <LinearLayout
-                            android:layout_weight="2"
+                            android:layout_weight="1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
@@ -174,7 +174,7 @@
                                 android:text="Tanggal Order"
                                 android:gravity="left"
                                 android:textStyle="normal"
-                                android:textSize="7dp"
+                                android:textSize="10dp"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 >
@@ -260,7 +260,7 @@
                         <TextView
                             android:id="@+id/tv_confirm_item_jenis_makanan"
                             android:padding="2dp"
-                            android:gravity="center"
+                            android:gravity="left"
                             android:textSize="10dp"
                             android:textColor="#BFBABA"
                             android:drawablePadding="5dp"
@@ -295,7 +295,7 @@
                         android:orientation="vertical"
                         android:layout_weight="1">
                         <TextView
-                            android:gravity="center"
+                            android:gravity="left"
                             android:id="@+id/tv_confirm_item_cutomer_name"
                             android:textColor="#BFBABA"
                             android:padding="2dp"
@@ -309,7 +309,7 @@
 
                         <TextView
                             android:id="@+id/tv_confirm_item_phone_customer"
-                            android:gravity="center"
+                            android:gravity="left"
                             android:textColor="#BFBABA"
                             android:padding="2dp"
                             android:textSize="10dp"
