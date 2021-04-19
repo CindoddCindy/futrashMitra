@@ -227,6 +227,7 @@
             </TextView>
 
             <EditText
+                android:gravity="center"
                 android:id="@+id/et_add_item_edit_harga_makanan"
                 android:textColor="#BFBABA"
                 android:layout_margin="10dp"
